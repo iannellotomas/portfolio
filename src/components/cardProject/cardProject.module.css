@@ -1,0 +1,227 @@
+/* .cardProject {
+  position: relative;
+  min-width: 400px;
+  max-width: calc(50% - 100px);
+  flex: 1 1 calc(50% - 25px);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background: var(--white);
+  padding: 40px 30px 30px 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: .3s ease;
+} */
+
+.cardProject {
+  position: relative;
+  min-width: 430px;
+  flex: 1 1 calc(50% - 25px);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background: var(--white);
+  padding: 40px 30px 30px 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.cardProject:hover {
+  box-shadow: var(--smooth-shadow);
+}
+
+.category {
+  position: absolute;
+  display: flex;
+  left: 0;
+  top: -15px;
+  pointer-events: none;
+}
+
+.category span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: 40px;
+  padding: 0 30px;
+  gap: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--purple);
+  border-radius: 20px 15px 15px 0;
+}
+
+.category span:nth-child(1) {
+  z-index: 2;
+}
+
+.category span:nth-child(2) {
+  background: var(--dark-purple);
+  padding-left: 60px;
+  margin-left: -40px;
+}
+
+.category svg path {
+  width: 24px;
+}
+
+.category svg path {
+  stroke: var(--white);
+}
+
+/* CARD HEADER */
+
+.carousel {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: none;
+}
+
+.carouselTrack {
+  display: flex;
+  position: relative;
+  transition: transform var(--dynamic-transition);
+}
+
+.carouselImage {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.carouselImage img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.carouselControl {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.carouselButtonPrev,
+.carouselButtonNext {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: var(--strong-shadow);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  transition: .3s ease;
+}
+
+.carouselButtonPrev {
+  left: 10px;
+}
+
+.carouselButtonNext {
+  right: 10px;
+}
+
+.carouselButtonPrev:active,
+.carouselButtonNext:active {
+  opacity: .3;
+  transform: scale(1.1);
+}
+
+.stepbar {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+  padding: 0 20px;
+  border-radius: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: var(--white);
+  box-shadow: var(--strong-shadow);
+}
+
+.step {
+  width: 8px;
+  height: 8px;
+  border-radius: 500px;
+  background: #bbb;
+  transition: .3s ease;
+}
+
+.step.active {
+  width: 25px;
+  background: var(--purple);
+}
+
+/* CARD FOOTER */
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.cardFooter > span {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.cardFooter > span > span {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cardFooter h3 {
+  font-size: 26px;
+}
+
+.cardFooter p {
+  line-height: 140%;
+}
+
+.cardFooter ul {
+  display: flex;
+  gap: 0;
+}
+
+.arrowCircle {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--surface-purple);
+  border-radius: 50%;
+  transition: var(--dynamic-fast-transition);
+}
+
+.arrowCircle svg {
+  position: absolute;
+  transition: var(--dynamic-fast-transition);
+}
+
+.cardProject:hover .arrowCircle {
+  background: var(--surface-purple);
+}
+
+.cardProject:hover .arrowCircle svg {
+  transform: translate(5px, -5px);
+}
