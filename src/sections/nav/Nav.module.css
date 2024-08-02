@@ -1,0 +1,127 @@
+nav {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 50px;
+  padding-top: 20px;
+}
+
+nav::before {
+  content: "";
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  width: 120vw;
+  height: 200px;
+  background: var(--white);
+  top: -130px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(50px);
+  z-index: -1;
+}
+
+/* NAV LEFT */
+.navLeft, .navSetting {
+  height: 60px;
+  background: #ffffffb3;
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-purple);
+  gap: 10px;
+  border-radius: 500px;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.logo {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo svg {
+  width: 24px;
+}
+
+.navLink,
+.navSetting {
+  padding: 0 15px;
+  height: 100%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.navLink {
+  position: relative;
+}
+
+.navLink .line {
+  width: 0;
+  height: 2px;
+  background: var(--purple);
+  border-radius: 500px;
+  position: absolute;
+  bottom: 12px;
+  transition: var(--transition);
+}
+
+.navLink:hover:not(.primaryButton) {
+  color: var(--purple);
+}
+
+.navLink:hover .line {
+  width: 30px;
+}
+
+.primaryButton {
+  padding: 0 40px;
+  background: var(--purple);
+  color: var(--white);
+  font-weight: 600;
+  border-radius: 500px;
+}
+
+.primaryButton:hover {
+  background: var(--dark-purple);
+}
+
+
+/* NAV RIGHT */
+
+.navRight {
+  display: flex;
+}
+
+.navRight svg {
+  width: 24px;
+}
+
+.navSetting {
+  padding-inline: 30px;
+}
+
+.navRight .switch {
+  width: 50px;
+  border: 2px solid var(--black);
+  border-radius: 500px;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.navRight .switch span {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--black);
+}

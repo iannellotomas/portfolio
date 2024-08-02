@@ -1,0 +1,15 @@
+.chip {
+  list-style: none;
+  height: 30px;
+  width: max-content;
+  display: grid;
+  place-items: center;
+  padding: 0 15px;
+  border-radius: 500px;
+  background: var(--surface-purple);
+  color: var(--purple);
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: -.5px;
+  text-transform: uppercase;
+}
