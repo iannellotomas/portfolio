@@ -187,7 +187,7 @@ export const dataProjects = [
 			},
 			{
 				type: "iframe",
-				src: "https://embed.figma.com/proto/Vu3rYXPv8a1suH4wZg2iy7/App-Mostaza---UX-Research---Tom%C3%A1s-Iannello?page-id=0%3A1&node-id=210-268&node-type=frame&viewport=-2753%2C-965%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=416%3A7580&show-proto-sidebar=0&embed-host=share", // URL del iframe
+				src: "https://embed.figma.com/proto/Vu3rYXPv8a1suH4wZg2iy7/App-Mostaza---UX-Research---Tom%C3%A1s-Iannello?page-id=0%3A1&node-id=210-268&node-type=frame&viewport=-2753%2C-965%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=416%3A7580&show-proto-sidebar=0&embed-host=share&client-id=sdLBeG2HPVfxWiFDCpN6rV",
 				title: "Prototipo del proyecto de Mostaza",
 			},
 		],
