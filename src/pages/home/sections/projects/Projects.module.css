@@ -1,0 +1,22 @@
+.projects {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.containerProjects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  background: var(--color-neutral);
+  padding: 60px;
+  margin-block: 30px;
+  border-radius: 20px;
+}
+
+.tools {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+  margin-top: 20px;
+}
