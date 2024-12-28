@@ -1,0 +1,190 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 150px 100px;
+  gap: 100px;
+}
+
+/* HEADER LEFT */
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerLeft img {
+  max-width: 250px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.headerLeft .workTag {
+  position: relative;
+  height: 40px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 500px;
+  color: var(--text-primary);
+  font-weight: var(--label-weight);
+  border: 2px solid transparent;
+  /* background-image: linear-gradient(to right, var(--surface-success) 0%, var(--color-success) 50%, var(--surface-success) 100%); */
+  background-image: linear-gradient(to right, var(--color-primary-light) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+  background-clip: padding-box;
+}
+
+.workTag::before {
+  content: "";
+  left: 2px;
+  top: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  position: absolute;
+  border-radius: 500px;
+  background: var(--surface-primary);
+}
+
+.workTag>* {
+  z-index: 2;
+}
+
+.workTag .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-success);
+}
+
+.workTag .circle::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--color-success);
+  opacity: .8;
+  animation: 1s ease zoom-in infinite;
+}
+
+
+@keyframes zoom-in {
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* HEADER RIGHT */
+.headerRight span {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header h1 {
+  font-size: 80px;
+  line-height: 110%;
+  color: var(--text-primary);
+}
+
+.header h2 {
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 110%;
+  background: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary-dark) 25%, var(--color-primary-dark) 75%, var(--color-primary) 100%);
+  background-clip: text;
+  letter-spacing: -2px;
+  -webkit-text-fill-color: transparent;
+}
+
+.headerRight span svg path {
+  fill: var(--color-primary);
+}
+
+.header h3 {
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.header p {
+  margin-block: 20px 30px;
+  max-width: 610px;
+}
+
+.cta {
+  display: flex;
+  gap: 20px;
+}
+
+.cta a {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--color-primary);
+  height: 50px;
+  border: 2px solid var(--color-primary-light);
+  padding: 0 30px;
+  border-radius: 500px;
+  transition: var(--dynamic-fast-transition);
+}
+
+.cta>a svg path,
+.cta>a svg line {
+  stroke: var(--color-primary);
+}
+
+.cta>a:hover {
+  border-color: var(--color-primary);
+}
+
+.cta .social {
+  display: flex;
+}
+
+.cta .social a {
+  padding-inline: 20px;
+  background: var(--color-primary-light);
+  border: none;
+}
+
+.cta .social a:hover {
+  background: var(--hover-primary-light);
+}
+
+.cta svg {
+  width: 24px;
+}
+
+.cta svg path {
+  fill: var(--color-primary);
+}
+
+
+/* BACKGROUND BLUR SHAPE */
+
+.shape {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: -1;
+}
+
+.shape svg circle {
+  fill: var(--color-primary);
+}
+
+.shape svg path {
+  fill: var(--color-neutral);
+}

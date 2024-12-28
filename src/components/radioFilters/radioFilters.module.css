@@ -1,0 +1,90 @@
+/* Ocultar los inputs de radio, pero mantener su funcionalidad */
+input[type="radio"] {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 2px solid var(--color-primary-light);
+  border-radius: 500px;
+  height: 56px;
+  width: max-content;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  height: calc(100% + 4px);
+  padding: 0 20px;
+  font-weight: var(--label-weight);
+  border-radius: 500px;
+  gap: 10px;
+  color: var(--text-primary);
+  position: relative;
+  transition: var(--dynamic-fast-transition);
+}
+
+.label svg path {
+  stroke: var(--text-primary);
+  pointer-events: none;
+}
+
+.label.active svg path {
+  stroke: var(--text-alternative);
+}
+
+.label.active {
+  background: var(--color-primary);
+  color: var(--text-alternative);
+  font-weight: var(--active-label-weight);
+  padding-right: 50px;
+}
+
+.label:not(.active) {
+  cursor: pointer;
+}
+
+.label:hover:not(.active) {
+  background: var(--hover-background);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 16px;
+}
+
+.label:not(.active) .check {
+  position: absolute;
+  opacity: 0;
+}
+
+.check svg {
+  width: 24px;
+  height: 24px;
+}
+
+.check svg path {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke: var(--text-alternative);
+}
+
+.checked svg path {
+  transition: .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  transition-delay: .1s;
+  stroke-dashoffset: 0;
+}
+
+.line {
+  width: 2px;
+  height: 25px;
+  border-radius: 5px;
+  background: var(--color-primary-light);
+}

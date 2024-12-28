@@ -1,0 +1,250 @@
+.detailEducation {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 4vw 0 4vw;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 110px;
+  background: var(--surface-primary);
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid var(--color-neutral);
+  z-index: 100;
+}
+
+.header>span {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.backButton {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-primary-light);
+  border-radius: 500px;
+  transition: var(--dynamic-fast-transition);
+}
+
+.backButton:hover {
+  background: var(--color-primary-light);
+}
+
+.backButton path {
+  stroke: var(--color-primary);
+}
+
+.header .title {
+  display: flex;
+  flex-direction: column;
+}
+
+.header h1 {
+  font-size: 50px;
+  line-height: 100%;
+  color: var(--text-primary);
+}
+
+.header .date {
+  height: 100%;
+  display: flex;
+  align-items: end;
+  padding-bottom: 20px;
+}
+
+.header>span>span {
+  color: var(--text-muted);
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: var(--active-label-weight);
+  background: var(--color-primary);
+  color: var(--text-alternative);
+  height: 50px;
+  padding: 0 30px;
+  border-radius: 500px;
+}
+
+.primaryButton svg path,
+.primaryButton svg line {
+  stroke: var(--text-alternative);
+}
+
+.caption {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+
+/* MAIN */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-block: 30px;
+}
+
+.mainTop {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px minmax(350px, 2fr) minmax(250px, 1fr));
+  gap: 50px;
+}
+
+.main .col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.institution {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.institution:hover {
+  text-decoration: underline;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.mainBottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.mainBottom>div {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 20px;
+  position: relative;
+}
+
+.mainBottom>div::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 20px;
+}
+
+.mainBottom>div * {
+  z-index: 2;
+}
+
+.mainBottom .icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  background: var(--color-primary-light);
+  border-radius: 20px;
+}
+
+.outstanding .icon {
+  background: var(--surface-icon-outstanding);
+}
+
+.outstanding .icon path {
+  fill: var(--text-outstanding);
+}
+
+.classes .icon path {
+  fill: var(--color-primary);
+}
+
+.hours .icon svg g path {
+  fill: var(--color-primary);
+}
+
+.mainBottom h2 {
+  font-size: 26px;
+  color: var(--color-primary);
+  letter-spacing: -1px;
+}
+
+.outstanding h2 {
+  color: var(--text-outstanding);
+}
+
+.mainBottom h2+span {
+  letter-spacing: -1px;
+}
+
+.outstanding {
+  font-weight: var(--paragraph-weight);
+  color: var(--text-outstanding);
+  background: linear-gradient(to right, var(--surface-outstanding) 0%, var(--border-outstanding) 50%, var(--surface-outstanding) 100%);
+}
+
+.hours,
+.classes {
+  background: linear-gradient(to right, var(--color-primary-light) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+}
+
+.outstanding::before {
+  background: var(--surface-outstanding);
+}
+
+.hours::before,
+.classes::before {
+  background: var(--surface-primary);
+}
+
+/* CERTFICATE */
+.certificate {
+  padding: 60px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  background: var(--color-neutral);
+}
+
+.certificate > span {
+  border-radius: 20px !important;
+  overflow: hidden;
+  background: green;
+}
+
+.certificate img {
+  width: 100%;
+  min-height: 500px;
+  object-fit: contain;
+  border-radius: 20px;
+  pointer-events: none;
+  user-select: none;
+}

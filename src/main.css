@@ -1,0 +1,205 @@
+:root {
+  --transition: .15s ease;
+  --transition-low: .3s ease;
+  --transition-very-low: .5s ease;
+  --dynamic-transition: .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+  --dynamic-fast-transition: .15s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body.light-mode {
+  /* SURFACE */
+  --surface-primary: #FFF;
+  --surface-primary-transparent: #FFFFFFBF;
+  --surface-primary-transparent-2: rgba(255, 255, 255, 0.8);
+  --hover-background: #0000001a;
+  --surface-skeleton: #d8daec;
+  --accent-skeleton: #8d8ead;
+  /* TEXT */
+  --text-primary: #1D1D1D;
+  --text-primary-transparent: rgba(0, 0, 0, 0.1);
+  --text-secondary: #464646;
+  --text-alternative: #FFF;
+  --text-muted: #969696;
+  --label-weight: 700;
+  --active-label-weight: 600;
+  --paragraph-weight: 400;
+  /* COLOR */
+  --color-neutral: #e7e7e9;
+  --color-primary: #4557FB;
+  --color-primary-light: #DBDDF2;
+  --hover-primary-light: #CBCDE2;
+  --color-primary-dark: #202981;
+  /* SUCCESS */
+  --color-success: #2A9928;
+  /* OUTSTANDING */
+  --surface-outstanding: #FAFF00;
+  --surface-icon-outstanding: #D9DD04;
+  --text-outstanding: #1D1D1D;
+  --border-outstanding: #868902;
+  /* SHADOWS */
+  --smooth-shadow: 0 4px 30px 10px #a1a5ce47;
+  --strong-shadow: 0 4px 5px rgba(0, 0, 0, .25);
+  /* SCROLLBAR */
+  --thumb: #c2c2c2;
+  --hover-thumb: #8e8e8e;
+  /* STATES */
+  --error: #F27C7C;
+}
+
+body.dark-mode {
+  /* SURFACE */
+  --surface-primary: #0A0B15;
+  --surface-primary-transparent: #0A0B15BF;
+  --surface-primary-transparent-2: hsla(235, 35%, 6%, 0.8);
+  --hover-background: #ffffff0d;
+  --surface-skeleton: #272a48;
+  --accent-skeleton: #3c4286;
+  /* TEXT */
+  --text-primary: #FFF;
+  --text-primary-transparent: rgba(255, 255, 255, 0.05);
+  --text-secondary: #9c9caf;
+  --text-alternative: #0C1884;
+  --text-muted: #56586d;
+  /* COLOR */
+  --color-neutral: #111329;
+  --color-primary: #7D8AFF;
+  --color-primary-light: #1D1F34;
+  --hover-primary-light: #272a48;
+  --color-primary-dark: #AAB2F9;
+  --label-weight: 500;
+  --active-label-weight: 800;
+  --paragraph-weight: 300;
+  /* SUCCESS */
+  --color-success: #49FB45;
+  /* OUTSTANDING */
+  --surface-outstanding: #20230B;
+  --surface-icon-outstanding: #2F330D;
+  --text-outstanding: #FAFF00;
+  --border-outstanding: #FAFF00;
+  /* SHADOWS */
+  --smooth-shadow: 0 4px 30px 10px #272a4872;
+  --strong-shadow: 0 4px 10px #99a0e93a;
+  /* SCROLLBAR */
+  --thumb: #1f213d;
+  --hover-thumb: #2f3263;
+  /* STATES */
+  --error: #F27C7C;
+}
+
+body {
+  background: var(--surface-primary);
+  color: var(--text-secondary);
+  transition: background var(--dynamic-fast-transition);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  /* Efecto de resaltado en mobile*/
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--thumb);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-thumb);
+}
+
+
+/* RESET STYLES */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+a,
+button,
+input,
+textarea {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+button:active {
+  transform: scale(1.1);
+}
+
+input,
+textarea {
+  cursor: auto;
+}
+
+p {
+  font-size: 16px;
+  font-weight: var(--paragraph-weight);
+  line-height: 150%;
+}
+
+
+button:focus-visible,
+a:focus-visible {
+  border: 4px solid var(--surface-primary) !important;
+  outline: 3px solid var(--text-primary) !important;
+}
+
+strong {
+  font-weight: 800;
+}
+
+/* PAGE TRANSITION */
+
+.slide-in {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-primary);
+  transform-origin: bottom;
+}
+
+.slide-out {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-primary);
+  transform-origin: top;
+}

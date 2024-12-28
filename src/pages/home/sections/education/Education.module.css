@@ -1,0 +1,130 @@
+.education {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.containerEducation {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  transition: var(--dynamic-fast-transition);
+
+  header {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 200px minmax(250px, 1fr) 80px;
+    gap: 40px;
+    padding: 0 40px 0 20px;
+    padding-inline: 20px 40px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--text-muted);
+
+    span:nth-child(1) {
+      margin-left: 20px;
+    }
+  }
+}
+
+/* TOOLS */
+
+.tools {
+  display: flex;
+  margin-block: 20px 30px;
+  height: 56px;
+  justify-content: end;
+}
+
+.viewMode {
+  height: 100%;
+  display: flex;
+  border: 2px solid var(--color-primary-light);
+  border-radius: 500px;
+}
+
+.modeOption {
+  width: 110px;
+  position: relative;
+  border-radius: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--dynamic-fast-transition);
+}
+
+.modeOption:last-child {
+  margin-left: -20px;
+}
+
+.modeOption input {
+  display: none;
+}
+
+.modeOption:not(.active) svg path {
+  stroke: var(--text-primary);
+}
+
+.modeOption:not(.active):hover svg path {
+  stroke: var(--color-primary);
+  transition: var(--dynamic-fast-transition);
+}
+
+.modeOption.active {
+  background-color: var(--color-primary);
+  padding-left: 24px;
+  pointer-events: none;
+}
+
+.modeOption.active svg path {
+  stroke: var(--text-alternative);
+}
+
+.containerList {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  padding: 60px;
+  background: var(--color-neutral);
+  border-radius: 20px;
+  gap: 30px;
+}
+
+.containerGrid header {
+  display: none;
+}
+
+/* CHECK */
+
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 20px;
+}
+
+.label:not(.active) .check {
+  position: absolute;
+  opacity: 0;
+}
+
+.check svg {
+  width: 24px;
+  height: 24px;
+}
+
+.check svg path {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke: var(--text-alternative);
+}
+
+.checked svg path {
+  transition: .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  stroke-dashoffset: 0;
+  transition-delay: .1s;
+}

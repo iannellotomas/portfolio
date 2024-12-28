@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/project/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/education/:path*",
+      "destination": "/"
+    }
+  ]
+}

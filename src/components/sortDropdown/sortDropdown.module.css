@@ -1,0 +1,159 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dropdownHeader {
+  display: flex;
+  height: 56px;
+  border-radius: 50px;
+  border: 2px solid var(--color-primary-light);
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--dynamic-fast-transition);
+  z-index: 6;
+}
+
+.dropdown:not(.open) .dropdownHeader:hover {
+  border-color: var(--color-primary);
+}
+
+.dropdown.open .dropdownHeader {
+  border-radius: 30px 30px 0 0;
+}
+
+.dropdown.open .dropdownHeader .icon {
+  border-radius: 30px 0 0 0;
+}
+
+
+.dropdownHeader .icon {
+  width: 50px;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  background: var(--color-primary-light);
+  border-radius: 50px 0 0 50px;
+}
+
+.dropdownHeader .icon svg {
+  width: 22px;
+}
+
+.dropdownHeader path {
+  stroke: var(--color-primary);
+}
+
+.dropdownHeader .option {
+  width: 200px;
+  height: 100%;
+  padding-inline: 15px 20px;
+  gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: var(--label-weight);
+  color: var(--text-primary);
+  align-items: center;
+}
+
+.dropdownHeader .option svg {
+  width: 16px;
+  transition: .2s ease;
+}
+
+.dropdown.open .dropdownHeader .option svg {
+  transform: rotate(180deg);
+}
+
+
+/* DROPDOWN LIST */
+.dropdownList {
+  display: flex;
+  width: 100%;
+  top: 25px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  position: absolute;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 15px 15px 15px;
+  border-radius: 0 0 30px 30px;
+  background: var(--surface-primary-transparent);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--color-primary-light);
+  border-top: 0;
+  transition: top var(--dynamic-fast-transition);
+}
+
+.dropdown.open .dropdownList {
+  top: 50px;
+  pointer-events: all;
+  opacity: 1;
+}
+
+.dropdownList>span {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.dropdownList .containerOptions {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownList .label {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  border-radius: 40px;
+  padding: 0 20px;
+  color: var(--text-primary);
+  font-weight: var(--label-weight);
+  transition: var(--dynamic-fast-transition);
+}
+
+.dropdownList .label:not(.selected):hover {
+  cursor: pointer;
+  background: var(--hover-background);
+}
+
+.modeOption input {
+  display: none;
+}
+
+.dropdownList .label.selected {
+  background: var(--color-primary);
+  color: var(--text-alternative);
+  font-weight: var(--active-label-weight);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 16px;
+  opacity: 0;
+}
+
+.check {
+  padding-right: 15px;
+}
+
+.check svg {
+  width: 24px;
+  height: 24px;
+}
+
+.check svg path {
+  stroke: var(--text-alternative);
+  stroke-width: 5;
+}
+
+.label.selected .check {
+  opacity: 1;
+}

@@ -1,0 +1,193 @@
+nav {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  width: calc(100% - 8vw);
+  max-width: calc(1440px - 8vw);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+nav::before {
+  content: "";
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  width: 120vw;
+  height: 200px;
+  background: var(--surface-primary);
+  top: -130px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(50px);
+  z-index: -1;
+}
+
+/* NAV LEFT */
+.navLeft, .navSetting {
+  height: 60px;
+  background: var(--surface-primary-transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-primary-light);
+  gap: 10px;
+  border-radius: 500px;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.logo {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo svg {
+  width: 24px;
+}
+
+.logo svg path {
+  stroke: var(--color-primary);
+}
+
+.navLink,
+.navSetting {
+  padding: 0 15px;
+  height: 100%;
+  font-weight: var(--label-weight);
+  display: flex;
+  color: var(--text-primary);
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.navLink {
+  position: relative;
+}
+
+.navLink .line {
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 500px;
+  position: absolute;
+  bottom: 12px;
+  transition: var(--transition);
+}
+
+.navLink:hover:not(.primaryButton) {
+  color: var(--color-primary);
+}
+
+.navLink:hover .line {
+  width: 30px;
+}
+
+.primaryButton {
+  padding: 0 40px;
+  background: var(--color-primary);
+  color: var(--text-alternative);
+  font-weight: var(--active-label-weight);
+  border-radius: 500px;
+}
+
+.primaryButton:hover {
+  background: var(--color-primary-dark);
+}
+
+
+/* NAV RIGHT */
+
+.navRight {
+  display: flex;
+}
+
+.navRight svg {
+  width: 24px;
+}
+
+.navSetting:not(.switchSetting) svg path {
+  stroke: var(--color-primary);
+}
+
+.moon path {
+  fill: var(--color-primary);
+}
+
+.navSetting {
+  padding-inline: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.navSetting:active {
+  background: var(--color-primary-light);
+}
+
+.switchSetting {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: var(--dynamic-fast-transition);
+}
+
+.switchSetting .backdrop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  transition: var(--dynamic-transition);
+}
+
+.switchSetting .icon {
+  display: grid;
+  place-items: center;
+  transition: var(--dynamic-fast-transition);
+}
+
+.navRight .switch {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  border: 2px solid var(--text-primary);
+  border-radius: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--dynamic-fast-transition);
+}
+
+.switch .circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-primary);
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  transition: var(--dynamic-fast-transition);
+}
+
+.switchSetting.light .backdrop {
+  transform: translateX(15px);
+}
+
+.switchSetting.dark .backdrop {
+  transform: translateX(-15px);
+}
+
+.switchSetting.dark .circle {
+  left: calc(100% - 20px);
+}
+
+.switchSetting.light .moon,
+.switchSetting.dark .sun {
+  opacity: 0;
+}

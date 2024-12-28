@@ -1,0 +1,131 @@
+/* LIST ITEM */
+
+.container {
+  cursor: pointer;
+
+  h3 {
+    font-size: 26px;
+  }
+
+  span {
+    letter-spacing: -.5px;
+  }
+}
+
+.listItem {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 200px minmax(250px, 1fr) 80px;
+  gap: 40px;
+  justify-items: start;
+  align-items: center;
+  padding: 20px 40px 20px 20px;
+  border-bottom: 2px solid var(--color-neutral);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  position: relative;
+
+  * {
+    z-index: 2;
+  }
+
+  h3 {
+    color: var(--text-primary);
+    font-weight: var(--label-weight);
+  }
+
+  svg {
+    position: absolute;
+    right: -20px;
+    transform: translate(-10px, 10px);
+    opacity: 0;
+    transition: transform var(--dynamic-fast-transition);
+
+    path {
+      stroke: var(--color-primary);
+    }
+  }
+}
+
+.title::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-right: 40px;
+  position: absolute;
+  border-radius: 20px;
+  transition: var(--dynamic-fast-transition);
+}
+
+.container:hover .title::before {
+  background: var(--color-neutral);
+}
+
+.container:hover .title svg {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.institution {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* GRID ITEM */
+
+.gridItem {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  background: var(--surface-primary);
+  padding: 20px 10px 30px 10px;
+  border-radius: 20px;
+  transition: box-shadow .3s ease;
+}
+
+.gridItem:hover {
+  box-shadow: var(--smooth-shadow);
+}
+
+.gridItem>*:not(.title) {
+  padding-inline: 20px;
+}
+
+.gridItem .title {
+  width: max-content;
+}
+
+.gridItem>span:last-child {
+  display: flex;
+  align-items: end;
+  flex-grow: 1;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.gridItem .tags {
+  margin-block: 15px;
+  padding-top: 20px;
+  border-top: 2px solid var(--color-neutral);
+}

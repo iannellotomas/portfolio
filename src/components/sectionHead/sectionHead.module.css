@@ -1,0 +1,22 @@
+.header, .header span {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  gap: 50px;
+}
+
+.header span {
+  gap: 30px;
+}
+
+.header svg path {
+  fill: var(--text-primary);
+}
+
+.title {
+  color: var(--text-primary);
+  font-size: 50px;
+}
