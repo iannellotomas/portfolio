@@ -47,7 +47,7 @@ body.light-mode {
   --thumb: #c2c2c2;
   --hover-thumb: #8e8e8e;
   /* STATES */
-  --error: #F27C7C;
+  --error: #DD2222;
 }
 
 body.dark-mode {
@@ -181,7 +181,6 @@ strong {
 }
 
 /* PAGE TRANSITION */
-
 .slide-in {
   position: fixed;
   z-index: 1000;
