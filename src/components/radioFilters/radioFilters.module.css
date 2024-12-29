@@ -1,4 +1,3 @@
-/* Ocultar los inputs de radio, pero mantener su funcionalidad */
 input[type="radio"] {
   opacity: 0;
   visibility: hidden;
@@ -9,8 +8,9 @@ input[type="radio"] {
   display: flex;
   align-items: center;
   gap: 5px;
-  border: 2px solid var(--color-primary-light);
-  border-radius: 500px;
+  padding-inline: 8px;
+  border: 1px solid var(--color-primary-light);
+  border-radius: 20px;
   height: 56px;
   width: max-content;
 }
@@ -21,27 +21,47 @@ input[type="radio"] {
   height: calc(100% + 4px);
   padding: 0 20px;
   font-weight: var(--label-weight);
-  border-radius: 500px;
   gap: 10px;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   position: relative;
   transition: var(--dynamic-fast-transition);
 }
 
+.label::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleX(.8);
+  width: 100%;
+  height: 40px;
+  background: var(--text-primary-transparent);
+  border-radius: 15px;
+  z-index: -1;
+  opacity: 0;
+  border: 1px solid var(--text-primary-transparent);
+  transition: var(--dynamic-fast-transition) transform;
+}
+
 .label svg path {
-  stroke: var(--text-primary);
+  stroke: var(--text-secondary);
   pointer-events: none;
+  stroke-width: 1.5px;
 }
 
 .label.active svg path {
   stroke: var(--text-alternative);
+  transition: var(--dynamic-fast-transition);
+}
+
+.label.active::before {
+  background: var(--color-primary);
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
 }
 
 .label.active {
-  background: var(--color-primary);
   color: var(--text-alternative);
   font-weight: var(--active-label-weight);
-  padding-right: 50px;
 }
 
 .label:not(.active) {
@@ -49,7 +69,16 @@ input[type="radio"] {
 }
 
 .label:hover:not(.active) {
-  background: var(--hover-background);
+  color: var(--text-primary);
+}
+
+.label:hover:not(.active) path {
+  stroke: var(--text-primary);
+}
+
+.label:hover:not(.active)::before {
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
 }
 
 .check {
@@ -57,12 +86,13 @@ input[type="radio"] {
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: 16px;
+  left: 16px;
+  background: var(--color-primary);
+  opacity: 0;
 }
 
-.label:not(.active) .check {
-  position: absolute;
-  opacity: 0;
+.label.active .check {
+  opacity: 1;
 }
 
 .check svg {
@@ -74,16 +104,21 @@ input[type="radio"] {
   stroke-dasharray: 48;
   stroke-dashoffset: 48;
   stroke: var(--text-alternative);
+  stroke-width: 5px;
+}
+
+.label.active .check path {
+  transition: var(--dynamic-fast-transition) stroke-dashoffset;
+  transition-delay: .1s;
 }
 
 .checked svg path {
-  transition: .3s cubic-bezier(0.215, 0.610, 0.355, 1);
-  transition-delay: .1s;
   stroke-dashoffset: 0;
 }
 
 .line {
-  width: 2px;
+  width: 1px;
+  z-index: -2;
   height: 25px;
   border-radius: 5px;
   background: var(--color-primary-light);

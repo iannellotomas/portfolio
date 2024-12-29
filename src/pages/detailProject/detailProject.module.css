@@ -374,7 +374,6 @@
   stroke: var(--text-primary);
 }
 
-
 .indexList {
   width: 220px;
   display: flex;
@@ -397,6 +396,10 @@
 
 .indexItem:hover {
   padding-inline: 20px 0;
+}
+
+.indexItem:active {
+  transform: scale(1);
 }
 
 .indexItem:not(:last-child):before {

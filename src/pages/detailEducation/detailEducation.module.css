@@ -58,13 +58,10 @@
   height: 100%;
   display: flex;
   align-items: end;
-  padding-bottom: 20px;
-}
-
-.header>span>span {
+  padding-bottom: 24px;
   color: var(--text-muted);
   font-weight: 300;
-  letter-spacing: -1px;
+  text-transform: uppercase;
 }
 
 .primaryButton {
@@ -136,7 +133,6 @@
   display: flex;
   flex-wrap: wrap;
 }
-
 
 .mainBottom {
   display: grid;
@@ -221,6 +217,10 @@
   background: var(--surface-outstanding);
 }
 
+.outstanding span {
+  color: var(--text-secondary);
+}
+
 .hours::before,
 .classes::before {
   background: var(--surface-primary);
@@ -230,21 +230,22 @@
 .certificate {
   padding: 60px;
   margin-bottom: 30px;
-  border-radius: 20px;
+  border-radius: 90px;
   background: var(--color-neutral);
+  display: flex;
 }
 
-.certificate > span {
-  border-radius: 20px !important;
+.certificate>span {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
   overflow: hidden;
-  background: green;
 }
 
 .certificate img {
   width: 100%;
   min-height: 500px;
-  object-fit: contain;
-  border-radius: 20px;
+  object-fit: cover;
   pointer-events: none;
   user-select: none;
 }

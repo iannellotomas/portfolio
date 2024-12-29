@@ -45,6 +45,7 @@ nav::before {
   width: 40px;
   display: flex;
   justify-content: center;
+  padding: 0 !important;
 }
 
 .logo svg {
@@ -59,37 +60,43 @@ nav::before {
 .navSetting {
   padding: 0 15px;
   height: 100%;
-  font-weight: var(--label-weight);
   display: flex;
   color: var(--text-primary);
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  color: var(--text-secondary);
 }
 
 .navLink {
   position: relative;
 }
 
-.navLink .line {
+.navLink::before {
+  content: "";
   width: 0;
   height: 2px;
   background: var(--color-primary);
   border-radius: 500px;
   position: absolute;
-  bottom: 12px;
-  transition: var(--transition);
+  bottom: -1px;
+  opacity: 0;
+  transition: var(--dynamic-fast-transition) width;
 }
 
-.navLink:hover:not(.primaryButton) {
-  color: var(--color-primary);
+.navLink:hover {
+  color: var(--text-primary);
 }
 
-.navLink:hover .line {
-  width: 30px;
+.navLink:hover::before {
+  opacity: 1;
+  width: 100%;
 }
 
 .primaryButton {
+  height: 100%;
+  display: grid;
+  place-items: center;
   padding: 0 40px;
   background: var(--color-primary);
   color: var(--text-alternative);

@@ -7,7 +7,7 @@ import RadioFilters from "../../../../components/radioFilters/radioFilters";
 import SortDropdown from "../../../../components/sortDropdown/sortDropdown";
 
 export default function Projects() {
-	const [selectedCategory, setSelectedCategory] = useState(0);
+	const [selectedCategory, setSelectedCategory] = useState(1); // UX/UI default
 	const [sortedProjects, setSortedProjects] = useState(dataProjects);
 	const dropdownOptions = ["Más relevantes", "Más recientes", "Más antiguos"];
 
@@ -54,7 +54,6 @@ export default function Projects() {
 				{sortedProjects
 					.filter(
 						(project) =>
-							selectedCategory === 0 ||
 							project.categories.includes(selectedCategory)
 					)
 					.map((project, index) => (

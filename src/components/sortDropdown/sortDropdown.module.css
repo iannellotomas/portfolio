@@ -7,26 +7,23 @@
 .dropdownHeader {
   display: flex;
   height: 56px;
-  border-radius: 50px;
-  border: 2px solid var(--color-primary-light);
+  border-radius: 20px;
+  border: 1px solid var(--color-primary-light);
+  outline: 2px solid transparent;
   cursor: pointer;
   font-size: 16px;
   transition: var(--dynamic-fast-transition);
   z-index: 6;
+  padding: 7px 0 7px 7px;
 }
 
 .dropdown:not(.open) .dropdownHeader:hover {
-  border-color: var(--color-primary);
+  outline-color: var(--color-primary-light);
 }
 
 .dropdown.open .dropdownHeader {
-  border-radius: 30px 30px 0 0;
+  border-radius: 13px 13px 0 0;
 }
-
-.dropdown.open .dropdownHeader .icon {
-  border-radius: 30px 0 0 0;
-}
-
 
 .dropdownHeader .icon {
   width: 50px;
@@ -34,21 +31,26 @@
   display: grid;
   place-content: center;
   background: var(--color-primary-light);
-  border-radius: 50px 0 0 50px;
+  border-radius: 15px;
 }
 
 .dropdownHeader .icon svg {
   width: 22px;
 }
 
-.dropdownHeader path {
+.dropdownHeader .icon path {
   stroke: var(--color-primary);
+}
+
+.dropdownHeader .option path {
+  stroke: var(--text-secondary);
+  stroke-width: 1px;
 }
 
 .dropdownHeader .option {
   width: 200px;
   height: 100%;
-  padding-inline: 15px 20px;
+  padding-inline: 10px 20px;
   gap: 15px;
   display: flex;
   justify-content: space-between;
@@ -78,11 +80,11 @@
   position: absolute;
   flex-direction: column;
   gap: 10px;
-  padding: 20px 15px 15px 15px;
-  border-radius: 0 0 30px 30px;
+  padding: 20px 0 15px 0;
+  border-radius: 0 0 15px 15px;
   background: var(--surface-primary-transparent);
   backdrop-filter: blur(10px);
-  border: 2px solid var(--color-primary-light);
+  border: 1px solid var(--color-primary-light);
   border-top: 0;
   transition: top var(--dynamic-fast-transition);
 }
@@ -96,6 +98,8 @@
 .dropdownList>span {
   text-transform: uppercase;
   font-weight: 300;
+  font-size: 14px;
+  padding-left: 15px;
   color: var(--text-muted);
 }
 
@@ -106,19 +110,40 @@
 
 .dropdownList .label {
   display: flex;
+  position: relative;
   width: 100%;
   height: 40px;
   align-items: center;
-  border-radius: 40px;
-  padding: 0 20px;
-  color: var(--text-primary);
+  padding: 0 25px;
   font-weight: var(--label-weight);
+  color: var(--text-secondary);
   transition: var(--dynamic-fast-transition);
+}
+
+.dropdownList .label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(100% - 20px);
+  height: 100%;
+  border-radius: 15px;
+  z-index: -1;
+  opacity: 0;
+  transform: translateX(-50%) scaleX(.8);
+  border: 1px solid var(--text-primary-transparent);
+  background: var(--text-primary-transparent);
+  transition: var(--dynamic-fast-transition) transform;
 }
 
 .dropdownList .label:not(.selected):hover {
   cursor: pointer;
-  background: var(--hover-background);
+  color: var(--text-primary);
+}
+
+.dropdownList .label:not(.selected):hover::before {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
 }
 
 .modeOption input {
@@ -126,9 +151,15 @@
 }
 
 .dropdownList .label.selected {
-  background: var(--color-primary);
   color: var(--text-alternative);
   font-weight: var(--active-label-weight);
+  padding: 0 25px 0 55px;
+}
+
+.dropdownList .label.selected::before {
+  opacity: 1;
+  transform: translateX(-50%) scaleX(1);
+  background: var(--color-primary);
 }
 
 .check {
@@ -136,7 +167,7 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: 16px;
+  left: 24px;
   opacity: 0;
 }
 

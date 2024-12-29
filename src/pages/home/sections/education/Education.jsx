@@ -24,7 +24,8 @@ export default function Education() {
 					<label
 						className={`${styles.modeOption} ${
 							viewMode === "list" ? styles.active : ""
-						}`}>
+						}`}
+						title="Ver como lista">
 						<input
 							type="radio"
 							name="viewMode"
@@ -68,7 +69,8 @@ export default function Education() {
 					<label
 						className={`${styles.modeOption} ${
 							viewMode === "grid" ? styles.active : ""
-						}`}>
+						}`}
+						title="Ver como grupo">
 						<input
 							type="radio"
 							name="viewMode"

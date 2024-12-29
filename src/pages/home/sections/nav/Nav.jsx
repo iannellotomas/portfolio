@@ -7,7 +7,7 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 			<div className={styles.navLeft}>
 				<Link
 					to="#"
-					className={styles.logo}>
+					className={`${styles.logo} ${styles.navLink}`}>
 					<svg
 						width="36"
 						height="36"
@@ -36,23 +36,20 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 					to="#"
 					className={styles.navLink}>
 					<span>Experiencia</span>
-					<div className={styles.line}></div>
 				</Link>
 				<Link
 					to="/projects"
 					className={styles.navLink}>
 					<span>Proyectos</span>
-					<div className={styles.line}></div>
 				</Link>
 				<Link
 					to="/education"
 					className={styles.navLink}>
 					<span>Educación</span>
-					<div className={styles.line}></div>
 				</Link>
 				<Link
 					to="#"
-					className={`${styles.navLink} ${styles.primaryButton}`}>
+					className={`${styles.primaryButton}`}>
 					<span>Contáctame</span>
 				</Link>
 			</div>

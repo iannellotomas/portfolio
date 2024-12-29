@@ -34,7 +34,7 @@
 
   h3 {
     color: var(--text-primary);
-    font-weight: var(--label-weight);
+    font-weight: var(--title-weight);
   }
 
   svg {
@@ -59,11 +59,17 @@
   padding-right: 40px;
   position: absolute;
   border-radius: 20px;
-  transition: var(--dynamic-fast-transition);
+  transition: var(--dynamic-fast-transition) transform;
+  border: 1px solid var(--text-primary-transparent);
+  background: var(--color-neutral);
+  transform-origin: left;
+  opacity: 0;
+  transform: scaleX(.7);
 }
 
 .container:hover .title::before {
-  background: var(--color-neutral);
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .container:hover .title svg {

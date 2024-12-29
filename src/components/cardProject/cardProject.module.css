@@ -70,7 +70,6 @@
   color: var(--text-alternative);
 }
 
-
 .category span svg {
   width: 16px;
   height: 16px;
@@ -139,7 +138,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--surface-primary);
+  background: var(--surface-image);
+  backdrop-filter: blur(10px);
   box-shadow: var(--strong-shadow);
   padding: 10px;
   cursor: pointer;
@@ -164,6 +164,7 @@
 .carouselButtonPrev path,
 .carouselButtonNext path {
   stroke: var(--text-primary);
+  stroke-width: 1.5px;
 }
 
 .stepbar {
@@ -178,7 +179,8 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  background: var(--surface-primary);
+  backdrop-filter: blur(10px);
+  background: var(--surface-image);
   box-shadow: var(--strong-shadow);
 }
 
@@ -186,7 +188,7 @@
   width: 8px;
   height: 8px;
   border-radius: 500px;
-  background: var(--hover-primary-light);
+  background: var(--text-primary-transparent-2);
   transition: width .3s ease;
 }
 
@@ -222,7 +224,7 @@
 .cardFooter h3 {
   font-size: 26px;
   color: var(--text-primary);
-  font-weight: var(--label-weight);
+  font-weight: var(--title-weight);
 }
 
 .cardFooter p {
@@ -239,33 +241,4 @@
 .cardFooter ul {
   display: flex;
   gap: 0;
-}
-
-.arrowCircle {
-  width: 60px;
-  height: 60px;
-  position: relative;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  border: 2px solid var(--color-primary-light);
-  border-radius: 50%;
-  transition: background var(--dynamic-fast-transition);
-}
-
-.arrowCircle svg {
-  position: absolute;
-  transition: var(--dynamic-fast-transition);
-}
-
-.arrowCircle svg path {
-  stroke: var(--color-primary);
-}
-
-.cardProject:hover .arrowCircle {
-  background: var(--color-primary-light);
-}
-
-.cardProject:hover .arrowCircle svg {
-  transform: translate(5px, -5px);
 }
