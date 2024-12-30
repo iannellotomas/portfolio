@@ -61,6 +61,7 @@ nav::before {
   padding: 0 15px;
   height: 100%;
   display: flex;
+  outline: 2px solid transparent;
   color: var(--text-primary);
   align-items: center;
   justify-content: center;
@@ -91,6 +92,11 @@ nav::before {
 .navLink:hover::before {
   opacity: 1;
   width: 100%;
+}
+
+.navSetting:hover {
+  outline-color: var(--color-primary-light);
+  border-color: transparent;
 }
 
 .primaryButton {

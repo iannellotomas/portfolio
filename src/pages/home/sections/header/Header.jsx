@@ -66,6 +66,7 @@ export default function Header() {
 				<img
 					src={headerImage}
 					alt="Foto de perfil de Tomás Iannello"
+					loading="eager"
 				/>
 				<div className={styles.workTag}>
 					<div className={styles.circle}></div>

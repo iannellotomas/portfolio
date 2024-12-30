@@ -15,12 +15,10 @@ export default function Projects() {
 		let sortedData = [...dataProjects];
 
 		if (selectedOption === "Más recientes") {
-			// Más recientes primero
 			sortedData.sort(
 				(a, b) => new Date(b.publishedDate) - new Date(a.publishedDate)
 			);
 		} else if (selectedOption === "Más antiguos") {
-			// Mas antiguos primero
 			sortedData.sort(
 				(a, b) => new Date(a.publishedDate) - new Date(b.publishedDate)
 			);

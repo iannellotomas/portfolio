@@ -49,7 +49,7 @@
 }
 
 .header h1 {
-  font-size: 50px;
+  font-size: calc(2vw + 2rem);
   line-height: 100%;
   color: var(--text-primary);
 }
@@ -81,9 +81,14 @@
   stroke: var(--text-alternative);
 }
 
+.primaryButton.disabled {
+  display: none;
+}
+
 .caption {
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 16px;
   color: var(--text-muted);
 }
 
@@ -110,10 +115,14 @@
 
 .institution {
   width: 100%;
+  padding-inline: 0 30px;
+  height: 50px;
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  position: relative;
+  transition: var(--dynamic-fast-transition);
 
   img {
     width: 32px;
@@ -125,8 +134,29 @@
   }
 }
 
+.institution::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  opacity: 0;
+  transform: scaleX(.8);
+  transform-origin: left;
+  border: 1px solid var(--text-primary-transparent);
+  background: var(--text-primary-transparent);
+  transition: var(--dynamic-fast-transition) transform;
+}
+
 .institution:hover {
-  text-decoration: underline;
+  padding-inline: 15px;
+}
+
+.institution:hover::before {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .tags {
@@ -238,8 +268,11 @@
 .certificate>span {
   width: 100%;
   height: 100%;
+  position: relative;
   border-radius: 30px;
   overflow: hidden;
+  display: grid;
+  place-items: center;
 }
 
 .certificate img {
@@ -248,4 +281,27 @@
   object-fit: cover;
   pointer-events: none;
   user-select: none;
+}
+
+.warning {
+  position: relative;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 140%;
+}
+
+.warning svg {
+  width: 100px;
+  height: 100px;
+}
+
+.warning path {
+  fill: var(--color-primary);
+  opacity: .2;
 }

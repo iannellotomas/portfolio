@@ -99,6 +99,7 @@ export const dataProjects = [
 			<img
 				src={MostazaHero}
 				alt="Mockup protagonista del proyecto de Mostaza"
+				loading="eager"
 			/>
 		),
 		images: [
@@ -201,6 +202,7 @@ export const dataProjects = [
 			<img
 				src={AmazonHero}
 				alt="Mockup protagonista del proyecto de Amazon"
+				loading="eager"
 			/>
 		),
 		images: [

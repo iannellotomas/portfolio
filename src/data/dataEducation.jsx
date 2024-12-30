@@ -1,6 +1,7 @@
 export const dataEducation = [
 	{
 		title: "Diseño Gráfico",
+		type: "career",
 		url: "graphic-design",
 		institution: 1,
 		skills: [
@@ -17,7 +18,32 @@ export const dataEducation = [
 			link: "https://drive.google.com/file/d/1tBj5lyd63a-VXj9SFPkzatT5qGJ6c1OV/view?usp=sharing",
 			image: "https://i.postimg.cc/5Njb33jr/Certificado-Dise-o-Gr-fico-UBA.jpg",
 		},
-		description: "",
+		description:
+			"Estoy cursando el primer año de la carrera, donde aprendo las bases en **comunicación visual, diseño editorial, tipografía y tecnología aplicada al diseño**. Me permitirá explorar los fundamentos teóricos y prácticos necesarios para abordar proyectos de **diseño gráfico con una visión integral y estratégica**, orientada a potenciar la experiencia del usuario y la interfaz en productos digitales.",
+	},
+	{
+		title: "React Js",
+		url: "react-js",
+		institution: 2,
+		skills: [
+			"SPA",
+			"Componentes",
+			"Hooks",
+			"Virtual DOM",
+			"Router",
+			"Context API",
+			"Firebase",
+		],
+		startDate: "2024-12",
+		endDate: "",
+		stats: {
+			outstanding: ["Estudiantes", "con mayor calificación"],
+			classes: ["8 clases", "8 semanas"],
+			hours: "22",
+		},
+		certificate: {},
+		description:
+			"Estoy aprendiendo a **desarrollar aplicaciones dinámicas con React JS**, utilizando programación por componentes en JavaScript (ES6) y gestionando rutas con React Router y Firebase. También estoy explorando el Virtual DOM y creando aplicaciones SPA para optimizar el rendimiento, lo que me permite no solo desarrollar **proyectos más interactivos y escalables**, sino también comprender mejor la **factibilidad y viabilidad de los diseños UX en productos digitales**.",
 	},
 	{
 		title: "UX Writing",
@@ -44,33 +70,6 @@ export const dataEducation = [
 		},
 		description:
 			"Comprendí cómo el rol del UX Writer influye en la usabilidad y accesibilidad al **crear contenido alineado con la marca y las necesidades del usuario**. Elaboré un brief para definir la voz y el tono, adaptando sus dimensiones según el contexto, y diseñé piezas digitales **enfocadas en objetivos UX concretos**, asegurando la accesibilidad y aplicando empatía de género para crear contenidos inclusivos.",
-	},
-	{
-		title: "Adobe Ps/Ai",
-		url: "photoshop-illustrator",
-		institution: 2,
-		skills: [
-			"Edición de fotos",
-			"Composición",
-			"Color",
-			"Tipografía",
-			"Logos",
-			"Brandbook",
-		],
-		startDate: "2024-05",
-		endDate: "2024-07",
-		stats: {
-			outstanding: ["#10 estudiantes", "con mayor calificación"],
-			classes: ["12 clases", "7 semanas"],
-			hours: "27",
-		},
-		certificate: {
-			link: "https://drive.google.com/file/d/1gbFnng5Q_mLGzUDQ66OCwqN0p790YtcF/view?usp=sharing",
-			image:
-				"https://i.postimg.cc/gcwsxMzL/Photoshop-Illustrator-Certificado-Coderhouse.jpg",
-		},
-		description:
-			"Aprendí a usar estas herramientas clave para el **diseño gráfico y la comunicación visual**. Desarrollé habilidades en edición de fotos, composición, color, y tipografía. También creé logotipos y manuales de marca, ampliando mi capacidad para diseñar **piezas gráficas profesionales y comunicativas** para redes sociales y branding.",
 	},
 	{
 		title: "UX Research",
@@ -127,22 +126,6 @@ export const dataEducation = [
 			"Aplicando los 5 elementos de UX logré profundizar en el rediseño de un producto digital hasta la generación de un sistema de diseño para garatizar la escalabilidad a largo plazo. Me enfoqué en entender los principios teóricos del diseño, incluyendo cómo evaluar la **usabilidad, la encontrabilidad y la navegación**, además de optimizar mi enfoque para alinear la **deseabilidad de los usuarios con la factibilidad de la implementación y la viabilidad del negocio**.",
 	},
 	{
-		title: "Téc. Informática",
-		url: "computing-tech",
-		institution: 5,
-		skills: [
-			"Office",
-			"G-suite",
-			"Programación",
-			"C/C++",
-			"Dart",
-			"Python",
-			"QA Testing",
-		],
-		startDate: "2017-03",
-		endDate: "2023-11",
-	},
-	{
 		title: "Diseño UX/UI",
 		url: "ux-ui-design",
 		institution: 2,
@@ -171,6 +154,33 @@ export const dataEducation = [
 			"A través del Design Thinking, logré **transformar un problema que afectaba la experiencia de muchos usuarios en una solución que se alinee con sus necesidades y expectativas**, desarrollando una app móvil desde cero. Definí las funcionalidades del MVP, identifiqué el público objetivo y utilicé herramientas  de prototipado y sistemas de diseño. Validé la propuesta a través de pruebas de usabilidad con usuarios y de un análisis heurístico.",
 	},
 	{
+		title: "Adobe Ps/Ai",
+		url: "photoshop-illustrator",
+		institution: 2,
+		skills: [
+			"Edición de fotos",
+			"Composición",
+			"Color",
+			"Tipografía",
+			"Logos",
+			"Brandbook",
+		],
+		startDate: "2024-05",
+		endDate: "2024-07",
+		stats: {
+			outstanding: ["#10 estudiantes", "con mayor calificación"],
+			classes: ["12 clases", "7 semanas"],
+			hours: "27",
+		},
+		certificate: {
+			link: "https://drive.google.com/file/d/1gbFnng5Q_mLGzUDQ66OCwqN0p790YtcF/view?usp=sharing",
+			image:
+				"https://i.postimg.cc/gcwsxMzL/Photoshop-Illustrator-Certificado-Coderhouse.jpg",
+		},
+		description:
+			"Aprendí a usar estas herramientas clave para el **diseño gráfico y la comunicación visual**. Desarrollé habilidades en edición de fotos, composición, color, y tipografía. También creé logotipos y manuales de marca, ampliando mi capacidad para diseñar **piezas gráficas profesionales y comunicativas** para redes sociales y branding.",
+	},
+	{
 		title: "Desarrollo Web III",
 		url: "web-development-3",
 		institution: 4,
@@ -182,7 +192,7 @@ export const dataEducation = [
 			"Objeto JSON",
 			"API",
 			"Router",
-			"CSS Modules"
+			"CSS Modules",
 		],
 		startDate: "2023-04",
 		endDate: "2023-07",
@@ -253,5 +263,21 @@ export const dataEducation = [
 		},
 		description:
 			"Aprendí a crear un sitio web desde cero usando HTML y CSS. Me enfoqué en técnicas modernas como Flexbox y Grid para diseñar sitios adaptables, y utilicé Bootstrap y otras librerías para mejorar el diseño y la funcionalidad. Además, adquirí habilidades en la gestión de código con GitHub, publicación en servicios de hosting, y las prácticas de Responsive Design y Mobile First.",
+	},
+	{
+		title: "Téc. Informática",
+		url: "computing-tech",
+		institution: 5,
+		skills: [
+			"Office",
+			"G-suite",
+			"Programación",
+			"C/C++",
+			"Dart",
+			"Python",
+			"QA Testing",
+		],
+		startDate: "2017-03",
+		endDate: "2023-11",
 	},
 ];

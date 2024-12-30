@@ -18,6 +18,7 @@
 }
 
 .dropdown:not(.open) .dropdownHeader:hover {
+  border-color: transparent;
   outline-color: var(--color-primary-light);
 }
 

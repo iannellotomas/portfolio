@@ -12,8 +12,12 @@
   gap: 30px;
 }
 
-.header svg path {
-  fill: var(--text-primary);
+.header svg stop {
+  stop-color: var(--color-primary-light);
+}
+
+.header svg stop:nth-child(1) {
+  stop-opacity: 0;
 }
 
 .title {

@@ -1,7 +1,7 @@
 import styles from "./ListEducation.module.css";
 import { Link } from "react-router-dom";
 import { dataInstitutions } from "../../data/dataInstitutions";
-import { formatDate } from '../../utils/formatDate';
+import { formatDate } from "../../utils/formatDate";
 import Chip from "../../components/chip/chip";
 
 export default function ListEducation({ education, index, viewMode }) {
@@ -14,7 +14,10 @@ export default function ListEducation({ education, index, viewMode }) {
 			to={`/education/${education.url}`}
 			key={index}>
 			<article className={`${styles.container} ${containerClass}`}>
-				<div className={styles.title}>
+				<div
+					className={`${styles.title} ${
+						education.endDate === "" ? styles.progress : ""
+					}`}>
 					<h3>{education.title}</h3>
 					<svg
 						width="20"
@@ -30,6 +33,13 @@ export default function ListEducation({ education, index, viewMode }) {
 							strokeLinejoin="round"
 						/>
 					</svg>
+					{education.endDate === "" && (
+						<div className={styles.tagProgress}>
+							<span className={styles.bg}></span>
+							<span className={styles.circle}></span>
+							<h5>En curso</h5>
+						</div>
+					)}
 				</div>
 				<div className={styles.institution}>
 					{institution.image}

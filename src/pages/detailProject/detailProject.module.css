@@ -52,6 +52,11 @@
   gap: 5px;
 }
 
+.header .caption {
+  display: flex;
+  gap: 5px;
+}
+
 .caption {
   text-transform: uppercase;
   font-weight: 400;
@@ -283,10 +288,14 @@
 
 .institution {
   width: 100%;
+  padding-inline: 0 30px;
+  height: 50px;
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  position: relative;
+  transition: var(--dynamic-fast-transition);
 
   img {
     width: 32px;
@@ -298,8 +307,29 @@
   }
 }
 
+.institution::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  opacity: 0;
+  transform: scaleX(.8);
+  transform-origin: left;
+  border: 1px solid var(--text-primary-transparent);
+  background: var(--text-primary-transparent);
+  transition: var(--dynamic-fast-transition) transform;
+}
+
 .institution:hover {
-  text-decoration: underline;
+  padding-inline: 15px;
+}
+
+.institution:hover::before {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .tags {

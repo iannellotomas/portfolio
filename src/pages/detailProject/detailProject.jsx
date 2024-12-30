@@ -5,6 +5,7 @@ import { dataProjects } from "../../data/dataProjects";
 import { formatDate } from "../../utils/formatDate";
 import { formatText } from "../../utils/formatText";
 import { dataInstitutions } from "../../data/dataInstitutions";
+import { dataCategories } from "../../data/dataCategories";
 import Chip from "../../components/chip/chip";
 import Footer from "../../components/footer/footer";
 import LazyImage from "../../components/lazyImage/LazyImage";
@@ -156,12 +157,13 @@ const DetailProject = () => {
 						</svg>
 					</Link>
 					<span>
-						<span>
-							<h3 className={styles.caption}>Proyecto • </h3>
-							<h3 className={styles.caption}>
-								{formatDate(project.publishedDate)}
-							</h3>
-						</span>
+						<h3 className={styles.caption}>
+							Proyecto&nbsp;
+							{project.categories.map((category) => (
+								<>{dataCategories[category].title}</>
+							))}
+							&nbsp;• {formatDate(project.publishedDate)}
+						</h3>
 						<h1>{project.title}</h1>
 					</span>
 				</div>

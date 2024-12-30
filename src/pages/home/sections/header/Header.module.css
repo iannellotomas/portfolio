@@ -73,7 +73,6 @@
   animation: 1s ease zoom-in infinite;
 }
 
-
 @keyframes zoom-in {
   to {
     transform: scale(3);
