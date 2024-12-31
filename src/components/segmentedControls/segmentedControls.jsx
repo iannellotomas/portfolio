@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./segmentedControls.module.css";
 
 export default function SegmentedControls({
@@ -12,14 +12,45 @@ export default function SegmentedControls({
 		...value,
 	}));
 
+	const highlightRef = useRef(null);
+	const containerRef = useRef(null);
+
 	const handleRadioChange = (e) => {
 		const currentControl = Number(e.target.value);
 		setSelectedControl(currentControl);
 	};
 
+	// Update the highlight position and size
+	useEffect(() => {
+		const currentElement = document.querySelector(
+			`input[name="filter"][value="${selectedControl}"]`
+		)?.parentElement;
+
+		if (currentElement && highlightRef.current) {
+			const { offsetWidth, offsetLeft } = currentElement;
+
+			const width = size === "small" ? 80 : offsetWidth; // Fixed width for small
+			const left =
+				size === "small"
+					? formattedControls.findIndex(
+							(control) => control.id === selectedControl
+					  ) *
+							80 +
+					  8
+					: offsetLeft; // Adjust left for small
+
+			highlightRef.current.style.width = `${width}px`;
+			highlightRef.current.style.transform = `translateX(${left}px)`;
+		}
+	}, [selectedControl, size, formattedControls]);
+
 	return (
 		<div
+			ref={containerRef}
 			className={`${styles.filters} ${size == "small" ? styles.small : null}`}>
+			<div
+				ref={highlightRef}
+				className={styles.highlight}></div>
 			{formattedControls.map((control) => (
 				<React.Fragment key={control.id}>
 					<label
