@@ -68,7 +68,7 @@
 }
 
 .checkbox.checked .switch .circle {
-  left: calc(100% - 20px);
+  left: calc(100% - 19px);
   background: var(--text-alternative);
 }
 

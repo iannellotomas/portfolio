@@ -25,8 +25,6 @@
   }
 }
 
-/* TOOLS */
-
 .tools {
   display: flex;
   justify-content: space-between;
@@ -38,74 +36,6 @@
   display: flex;
   align-items: center;
   gap: 15px;
-}
-
-.viewMode {
-  height: 100%;
-  padding-inline: 8px;
-  display: flex;
-  border: 1px solid var(--color-primary-light);
-  border-radius: 20px;
-}
-
-.modeOption {
-  width: 80px;
-  padding: 15px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--dynamic-fast-transition);
-}
-
-.modeOption svg {
-  width: 24px;
-  padding-top: 2px;
-}
-
-.modeOption::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  border-radius: 15px;
-  opacity: 0;
-  transform: scaleX(.8);
-  background: var(--text-primary-transparent);
-  border: 1px solid var(--text-primary-transparent);
-  transition: var(--dynamic-fast-transition) transform;
-}
-
-.modeOption input {
-  display: none;
-}
-
-.modeOption:not(.active) svg path {
-  stroke: var(--text-primary);
-  stroke-width: 2px;
-}
-
-.modeOption:not(.active):hover::before {
-  opacity: 1;
-  transform: scaleX(1);
-}
-
-.modeOption.active {
-  padding-left: 40px;
-  pointer-events: none;
-}
-
-.modeOption.active::before {
-  opacity: 1;
-  transform: scaleX(1);
-  background-color: var(--color-primary);
-}
-
-.modeOption.active .icon path {
-  stroke: var(--text-alternative);
 }
 
 .containerList {
@@ -124,35 +54,4 @@
 
 .containerGrid header {
   display: none;
-}
-
-.check {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 10px;
-}
-
-.label:not(.active) .check {
-  position: absolute;
-  opacity: 0;
-}
-
-.check svg {
-  width: 24px;
-  height: 24px;
-}
-
-.check svg path {
-  stroke-dasharray: 48;
-  stroke-dashoffset: 48;
-  stroke: var(--text-alternative) !important;
-  stroke-width: 5px;
-}
-
-.checked svg path {
-  transition: var(--dynamic-fast-transition);
-  stroke-dashoffset: 0;
-  transition-delay: .1s;
 }

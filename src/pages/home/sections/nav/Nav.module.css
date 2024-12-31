@@ -94,11 +94,6 @@ nav::before {
   width: 100%;
 }
 
-.navSetting:hover {
-  outline-color: var(--color-primary-light);
-  border-color: transparent;
-}
-
 .primaryButton {
   height: 100%;
   display: grid;
@@ -139,8 +134,9 @@ nav::before {
   align-items: center;
 }
 
-.navSetting:active {
-  background: var(--color-primary-light);
+.navSetting:hover {
+  outline-color: var(--color-primary-light);
+  border-color: transparent;
 }
 
 .switchSetting {

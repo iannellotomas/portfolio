@@ -7,7 +7,7 @@ import Chip from "../../components/chip/chip";
 export default function ListEducation({ education, index, viewMode }) {
 	const institution = dataInstitutions[education.institution];
 	const containerClass =
-		viewMode === "list" ? styles.listItem : styles.gridItem;
+		viewMode === 1 ? styles.listItem : styles.gridItem;
 
 	return (
 		<Link

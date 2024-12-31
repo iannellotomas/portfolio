@@ -33,6 +33,7 @@
   }
 
   h3 {
+    width: max-content;
     color: var(--text-primary);
     font-weight: var(--title-weight);
     z-index: 4;
@@ -44,7 +45,7 @@
     transform: translateY(10px);
     opacity: 0;
     z-index: 4;
-    transition: transform var(--dynamic-fast-transition) transform;
+    transition: transform var(--dynamic-fast-transition);
 
     path {
       stroke: var(--color-primary);
@@ -65,7 +66,7 @@
     text-transform: uppercase;
     border-radius: 0 10px 0 0;
     background: linear-gradient(90deg, var(--color-primary-light) 25%, var(--color-primary), var(--color-primary-light) 75%);
-    transition: var(--dynamic-fast-transition);
+    transition: transform var(--dynamic-fast-transition);
 
     h5 {
       color: var(--color-primary);
@@ -131,7 +132,7 @@
 .container:hover .title svg {
   transform: translateY(0);
   opacity: 1;
-  transition: var(--dynamic-fast-transition);
+  transition: var(--dynamic-fast-transition) transform;
 }
 
 .institution {
@@ -217,4 +218,8 @@
     transform: scale(3);
     opacity: 0;
   }
+}
+
+.container {
+  transition: none !important;
 }

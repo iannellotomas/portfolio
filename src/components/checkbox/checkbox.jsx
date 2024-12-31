@@ -5,6 +5,7 @@ export default function Checkbox({ text, isChecked, setIsChecked }) {
 		<label className={`${styles.checkbox} ${isChecked ? styles.checked : ""}`}>
 			<input
 				type="checkbox"
+				name={text}
 				checked={isChecked}
 				onChange={() => setIsChecked(!isChecked)}
 			/>

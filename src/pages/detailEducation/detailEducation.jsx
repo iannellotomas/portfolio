@@ -10,6 +10,7 @@ import styles from "./detailEducation.module.css";
 import Footer from "../../components/footer/footer";
 import transition from "../pageTransition";
 import LazyImage from "../../components/lazyImage/LazyImage";
+import PDFViewer from "../../components/PDFViewer/PDFViewer";
 
 const DetailEducation = () => {
 	const { id } = useParams();
@@ -182,7 +183,7 @@ const DetailEducation = () => {
 							</span>
 							<span>
 								<h2>+{education.stats.hours} horas</h2>
-								<span>de clase cursadas en vivo</span>
+								<span>de clase cursadas</span>
 							</span>
 						</div>
 						<div className={styles.classes}>
@@ -209,7 +210,7 @@ const DetailEducation = () => {
 			</main>
 			<section className={styles.certificate}>
 				<span>
-					{!education.certificate.link ? (
+					{!education.certificate?.link ? (
 						<div className={styles.warning}>
 							<svg
 								width="32"
@@ -224,9 +225,11 @@ const DetailEducation = () => {
 							</svg>
 							Este certificado aún no está disponible
 						</div>
+					) : education.certificate?.type === "pdf" ? (
+						<PDFViewer fileUrl={education.certificate.src} />
 					) : (
 						<LazyImage
-							src={education.certificate.image}
+							src={education.certificate.src}
 							alt={`Certificado de ${education.title}`}
 							style={{ width: "100%", height: "auto", borderRadius: "50px" }}
 						/>

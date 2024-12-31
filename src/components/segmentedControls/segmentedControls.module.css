@@ -123,3 +123,37 @@ input[type="radio"] {
   border-radius: 5px;
   background: var(--color-primary-light);
 }
+
+
+/* SMALL FILTERS */
+.filters.small {
+  gap: 0;
+}
+
+.filters.small .label {
+  width: 80px;
+  display: grid;
+  place-items: center;
+}
+
+
+.filters.small .label svg {
+  width: 24px;
+}
+
+.filters.small .label > svg path {
+  stroke-width: 2px;
+}
+
+.filters.small .label.active > svg path {
+  stroke-width: 2.5px;
+}
+
+.filters.small .check {
+  background: none;
+  left: 10px;
+}
+
+.filters.small .label.active {
+  padding-left: 40px;
+}
