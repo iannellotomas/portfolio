@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import styles from "./cardProject.module.css";
 import { dataCategories } from "../../data/dataCategories";
 import Chip from "../chip/chip";
-import { motion } from "framer-motion";
 import LazyImage from "../lazyImage/LazyImage";
 
 export default function CardProject({ project }) {
@@ -28,11 +27,7 @@ export default function CardProject({ project }) {
 		project.images[currentImageIndex].props;
 
 	return (
-		<motion.div
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-			layout
-			className={styles.cardProject}>
+		<article className={styles.cardProject}>
 			{/* Imagen duplicada con blur al hover */}
 			<div className={styles.blurOverlay}>
 				<LazyImage
@@ -152,25 +147,9 @@ export default function CardProject({ project }) {
 							</span>
 							<p>{project.shortDescription}</p>
 						</span>
-						{/* <div className={styles.arrowCircle}>
-							<svg
-								width="20"
-								height="20"
-								viewBox="0 0 20 20"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M2 18.02L18 2.02002M18 2.02002H6M18 2.02002V14.02"
-									stroke="#4557FB"
-									strokeWidth="3"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								/>
-							</svg>
-						</div> */}
 					</footer>
 				</Link>
 			</div>
-		</motion.div>
+		</article>
 	);
 }

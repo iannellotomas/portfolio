@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Projects.module.css";
 import SectionHead from "../../../../components/sectionHead/sectionHead";
 import { dataProjects } from "../../../../data/dataProjects";
@@ -51,14 +52,26 @@ export default function Projects() {
 
 			{/* Lista de proyectos */}
 			<main className={styles.containerProjects}>
-				{sortedProjects
-					.filter((project) => project.categories.includes(selectedCategory))
-					.map((project, index) => (
-						<CardProject
-							project={project}
-							key={index}
-						/>
-					))}
+				<AnimatePresence>
+					{sortedProjects
+						.filter((project) => project.categories.includes(selectedCategory))
+						.map((project) => (
+							<motion.div
+								key={project.id}
+								initial={{ opacity: 0, y: 50 }}
+								animate={{ opacity: 1, y: 0 }}
+								exit={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }} // Cuando el elemento está en el viewport
+								viewport={{ once: true, amount: 0.5 }}
+								transition={{
+									duration: 0.15, // Duración en segundos
+									ease: [0.215, 0.61, 0.355, 1], // Curva personalizada en formato cubic-bezier
+								}} // Duración de cada animación
+								layout>
+								<CardProject project={project} />
+							</motion.div>
+						))}
+				</AnimatePresence>
 			</main>
 		</section>
 	);

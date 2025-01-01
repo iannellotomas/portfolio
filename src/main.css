@@ -31,6 +31,7 @@ body.light-mode {
   --label-weight: 600;
   --active-label-weight: 600;
   --paragraph-weight: 400;
+  --inverse-weight: 500;
   /* COLOR */
   --color-neutral: #e7e7e9;
   --color-primary: #4557FB;
@@ -80,6 +81,7 @@ body.dark-mode {
   --label-weight: 500;
   --active-label-weight: 800;
   --paragraph-weight: 300;
+  --inverse-weight: 600;
   /* OUTSTANDING */
   --surface-outstanding: var(--surface-primary);
   --surface-icon-outstanding: #2F330D;
