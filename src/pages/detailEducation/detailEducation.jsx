@@ -6,6 +6,7 @@ import { dataInstitutions } from "../../data/dataInstitutions";
 import { formatDate } from "../../utils/formatDate";
 import { formatText } from "../../utils/formatText";
 import Chip from "../../components/chip/chip";
+import Tooltip from "../../components/tooltip/tooltip";
 import styles from "./detailEducation.module.css";
 import Footer from "../../components/footer/footer";
 import transition from "../pageTransition";
@@ -29,25 +30,28 @@ const DetailEducation = () => {
 		<section className={styles.detailEducation}>
 			<header className={styles.header}>
 				<span>
-					<Link
-						to="/"
-						className={styles.backButton}
-						title="Volver al inicio">
-						<svg
-							width="26"
-							height="20"
-							viewBox="0 0 26 20"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M23.6667 10.25H2.33337M2.33337 10.25L10.3334 2.25M2.33337 10.25L10.3334 18.25"
-								stroke="#4557FB"
-								strokeWidth="3"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-							/>
-						</svg>
-					</Link>
+					<Tooltip
+						text="Volver al inicio"
+						anchorSide="left">
+						<Link
+							to="/"
+							className={styles.backButton}>
+							<svg
+								width="26"
+								height="20"
+								viewBox="0 0 26 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M23.6667 10.25H2.33337M2.33337 10.25L10.3334 2.25M2.33337 10.25L10.3334 18.25"
+									stroke="#4557FB"
+									strokeWidth="3"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+								/>
+							</svg>
+						</Link>
+					</Tooltip>
 					<div className={styles.title}>
 						<h3 className={styles.caption}>
 							{education?.type === "career" ? <>Carrera</> : <>Curso</>}

@@ -59,14 +59,13 @@ export default function Projects() {
 							<motion.div
 								key={project.id}
 								initial={{ opacity: 0, y: 50 }}
-								animate={{ opacity: 1, y: 0 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true, amount: 0.15 }}
 								exit={{ opacity: 0, y: 50 }}
-								whileInView={{ opacity: 1, y: 0 }} // Cuando el elemento está en el viewport
-								viewport={{ once: true, amount: 0.5 }}
 								transition={{
-									duration: 0.15, // Duración en segundos
-									ease: [0.215, 0.61, 0.355, 1], // Curva personalizada en formato cubic-bezier
-								}} // Duración de cada animación
+									duration: 0.15,
+									ease: [0.215, 0.61, 0.355, 1],
+								}}
 								layout>
 								<CardProject project={project} />
 							</motion.div>

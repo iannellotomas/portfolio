@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Education.module.css";
 import { dataEducation } from "../../../../data/dataEducation";
 import SectionHead from "../../../../components/sectionHead/sectionHead";
@@ -114,26 +115,40 @@ export default function Education() {
 				className={`${styles.containerEducation} ${
 					viewMode === 1 ? styles.containerList : styles.containerGrid
 				}`}>
-				<header>
-					<span>Carrera / Curso</span>
-					<span>Institución</span>
-					<span>Habilidades</span>
-					<span>Fecha</span>
-				</header>
-				{sortedListsEducation
-					.filter((education) => {
-						if (!inProgress) {
-							return education.endDate != ""; // Filtrar los "en curso"
-						}
-						return true;
-					})
-					.map((education, index) => (
-						<ListEducation
-							key={index}
-							education={education}
-							viewMode={viewMode}
-						/>
-					))}
+				<AnimatePresence>
+					<header>
+						<span>Carrera / Curso</span>
+						<span>Institución</span>
+						<span>Habilidades</span>
+						<span>Fecha</span>
+					</header>
+					{sortedListsEducation
+						.filter((education) => {
+							if (!inProgress) {
+								return education.endDate != ""; // Filtrar los "en curso"
+							}
+							return true;
+						})
+						.map((education, index) => (
+							<motion.div
+								key={education.url}
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true, amount: 0.3 }}
+								exit={{ opacity: 0, y: 50 }}
+								layout
+								transition={{
+									duration: 0.15,
+									ease: [0.215, 0.61, 0.355, 1],
+								}}>
+								<ListEducation
+									key={index}
+									education={education}
+									viewMode={viewMode}
+								/>
+							</motion.div>
+						))}
+				</AnimatePresence>
 			</main>
 		</section>
 	);
