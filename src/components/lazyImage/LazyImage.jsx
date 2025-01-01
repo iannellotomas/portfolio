@@ -1,4 +1,3 @@
-// src/components/lazyImage/LazyImage.jsx
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./LazyImage.module.css";
 
@@ -15,7 +14,7 @@ const LazyImage = ({ src, alt, ...props }) => {
 					observer.disconnect();
 				}
 			},
-			{ threshold: 0.1 }
+			{ threshold: 0.1 } // 10% visible antes de cargar
 		);
 
 		if (imgRef.current) {
