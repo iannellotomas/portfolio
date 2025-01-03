@@ -3,6 +3,7 @@
   --transition-low: .3s ease;
   --transition-very-low: .5s ease;
   --dynamic-transition: .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+  --dynamic-medium-transition: .3s cubic-bezier(0.215, 0.610, 0.355, 1);
   --dynamic-fast-transition: .15s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
@@ -36,7 +37,7 @@ body.light-mode {
   --color-neutral: #e7e7e9;
   --color-primary: #4557FB;
   --color-primary-light: #DBDDF2;
-  --hover-primary-light: #d9dbf6;
+  --hover-primary-light: #cdd0f3;
   --color-primary-dark: #202981;
   /* OUTSTANDING */
   --surface-outstanding: #FAFF00;

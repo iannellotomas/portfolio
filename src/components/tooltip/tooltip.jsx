@@ -5,6 +5,7 @@ export default function Tooltip({
 	children,
 	text,
 	anchorSide = "center",
+	size = "normal",
 	isDisabled = null,
 }) {
 	const [showTooltip, setShowTooltip] = useState(false);
@@ -33,7 +34,9 @@ export default function Tooltip({
 			<div
 				className={`${styles.tooltip} ${showTooltip ? styles.show : ""} ${
 					styles[anchorSide]
-				} ${isDisabled ? styles.disabled : ""}`}>
+				} ${isDisabled ? styles.disabled : ""} ${
+					size == "minimal" ? styles.minimal : ""
+				}`}>
 				<svg
 					width="14"
 					height="10"

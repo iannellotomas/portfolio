@@ -1,0 +1,49 @@
+.link {
+  width: 60px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-radius: 500px;
+  border: none !important;
+  transition: var(--dynamic-fast-transition);
+}
+
+.link:hover {
+  background: var(--hover-primary-light);
+}
+
+.link svg {
+  width: 24px;
+}
+
+.link svg path {
+  fill: var(--color-primary);
+}
+
+.link.secondary {
+  width: 50px;
+  border-radius: 15px;
+  background: transparent;
+}
+
+.link.secondary svg {
+  width: 28px;
+  height: 28px;
+}
+
+.link.secondary path {
+  fill: var(--text-muted);
+  transition: var(--dynamic-fast-transition);
+}
+
+.link.secondary:hover {
+  background: var(--color-primary-light);
+}
+
+.link.secondary:hover path {
+  fill: var(--color-primary);
+}

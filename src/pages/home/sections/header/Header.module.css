@@ -104,7 +104,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.headerRight span svg path {
+.arrow path {
   fill: var(--color-primary);
 }
 
@@ -124,7 +124,7 @@
   gap: 20px;
 }
 
-.cta a {
+.cta>a {
   width: max-content;
   display: flex;
   align-items: center;
@@ -149,24 +149,14 @@
 
 .cta .social {
   display: flex;
+  align-items: center;
 }
 
-.cta .social a {
-  padding-inline: 20px;
+.social .separator {
+  width: 1px;
+  height: 30px;
   background: var(--color-primary-light);
-  border: none;
-}
-
-.cta .social a:hover {
-  background: var(--hover-primary-light);
-}
-
-.cta svg {
-  width: 24px;
-}
-
-.cta svg path {
-  fill: var(--color-primary);
+  margin-inline: 10px;
 }
 
 

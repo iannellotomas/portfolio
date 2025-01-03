@@ -21,7 +21,7 @@
   top: -130px;
   left: 50%;
   transform: translateX(-50%);
-  filter: blur(50px);
+  filter: blur(40px);
   z-index: -1;
 }
 
@@ -37,11 +37,12 @@
 .navLeft {
   display: flex;
   align-items: center;
-  padding-left: 40px;
+  padding-left: 80px;
 }
 
 .logo {
   width: 40px;
+  min-width: 40px;
   display: flex;
   justify-content: center;
   padding: 0 !important;
@@ -52,7 +53,8 @@
 }
 
 .logo svg path {
-  stroke: var(--color-primary);
+  stroke: var(--text-secondary);
+  stroke-width: 2px;
 }
 
 .navLink,
@@ -64,7 +66,7 @@
   color: var(--text-primary);
   align-items: center;
   justify-content: center;
-  transition: var(--transition);
+  transition: var(--dynamic-fast-transition);
   color: var(--text-secondary);
 }
 
@@ -86,8 +88,9 @@
   transition: var(--dynamic-fast-transition) width;
 }
 
-.navLink:hover {
+.navLink:hover * {
   color: var(--text-primary);
+  stroke: var(--text-primary);
 }
 
 .navLink:hover::before {
@@ -105,7 +108,7 @@
   font-size: 15px;
   font-weight: var(--active-label-weight);
   border-radius: 500px;
-  margin-left: 10px;
+  margin-left: 70px;
 }
 
 .primaryButton:hover {
@@ -180,4 +183,58 @@
 .switchSetting.dark .moon,
 .switchSetting.light .sun {
   opacity: 0;
+}
+
+
+/* NAV COLLAPSED */
+.menu {
+  width: 60px;
+  height: 100%;
+  left: 20px;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(40px);
+}
+
+.menu span {
+  width: 24px;
+  height: 2px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50px;
+  background: var(--text-secondary);
+}
+
+.menu span:nth-child(1) {
+  top: calc(50% - 8px);
+}
+
+.menu span:nth-child(3) {
+  top: calc(50% + 8px);
+}
+
+.navLeft.collapsed .menu {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+  transition: var(--dynamic-fast-transition);
+  transition-delay: .15s;
+}
+
+.links {
+  display: flex;
+  width: 347px;
+  margin-left: -40px;
+  margin-right: -20px;
+  height: 100%;
+  transition: width var(--dynamic-medium-transition), transform var(--dynamic-medium-transition), opacity .1s ease-in;
+}
+
+.navLeft.collapsed .links {
+  width: 0;
+  opacity: 0;
+  transform: translateX(-20px);
+  pointer-events: none;
 }

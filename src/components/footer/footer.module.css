@@ -15,28 +15,14 @@
 
 .footerLinks {
   display: flex;
+  align-items: center;
 }
 
-.footerLinks a {
-  width: 60px;
-  height: 60px;
-  display: grid;
-  place-items: center;
-  transition: var(--dynamic-fast-transition);
-  border-radius: 20px;
-}
-
-.footerLinks a svg path {
-  fill: var(--text-muted);
-  transition: var(--dynamic-fast-transition);
-}
-
-.footerLinks a:hover {
-  background: var(--color-neutral);
-}
-
-.footerLinks a:hover svg path {
-  fill: var(--color-primary);
+.separator {
+  width: 1px;
+  height: 30px;
+  background: var(--color-primary-light);
+  margin-inline: 10px;
 }
 
 

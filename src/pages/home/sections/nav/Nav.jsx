@@ -1,7 +1,30 @@
+import { useEffect, useState, useRef } from "react";
 import styles from "./Nav.module.css";
 import Tooltip from "../../../../components/tooltip/tooltip";
 
 export default function Nav({ isDarkMode, toggleDarkMode }) {
+	const [isCollapsed, setIsCollapsed] = useState(false);
+	const navRef = useRef(null);
+
+	const handleScrollNav = () => {
+		setIsCollapsed(window.scrollY > 0);
+	};
+
+	const handleHoverNav = (isHover) => {
+		if (window.scrollY > 0) {
+			setIsCollapsed(!isHover);
+		}
+	};
+
+	useEffect(() => {
+		handleScrollNav();
+
+		window.addEventListener("scroll", handleScrollNav);
+		return () => {
+			window.removeEventListener("scroll", handleScrollNav); // Limpia el evento
+		};
+	}, []);
+
 	const handleScroll = (sectionId) => {
 		const section = document.getElementById(sectionId);
 		if (section) {
@@ -18,47 +41,59 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 
 	return (
 		<nav className={styles.nav}>
-			<div className={styles.navLeft}>
+			<div
+				className={`${styles.navLeft} ${isCollapsed ? styles.collapsed : ""}`}
+				onMouseEnter={() => handleHoverNav(true)}
+				onMouseLeave={() => handleHoverNav(false)}>
 				<button
 					to="#"
-					className={`${styles.logo} ${styles.navLink}`}>
-					<svg
-						width="36"
-						height="36"
-						viewBox="0 0 36 36"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M17.694 18.3059C20.345 18.3059 22.494 16.1568 22.494 13.5059C22.494 10.8549 20.345 8.70587 17.694 8.70587C15.0431 8.70587 12.894 10.8549 12.894 13.5059C12.894 16.1568 15.0431 18.3059 17.694 18.3059Z"
-							stroke="#7D8AFF"
-							strokeWidth="3"
-						/>
-						<path
-							d="M17.6938 34.3058C26.5304 34.3058 33.6938 27.1424 33.6938 18.3058C33.6938 9.46929 26.5304 2.30585 17.6938 2.30585C8.85729 2.30585 1.69385 9.46929 1.69385 18.3058C1.69385 27.1424 8.85729 34.3058 17.6938 34.3058Z"
-							stroke="#7D8AFF"
-							strokeWidth="3"
-						/>
-						<path
-							d="M27.2456 31.1058C26.9896 26.4786 25.5736 23.1058 17.6936 23.1058C9.8136 23.1058 8.3976 26.4786 8.1416 31.1058"
-							stroke="#7D8AFF"
-							strokeWidth="3"
-							strokeLinecap="round"
-						/>
-					</svg>
+					className={styles.menu}>
+					<span></span>
+					<span></span>
+					<span></span>
 				</button>
-				<button className={styles.navLink}>
-					<span>Experiencia</span>
-				</button>
-				<button
-					className={styles.navLink}
-					onClick={() => handleScroll("projects")}>
-					<span>Proyectos</span>
-				</button>
-				<button
-					className={styles.navLink}
-					onClick={() => handleScroll("education")}>
-					<span>Educación</span>
-				</button>
+				<div
+					className={styles.links}
+					ref={navRef}>
+					<button className={`${styles.logo} ${styles.navLink}`}>
+						<svg
+							width="36"
+							height="36"
+							viewBox="0 0 36 36"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M17.694 18.3059C20.345 18.3059 22.494 16.1568 22.494 13.5059C22.494 10.8549 20.345 8.70587 17.694 8.70587C15.0431 8.70587 12.894 10.8549 12.894 13.5059C12.894 16.1568 15.0431 18.3059 17.694 18.3059Z"
+								stroke="#7D8AFF"
+								strokeWidth="3"
+							/>
+							<path
+								d="M17.6938 34.3058C26.5304 34.3058 33.6938 27.1424 33.6938 18.3058C33.6938 9.46929 26.5304 2.30585 17.6938 2.30585C8.85729 2.30585 1.69385 9.46929 1.69385 18.3058C1.69385 27.1424 8.85729 34.3058 17.6938 34.3058Z"
+								stroke="#7D8AFF"
+								strokeWidth="3"
+							/>
+							<path
+								d="M27.2456 31.1058C26.9896 26.4786 25.5736 23.1058 17.6936 23.1058C9.8136 23.1058 8.3976 26.4786 8.1416 31.1058"
+								stroke="#7D8AFF"
+								strokeWidth="3"
+								strokeLinecap="round"
+							/>
+						</svg>
+					</button>
+					<button className={styles.navLink}>
+						<span>Experiencia</span>
+					</button>
+					<button
+						className={styles.navLink}
+						onClick={() => handleScroll("projects")}>
+						<span>Proyectos</span>
+					</button>
+					<button
+						className={styles.navLink}
+						onClick={() => handleScroll("education")}>
+						<span>Educación</span>
+					</button>
+				</div>
 				<button className={`${styles.primaryButton}`}>
 					<span>Contáctame</span>
 				</button>
