@@ -1,4 +1,4 @@
-nav {
+.nav {
   position: fixed;
   z-index: 100;
   display: flex;
@@ -10,7 +10,7 @@ nav {
   padding-top: 20px;
 }
 
-nav::before {
+.nav::before {
   content: "";
   pointer-events: none;
   user-select: none;
@@ -31,7 +31,6 @@ nav::before {
   background: var(--surface-primary-transparent);
   backdrop-filter: blur(12px);
   border: 1px solid var(--color-primary-light);
-  gap: 10px;
   border-radius: 500px;
 }
 
@@ -71,6 +70,8 @@ nav::before {
 
 .navLink {
   position: relative;
+  font-size: 15px;
+  padding: 0 20px;
 }
 
 .navLink::before {
@@ -101,8 +102,10 @@ nav::before {
   padding: 0 40px;
   background: var(--color-primary);
   color: var(--text-alternative);
+  font-size: 15px;
   font-weight: var(--active-label-weight);
   border-radius: 500px;
+  margin-left: 10px;
 }
 
 .primaryButton:hover {
@@ -134,8 +137,9 @@ nav::before {
 
 .navSetting {
   padding-inline: 30px;
-  display: flex;
+  display: flex;  
   align-items: center;
+  gap: 10px;
 }
 
 .navSetting:hover {

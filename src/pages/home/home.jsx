@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./home.module.css";
 import Nav from "./sections/nav/Nav";
 import Header from "./sections/header/Header";
 import Projects from "./sections/projects/Projects";
 import Education from "./sections/education/Education";
 import Footer from "../../components/footer/footer";
-import transition from "../pageTransition";
 
-const Home = ({ isDarkMode, toggleDarkMode }) => {
+export default function Home({ isDarkMode, toggleDarkMode }) {
 	return (
-		<div className={styles.container}>
+		<div
+			id="container"
+			className={styles.container}>
 			<Nav
 				isDarkMode={isDarkMode}
 				toggleDarkMode={toggleDarkMode}
@@ -20,6 +21,4 @@ const Home = ({ isDarkMode, toggleDarkMode }) => {
 			<Footer />
 		</div>
 	);
-};
-
-export default transition(Home);
+}

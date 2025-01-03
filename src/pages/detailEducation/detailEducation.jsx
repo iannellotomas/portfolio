@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { dataEducation } from "../../data/dataEducation";
 import { dataInstitutions } from "../../data/dataInstitutions";
 import { formatDate } from "../../utils/formatDate";
@@ -17,6 +17,7 @@ const DetailEducation = () => {
 	const { id } = useParams();
 	const education = dataEducation.find((item) => item.url === id);
 	const institution = dataInstitutions[education.institution];
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -33,8 +34,8 @@ const DetailEducation = () => {
 					<Tooltip
 						text="Volver al inicio"
 						anchorSide="left">
-						<Link
-							to="/"
+						<button
+							onClick={() => navigate(-1)}
 							className={styles.backButton}>
 							<svg
 								width="26"
@@ -50,7 +51,7 @@ const DetailEducation = () => {
 									strokeLinejoin="round"
 								/>
 							</svg>
-						</Link>
+						</button>
 					</Tooltip>
 					<div className={styles.title}>
 						<h3 className={styles.caption}>

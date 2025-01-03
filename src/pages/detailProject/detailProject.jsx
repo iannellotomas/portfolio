@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { dataProjects } from "../../data/dataProjects";
 import { formatDate } from "../../utils/formatDate";
 import { formatText } from "../../utils/formatText";
@@ -21,17 +21,22 @@ const DetailProject = () => {
 	const project = dataProjects.find((item) => item.url === url);
 	const institution = dataInstitutions[project.institution];
 	const menuRef = useRef(null);
+	const navigate = useNavigate();
 
 	const [isOptionsOpen, setIsOptionsOpen] = useState(false);
-	const [indices, setIndices] = useState([]);
-	const [openIndex, setOpenIndex] = useState(
-		() => (window.innerWidth <= 1024 ? 0 : 1) // Índice visible al entrar en desktop
-	);
-	const [activeIndex, setActiveIndex] = useState(null);
 	const [openFeedback, setOpenFeedback] = useState(false);
 	const [isSnackbarVisible, setIsSnackbarVisible] = useState(false);
 
+	const [indexes, setIndexes] = useState([]);
+	const [openIndex, setOpenIndex] = useState(
+		() => (window.innerWidth <= 1024 ? 0 : 1) // Visible por defecto en desktop
+	);
+	const [activeIndex, setActiveIndex] = useState(null);
+	const sectionRefs = useRef([]);
+
 	useEffect(() => {
+		scrollTo(0, 0);
+
 		const handleClickOutside = (event) => {
 			if (menuRef.current && !menuRef.current.contains(event.target)) {
 				setIsOptionsOpen(false);
@@ -42,63 +47,51 @@ const DetailProject = () => {
 		return () => document.removeEventListener("mousedown", handleClickOutside);
 	}, []);
 
+	// Obtener los indices del proyecto
 	useEffect(() => {
 		if (project && project.sheet) {
-			const newIndices = project.sheet
+			const newIndexes = project.sheet
 				.map((item, index) => ({
 					id: index,
 					label: item.index || null,
 				}))
 				.filter((item) => item.label);
-			setIndices(newIndices);
+			setIndexes(newIndexes);
 		}
 	}, [project]);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const sections = project.sheet.map((_, index) => {
-				const section = document.getElementById(`section-${index}`);
-				return section
-					? {
-							id: index,
-							top: section.getBoundingClientRect().top + window.scrollY, // Posición superior de la sección
-							height: section.offsetHeight, // Altura de la sección
-					  }
-					: null;
-			});
+	// Detectar sección activa mientras se hace scroll
+	// useEffect(() => {
+	// 	const handleScroll = () => {
+	// 		const headerHeight = document.querySelector("header").offsetHeight;
+	// 		sectionRefs.current.forEach((section, index) => {
+	// 			if (section) {
+	// 				const sectionTop = section.getBoundingClientRect().top;
+	// 				const sectionBottom = section.getBoundingClientRect().bottom;
 
-			const scrollPosition = window.scrollY + window.innerHeight / 2; // Punto medio de la pantalla
+	// 				if (sectionTop < headerHeight && sectionBottom > headerHeight) {
+	// 					setActiveIndex(index);
+	// 				}
+	// 			}
+	// 		});
+	// 	};
 
-			for (let i = 0; i < sections.length; i++) {
-				const current = sections[i];
-				const next = sections[i + 1];
+	// 	window.addEventListener("scroll", handleScroll);
+	// 	return () => window.removeEventListener("scroll", handleScroll);
+	// }, []);
 
-				if (
-					scrollPosition >= current.top &&
-					(!next || scrollPosition < next.top) // Activo hasta la siguiente sección
-				) {
-					setActiveIndex(current.id);
-					break;
-				}
-			}
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		handleScroll(); // Llamada inicial
-
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [project]);
-
+	// Scrollear hasta la sección elegida
 	const handleScrollToSection = (index) => {
 		const targetSection = document.getElementById(`section-${index}`);
 		if (targetSection) {
-			// Actualiza el hash en la URL
-			window.location.hash = `section-${index}`;
+			const headerHeight = document.querySelector("header").offsetHeight;
+			const offsetTop =
+				targetSection.getBoundingClientRect().top +
+				window.scrollY -
+				headerHeight;
 
-			// Desplaza la ventana hasta la sección deseada
-			const topPosition = targetSection.offsetTop;
 			window.scrollTo({
-				top: topPosition - 500, // Ajuste para headers fijos o márgenes
+				top: offsetTop,
 				behavior: "smooth",
 			});
 
@@ -108,8 +101,6 @@ const DetailProject = () => {
 			if (window.innerWidth <= 1024) {
 				setOpenIndex(0);
 			}
-		} else {
-			console.error(`Section ${index} not found`);
 		}
 	};
 
@@ -141,8 +132,8 @@ const DetailProject = () => {
 					<Tooltip
 						text="Volver al inicio"
 						anchorSide="left">
-						<Link
-							to="/"
+						<button
+							onClick={() => navigate(-1)}
 							className={styles.backButton}>
 							<svg
 								width="26"
@@ -158,13 +149,15 @@ const DetailProject = () => {
 									strokeLinejoin="round"
 								/>
 							</svg>
-						</Link>
+						</button>
 					</Tooltip>
 					<span>
 						<h3 className={styles.caption}>
 							Proyecto&nbsp;
-							{project.categories.map((category) => (
-								<>{dataCategories[category].title}</>
+							{project.categories.map((category, index) => (
+								<React.Fragment key={index}>
+									{dataCategories[category].title}
+								</React.Fragment>
 							))}
 							&nbsp;• {formatDate(project.publishedDate)}
 						</h3>
@@ -317,7 +310,7 @@ const DetailProject = () => {
 						</button>
 					</header>
 					<main className={styles.indexList}>
-						{indices.map((item) => (
+						{indexes.map((item) => (
 							<button
 								key={item.id}
 								className={`${styles.indexItem} ${
@@ -356,6 +349,7 @@ const DetailProject = () => {
 							<div
 								key={index}
 								id={`section-${index}`}
+								ref={(el) => (sectionRefs.current[index] = el)}
 								className={styles.sheetSection}>
 								{item.type === "iframe" ? (
 									<iframe

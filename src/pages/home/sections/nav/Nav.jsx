@@ -1,12 +1,25 @@
 import styles from "./Nav.module.css";
-import { Link } from "react-router-dom";
 import Tooltip from "../../../../components/tooltip/tooltip";
 
 export default function Nav({ isDarkMode, toggleDarkMode }) {
+	const handleScroll = (sectionId) => {
+		const section = document.getElementById(sectionId);
+		if (section) {
+			const navbarHeight = document.querySelector("nav").offsetHeight; // Altura del navbar fijo
+			const offsetTop =
+				section.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+			window.scrollTo({
+				top: offsetTop,
+				behavior: "smooth",
+			});
+		}
+	};
+
 	return (
-		<nav>
+		<nav className={styles.nav}>
 			<div className={styles.navLeft}>
-				<Link
+				<button
 					to="#"
 					className={`${styles.logo} ${styles.navLink}`}>
 					<svg
@@ -32,30 +45,28 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 							strokeLinecap="round"
 						/>
 					</svg>
-				</Link>
-				<Link
-					to="#"
-					className={styles.navLink}>
+				</button>
+				<button className={styles.navLink}>
 					<span>Experiencia</span>
-				</Link>
-				<Link
-					to="/projects"
-					className={styles.navLink}>
+				</button>
+				<button
+					className={styles.navLink}
+					onClick={() => handleScroll("projects")}>
 					<span>Proyectos</span>
-				</Link>
-				<Link
-					to="/education"
-					className={styles.navLink}>
+				</button>
+				<button
+					className={styles.navLink}
+					onClick={() => handleScroll("education")}>
 					<span>Educación</span>
-				</Link>
-				<Link
-					to="#"
-					className={`${styles.primaryButton}`}>
+				</button>
+				<button className={`${styles.primaryButton}`}>
 					<span>Contáctame</span>
-				</Link>
+				</button>
 			</div>
 			<div className={styles.navRight}>
-				<Tooltip text="Available soon" anchorSide="right">
+				<Tooltip
+					text="Available soon"
+					anchorSide="right">
 					<button className={styles.navSetting}>
 						<svg
 							width="26"
