@@ -168,7 +168,9 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 					<span></span>
 				</button>
 				<div className={styles.links}>
-					<button className={`${styles.logo} ${styles.navLink}`}>
+					<button
+						className={`${styles.logo} ${styles.navLink}`}
+						onClick={() => handleScroll("header")}>
 						{getIcon("logo")}
 					</button>
 					<button className={styles.navLink}>
@@ -219,6 +221,7 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 			<div className={styles.navList}>
 				<button
 					className={`${styles.navLink}`}
+					onClick={() => handleScroll("header")}
 					style={{
 						animationDelay: `${0.1}s`,
 					}}>
