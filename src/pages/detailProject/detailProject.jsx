@@ -202,7 +202,8 @@ const DetailProject = () => {
 					<div ref={menuRef}>
 						<Tooltip
 							text={"Ver más opciones"}
-							anchorSide="right"
+							anchorSide={innerWidth <= 768 ? "top" : "right"}
+							size={innerWidth <= 768 ? "minimal" : ""}
 							isDisabled={isOptionsOpen}>
 							<button
 								onClick={toggleOptions}

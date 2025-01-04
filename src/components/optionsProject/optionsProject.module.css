@@ -83,21 +83,22 @@
 
 .optionsContainer.open .option,
 .optionsContainer.open .line {
-  animation: fadeIn 0.3s ease forwards;
+  animation: fadeIn .3s ease forwards;
 }
 
 @keyframes fadeIn {
   from {
-      opacity: 0;
-      transform: translateY(10px);
+    opacity: 0;
+    transform: translateY(10px);
   }
+
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
   .optionsContainer {
     width: calc(100vw - 8vw);
     max-width: 400px;
