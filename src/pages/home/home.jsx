@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import styles from "./home.module.css";
 import Nav from "./sections/nav/Nav";
 import Header from "./sections/header/Header";

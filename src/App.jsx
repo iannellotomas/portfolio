@@ -1,7 +1,7 @@
-import "./main.css";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import AppRouter from "./routing/AppRouter";
-import React from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import "./main.css";
 
 export default function App() {
 	const [isDarkMode, setIsDarkMode] = useState(false);
@@ -31,6 +31,7 @@ export default function App() {
 
 	return (
 		<>
+			<SpeedInsights />
 			<AppRouter
 				isDarkMode={isDarkMode}
 				toggleDarkMode={toggleDarkMode}
