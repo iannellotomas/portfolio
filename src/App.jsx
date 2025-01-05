@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AppRouter from "./routing/AppRouter";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./main.css";
 
 export default function App() {
