@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AppRouter from "./routing/AppRouter";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 import "./main.css";
 
 export default function App() {
@@ -31,11 +32,12 @@ export default function App() {
 
 	return (
 		<>
-			<SpeedInsights />
 			<AppRouter
 				isDarkMode={isDarkMode}
 				toggleDarkMode={toggleDarkMode}
 			/>
+			<SpeedInsights />
+			<Analytics />
 		</>
 	);
 }
