@@ -159,8 +159,8 @@ input[type="radio"] {
 /* DYNAMIC RECTANGLE */
 .highlight {
 	position: absolute;
-  height: 42px;
-	top: 6px;
+  height: 40px;
+	top: 7px;
 	left: 0;
 	background-color: var(--color-primary);
 	border-radius: 15px;

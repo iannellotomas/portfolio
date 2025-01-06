@@ -162,6 +162,11 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 				<button
 					to="#"
 					className={styles.menu}
+					aria-label={
+						!listVisible
+							? "Abrir menú de navegación"
+							: "Cerrar menú de navegación"
+					}
 					onClick={() => setListVisible((prev) => !prev)}>
 					<span></span>
 					<span></span>
@@ -169,21 +174,22 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 				</button>
 				<div className={styles.links}>
 					<button
+						onClick={() => handleScroll("header")}
 						className={`${styles.logo} ${styles.navLink}`}
-						onClick={() => handleScroll("header")}>
+						aria-label="Ir al inicio">
 						{getIcon("logo")}
 					</button>
 					<button className={styles.navLink}>
 						<span>Experiencia</span>
 					</button>
 					<button
-						className={styles.navLink}
-						onClick={() => handleScroll("projects")}>
+						onClick={() => handleScroll("projects")}
+						className={styles.navLink}>
 						<span>Proyectos</span>
 					</button>
 					<button
-						className={styles.navLink}
-						onClick={() => handleScroll("education")}>
+						onClick={() => handleScroll("education")}
+						className={styles.navLink}>
 						<span>Educación</span>
 					</button>
 				</div>
@@ -194,6 +200,7 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 			<div className={styles.navRight}>
 				<Tooltip
 					text="Available soon"
+					ariaLabel="Cambiar idioma a Inglés"
 					anchorSide="right">
 					<button className={styles.navSetting}>
 						{getIcon("world")}
@@ -255,14 +262,17 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 					style={{
 						animationDelay: `${0.1 * 5}s`,
 					}}>
-					<button className={styles.navSetting}>
+					<button
+						className={styles.navSetting}
+						aria-label="Cambiar idioma a Inglés (Aún no disponible)">
 						{getIcon("world")}
 						<span>EN</span>
 					</button>
 					<button
 						onClick={toggleDarkMode}
 						className={`${styles.navSetting} ${styles.switchSetting}
-					${isDarkMode ? styles.dark : styles.light}`}>
+					${isDarkMode ? styles.dark : styles.light}`}
+						aria-label={isDarkMode ? "Ver modo oscuro" : "Ver modo claro"}>
 						<div className={styles.backdrop}>
 							<span className={`${styles.icon} ${styles.sun}`}>
 								{getIcon("sun")}

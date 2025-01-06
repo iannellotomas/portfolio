@@ -37,7 +37,7 @@ export default function ListEducation({ education, index, viewMode }) {
 						<div className={styles.tagProgress}>
 							<span className={styles.bg}></span>
 							<span className={styles.circle}></span>
-							<h5>En curso</h5>
+							<span>En curso</span>
 						</div>
 					)}
 				</div>
@@ -45,7 +45,7 @@ export default function ListEducation({ education, index, viewMode }) {
 					{institution.image}
 					<span>{institution.name}</span>
 				</div>
-				<div className={styles.tags}>
+				<ul className={styles.tags}>
 					{education.skills.map((skill, index) => (
 						<Chip
 							tag={skill}
@@ -53,7 +53,7 @@ export default function ListEducation({ education, index, viewMode }) {
 							key={index}
 						/>
 					))}
-				</div>
+				</ul>
 				<span>
 					{formatDate(education.startDate)} - {""}
 					{formatDate(education.endDate)}

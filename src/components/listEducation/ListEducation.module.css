@@ -8,7 +8,8 @@
   }
 
   span {
-    letter-spacing: -.5px;
+    font-weight: 400;
+    letter-spacing: normal;
   }
 }
 
@@ -65,11 +66,13 @@
     align-items: center;
     text-transform: uppercase;
     border-radius: 0 10px 0 0;
+    color: var(--color-primary);
     background: linear-gradient(90deg, var(--color-primary-light) 25%, var(--color-primary), var(--color-primary-light) 75%);
     transition: transform var(--dynamic-fast-transition);
 
-    h5 {
-      color: var(--color-primary);
+    span {
+      font-size: 12px;
+      font-weight: 700;
     }
 
     .bg {

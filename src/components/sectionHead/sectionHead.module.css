@@ -1,26 +1,31 @@
-.header, .header span {
-  display: flex;
-  align-items: center;
-}
-
 .header {
   width: 100%;
-  gap: 50px;
-}
-
-.header span {
+  display: flex;
+  align-items: end;
+  margin-bottom: 30px;
   gap: 30px;
 }
 
-.header svg stop {
-  stop-color: var(--color-primary-light);
+.icon {
+  width: 150px;
+  height: 150px;
+  background: var(--color-primary-light);
+  border-radius: 5px 50px 50px 50px;
+  display: grid;
+  place-items: center;
 }
 
-.header svg stop:nth-child(1) {
-  stop-opacity: 0;
+.header span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .title {
   color: var(--text-primary);
-  font-size: 50px;
+  font-size: calc(2vw + 1.75rem);
+}
+
+.description {
+  max-width: 800px;
 }

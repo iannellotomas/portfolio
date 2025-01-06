@@ -47,7 +47,8 @@ export default function SegmentedControls({
 	return (
 		<div
 			ref={containerRef}
-			className={`${styles.filters} ${size == "small" ? styles.small : null}`}>
+			className={`${styles.filters} ${size == "small" ? styles.small : null}`}
+			role="radiogroup">
 			<div
 				ref={highlightRef}
 				className={styles.highlight}></div>

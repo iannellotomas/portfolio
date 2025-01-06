@@ -20,7 +20,7 @@
   pointer-events: none;
   transition: var(--dynamic-fast-transition);
   
-  h5 {
+  .title {
     color: var(--surface-primary);
     font-size: 16px;
     font-weight: 600;
@@ -33,7 +33,7 @@
     gap: 10px;
   }
 
-  span {
+  .icon {
     width: 40px;
     height: 40px;
     display: grid;

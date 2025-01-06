@@ -153,7 +153,8 @@ export default function SocialButton({ iconName, type = "primary" }) {
 				href={social.url}
 				rel="noreferrer"
 				target={social.title != "email" ? "_blank" : null}
-				onClick={social.title == "email" ? () => handleEmail() : null}>
+				onClick={social.title == "email" ? () => handleEmail() : null}
+				aria-label={social.label}>
 				{social.svg}
 			</a>
 			{social.title == "email" && (

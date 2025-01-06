@@ -7,6 +7,7 @@ export default function Tooltip({
 	anchorSide = "center",
 	size = "normal",
 	isDisabled = null,
+	ariaLabel = "",
 }) {
 	const [showTooltip, setShowTooltip] = useState(false);
 	const longPressTimer = useRef(null);
@@ -30,13 +31,18 @@ export default function Tooltip({
 			onMouseLeave={() => setShowTooltip(false)}
 			onTouchStart={handleTouchStart} // Para mobile
 			onTouchEnd={handleTouchEnd}>
-			{children}
+			{React.isValidElement(children)
+				? React.cloneElement(children, {
+						"aria-label": ariaLabel || text, // Aplica aria-label si el hijo es válido
+				  })
+				: children}
 			<div
 				className={`${styles.tooltip} ${showTooltip ? styles.show : ""} ${
 					styles[anchorSide]
 				} ${isDisabled ? styles.disabled : ""} ${
 					size == "minimal" ? styles.minimal : ""
-				}`}>
+				}`}
+				aria-hidden={!showTooltip}>
 				<svg
 					width="14"
 					height="10"

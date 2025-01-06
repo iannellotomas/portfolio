@@ -36,7 +36,7 @@ export default function Projects() {
 			className={styles.projects}>
 			<SectionHead
 				title="Proyectos"
-				description="Cada trabajo no solo muestra mis competencias técnicas, sino también mi enfoque creativo y mi dedicación a crear soluciones de diseño que sean estéticamente agradables y funcionales."
+				description="Cada trabajo no solo muestra mis competencias técnicas, sino también mi enfoque creativo y mi dedicación a crear soluciones de diseño que sean usables, accesibles y estéticas."
 			/>
 			<section className={styles.tools}>
 				<SegmentedControls
