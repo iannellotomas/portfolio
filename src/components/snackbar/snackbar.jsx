@@ -51,16 +51,18 @@ function Snackbar({
 			className={`${styles.snackbar} ${
 				isVisible ? styles.visible : styles.hidden
 			}`}
-			role="alert" aria-hidden={!isVisible}>
+			role="alert"
+			aria-hidden={!isVisible}>
 			<div className={styles.snackbarLeft}>
 				{Icon && <span className={styles.icon}>{Icon}</span>}
 				<span className={styles.title}>{title}</span>
 			</div>
 			<button
+				onClick={onClose}
 				className={styles.closeButton}
 				title="Ocultar mensaje"
 				aria-label="Ocultar mensaje"
-				onClick={onClose}>
+				tabIndex={isVisible ? 0 : -1}>
 				<svg
 					width="14"
 					height="14"
