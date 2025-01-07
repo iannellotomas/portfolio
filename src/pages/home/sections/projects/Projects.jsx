@@ -60,12 +60,13 @@ export default function Projects() {
 								key={project.id}
 								initial={{ opacity: 0, y: 50 }}
 								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, amount: 0.15 }}
+								viewport={{ once: true, amount: 0.10 }}
 								exit={{ opacity: 0, y: 50 }}
 								transition={{
 									duration: 0.15,
 									ease: [0.215, 0.61, 0.355, 1],
 								}}
+								className={styles.motionCard}
 								layout>
 								<CardProject project={project} />
 							</motion.div>

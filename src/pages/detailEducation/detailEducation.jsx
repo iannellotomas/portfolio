@@ -55,46 +55,46 @@ const DetailEducation = () => {
 					</Tooltip>
 					<div className={styles.title}>
 						<h3 className={styles.caption}>
-							{education?.type === "career" ? <>Carrera</> : <>Curso</>}
-							&nbsp;•&nbsp;
 							{formatDate(education.startDate)} -{" "}
 							{formatDate(education.endDate)}
 						</h3>
 						<h1>{education.title}</h1>
 					</div>
 				</span>
-				<a
-					className={`${styles.primaryButton} ${
-						!education.certificate.link ? styles.disabled : ""
-					}`}
-					href={education.certificate.link}
-					target="_blank"
-					rel="noreferrer">
-					<svg
-						width="16"
-						height="23"
-						viewBox="0 0 16 23"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M7.85156 2.14746V18.1475M7.85156 18.1475L13.8516 12.1475M7.85156 18.1475L1.85156 12.1475"
-							stroke="white"
-							strokeWidth="2.5"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-						/>
-						<line
-							x1="1.58484"
-							y1="21.0856"
-							x2="14.0837"
-							y2="20.9146"
-							stroke="white"
-							strokeWidth="2.5"
-							strokeLinecap="round"
-						/>
-					</svg>
-					<span>Descargar certificado</span>
-				</a>
+				<div className={styles.cta}>
+					<a
+						className={`${styles.primaryButton} ${
+							!education.certificate.link ? styles.disabled : ""
+						}`}
+						href={education.certificate.link}
+						target="_blank"
+						rel="noreferrer">
+						<svg
+							width="16"
+							height="23"
+							viewBox="0 0 16 23"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M7.85156 2.14746V18.1475M7.85156 18.1475L13.8516 12.1475M7.85156 18.1475L1.85156 12.1475"
+								stroke="white"
+								strokeWidth="2.5"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
+							<line
+								x1="1.58484"
+								y1="21.0856"
+								x2="14.0837"
+								y2="20.9146"
+								stroke="white"
+								strokeWidth="2.5"
+								strokeLinecap="round"
+							/>
+						</svg>
+						<span>Descargar certificado</span>
+					</a>
+				</div>
 			</header>
 			<main className={styles.main}>
 				<div className={styles.mainTop}>

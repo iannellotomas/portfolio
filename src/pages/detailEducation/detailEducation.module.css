@@ -7,6 +7,7 @@
 
 /* HEADER */
 .header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,6 +20,8 @@
 }
 
 .header>span {
+  width: 100%;
+  max-width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -44,14 +47,19 @@
 }
 
 .header .title {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .header h1 {
-  font-size: calc(2vw + 2rem);
+  font-size: calc(2rem + 1.5vw);
   line-height: 100%;
   color: var(--text-primary);
+  max-width: calc(100% - 50px);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .header .date {
@@ -65,14 +73,15 @@
 }
 
 .primaryButton {
+  width: max-content;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   font-weight: var(--active-label-weight);
   background: var(--color-primary);
   color: var(--text-alternative);
   height: 50px;
-  padding: 0 30px;
+  padding: 0 40px;
   border-radius: 500px;
 }
 
@@ -304,4 +313,104 @@
 .warning path {
   fill: var(--color-primary);
   opacity: .2;
+}
+
+
+/* MEDIA QUERIES */
+@media (width <=1024px) {
+  .mainTop {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+
+  .mainTop .col:nth-child(2) {
+    order: 3;
+  }
+
+  .mainTop .caption {
+    display: none;
+  }
+
+  .tags {
+    margin-block: 5px 20px;
+  }
+
+  .mainBottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .mainBottom .outstanding {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .mainBottom .hours,
+  .mainBottom .classes {
+    width: calc(50% - 10px);
+    min-width: 300px;
+    flex-grow: 1;
+  }
+
+  .certificate img {
+    min-height: 370px;
+  }
+}
+
+@media (width <=768px) {
+  .detailEducation {
+    padding: 0 4vw 100px 4vw;
+  }
+
+  .header .cta {
+    position: fixed;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 55;
+  }
+
+  .header .cta::before {
+    content: "";
+    top: calc(100% + 50px);
+    left: 50%;
+    transform: translateX(-50%) scale(2);
+    position: absolute;
+    z-index: -1;
+    width: 120vw;
+    height: 200px;
+    background: var(--surface-primary);
+    filter: blur(10px);
+  }
+
+  .hero {
+    margin: 0;
+  }
+
+  .heroTop span {
+    max-height: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  .main {
+    margin-top: 20px;
+  }
+
+  .certificate:not(:has(.warning)) {
+    padding: 0;
+    margin-bottom: 30px;
+    background: none;
+  }
+
+  .certificate {
+    border-radius: 30px;
+  }
+
+  .certificate img {
+    min-height: 200px;
+  }
 }

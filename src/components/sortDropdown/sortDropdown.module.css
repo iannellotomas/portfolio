@@ -132,6 +132,7 @@
   z-index: -1;
   opacity: 0;
   transform: translateX(-50%) scaleX(.8);
+  pointer-events: none;
   border: 1px solid var(--text-primary-transparent);
   background: var(--text-primary-transparent);
   transition: var(--dynamic-fast-transition) transform;
@@ -188,4 +189,99 @@
 
 .label.selected .check {
   opacity: 1;
+}
+
+/* NAV LIST ANIMATION */
+.dropdown .dropdownList .label {
+  opacity: 0;
+}
+
+.dropdown.open .dropdownList .label {
+  animation: fadeIn .3s ease forwards;
+}
+
+.coverDropdown {
+  position: fixed;
+  display: none;
+}
+
+
+/* MEDIA QUERIES */
+@media (width <=1024px) {
+  .dropdown.open .dropdownHeader {
+    border-radius: 20px;
+    z-index: -1;
+  }
+
+  .dropdownList {
+    position: fixed;
+    top: auto !important;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92vw;
+    max-width: 400px;
+    min-width: 300px;
+    padding: 40px 20px 30px 20px;
+    border-radius: 20px 20px 0 0;
+    border: 3px solid var(--text-primary-transparent);
+    border-bottom: 0;
+    backdrop-filter: blur(20px);
+    clip-path: inset(100% 0 0 0);
+    height: max-content;
+    z-index: 600;
+  }
+
+  .dropdown.open .dropdownList {
+    clip-path: inset(0 0 0 0);
+    pointer-events: all;
+    transition: clip-path var(--dynamic-fast-transition);
+  }
+
+  .dropdownList .label {
+    height: 50px;
+  }
+
+  .dropdownList::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    border-radius: 10px;
+    background: var(--text-primary-transparent);
+  }
+
+  .coverDropdown {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 595;
+    background: var(--surface-primary-transparent);
+    backdrop-filter: blur(5px);
+    transition: var(--dynamic-medium-transition);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .coverDropdown.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

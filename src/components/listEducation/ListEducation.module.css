@@ -15,7 +15,7 @@
 
 .listItem {
   display: grid;
-  grid-template-columns: minmax(200px, 1fr) 200px minmax(250px, 1fr) 80px;
+  grid-template-columns: minmax(150px, 300px) 200px minmax(250px, 1fr) 80px;
   gap: 40px;
   justify-items: start;
   align-items: center;
@@ -160,7 +160,6 @@
 }
 
 /* GRID ITEM */
-
 .gridItem {
   display: flex;
   height: 100%;
@@ -225,4 +224,20 @@
 
 .container {
   transition: none !important;
+}
+
+/* MEDIA QUERIES */
+
+@media (width <=1024px) {
+  .gridItem {
+    width: 100%;
+    min-width: 350px;
+    border: 2px solid var(--color-neutral);
+  }
+
+  .gridItem .title svg {
+    right: -20px;
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

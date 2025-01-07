@@ -211,3 +211,9 @@ strong {
   background: var(--color-primary);
   transform-origin: top;
 }
+
+@media (width <=550px) {
+  p {
+    font-size: 14px;
+  }
+}

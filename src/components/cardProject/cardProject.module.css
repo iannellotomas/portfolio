@@ -1,11 +1,19 @@
+a {
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
 .cardProject {
   position: relative;
-  min-width: 430px;
-  flex: 1 1 calc(50% - 25px);
+  width: 100%;
+  min-width: 300px;
+  max-width: 100%;
   box-sizing: border-box;
-  cursor: pointer;
   border-radius: 20px;
   z-index: 1;
+  cursor: pointer;
+  transition: background var(--dynamic-fast-transition);
 }
 
 .content {
@@ -13,6 +21,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  max-width: 100%;
   border-radius: 20px;
   z-index: 10;
   transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -98,7 +107,7 @@
 .carousel {
   width: 100%;
   border-radius: 30px;
-  height: 400px;
+  height: clamp(300px, 70vh, 400px);
   overflow: hidden;
   position: relative;
   background: var(--surface-primary);
@@ -203,6 +212,7 @@
   background: var(--surface-primary-transparent-2);
   backdrop-filter: blur(10px);
   display: flex;
+  width: 100%;
   height: 130px;
   align-items: center;
   padding: 20px 30px;
@@ -224,23 +234,112 @@
 }
 
 .cardFooter h3 {
-  font-size: 26px;
+  font-size: calc(1rem + 1vw);
   color: var(--text-primary);
   font-weight: var(--title-weight);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .cardFooter p {
   height: 50px;
-  display: -webkit-box; /* Crea una caja flexible para usar line clamp */
+  display: -webkit-box;
   line-clamp: 2;
-  -webkit-line-clamp: 2; /* Limita el texto a 2 líneas */
-  -webkit-box-orient: vertical; /* Define la orientación de la caja como vertical */
-  overflow: hidden; /* Oculta el texto sobrante */
-  text-overflow: ellipsis; /* Agrega "..." al final del texto recortado */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   word-wrap: break-word;
 }
 
 .cardFooter ul {
   display: flex;
   gap: 0;
+}
+
+
+/* MEDIA QUERIES */
+@media (width <=1100px) {
+  .carousel {
+    height: clamp(300px, 50vh, 400px);
+  }
+}
+
+@media (width <=1024px) {
+  .cardFooter p {
+    font-size: 14px;
+    height: 40px;
+  }
+}
+
+@media (width <= 900px) and (width >= 650px)  {
+  .content {
+    flex-direction: row;
+  }
+
+  .cardFooter {
+    width: 70%;
+    height: 100%;
+    align-items: start;
+    padding-top: 30px;
+    justify-content: start;
+  }
+
+  .cardFooter>span>span {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+
+  .cardFooter p {
+    height: max-content;
+    display: block;
+    overflow: visible;
+  }
+}
+
+@media (width <=768px) {
+
+  .carouselButtonPrev,
+  .carouselButtonNext {
+    display: none;
+  }
+}
+
+@media (width <= 500px) {
+  .cardProject {
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .cardProject:active {
+    background: var(--color-neutral);
+  }
+
+  .cardProject:hover .carouselImage img {
+    transform: scale(1);
+  }
+
+  .carousel {
+    height: clamp(300px, 30vh, 300px);
+  }
+
+  .blurOverlay {
+    display: none;
+  }
+
+  .category {
+    border-color: var(--surface-primary);
+  }
+
+  .cardFooter {
+    padding: 20px 10px 20px 0;
+    height: max-content;
+    border-radius: 0 0 20px 20px;
+    background: none;
+  }
+
+  .cardFooter h3 {
+    font-size: 24px;
+  }
 }

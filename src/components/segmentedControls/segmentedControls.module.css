@@ -6,6 +6,7 @@ input[type="radio"] {
 
 .filters {
   position: relative;
+  max-width: 100%;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -13,7 +14,6 @@ input[type="radio"] {
   border: 1px solid var(--color-primary-light);
   border-radius: 20px;
   height: 56px;
-  width: max-content;
 }
 
 .label {
@@ -116,6 +116,7 @@ input[type="radio"] {
 
 .line {
   width: 1px;
+  min-width: 1px;
   z-index: -2;
   height: 25px;
   border-radius: 5px;
@@ -167,4 +168,32 @@ input[type="radio"] {
   pointer-events: none;
 	transition: transform .3s ease, width .3s ease;
 	z-index: 0;
+}
+
+
+/* MEDIA QUERIES */
+@media  (width <= 768px) {
+  .filters {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: 0;
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filters::after {
+    content: "";
+    position: sticky;
+    top: 20px;
+    right: -30px;
+    min-width: 60px;
+    height: 80px;
+    background: var(--surface-primary);
+    filter: blur(10px);
+    z-index: 2;
+    pointer-events: none;
+    margin-left: -30px;
+  }
 }

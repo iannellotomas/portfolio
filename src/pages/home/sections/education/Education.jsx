@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Education.module.css";
 import { dataEducation } from "../../../../data/dataEducation";
@@ -47,12 +47,28 @@ const viewModeOptions = {
 };
 
 export default function Education() {
-	const [viewMode, setViewMode] = useState(1); // List default
+	const [isMobile, setIsMobile] = useState(false);
+	const [viewMode, setViewMode] = useState(isMobile ? 2 : 1); // List default
 	const [inProgress, setInProgress] = useState(true); // Show default
 
 	const [sortedListsEducation, setSortedListsEducation] =
 		useState(dataEducation);
 	const dropdownOptions = ["Más relevantes", "Más recientes", "Mayor duración"];
+
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.matchMedia("(max-width: 1024px)").matches);
+		};
+
+		checkMobile();
+		window.addEventListener("resize", checkMobile);
+
+		return () => window.removeEventListener("resize", checkMobile);
+	}, []);
+
+	useEffect(() => {
+		setViewMode(isMobile ? 2 : 1);
+	}, [isMobile]);
 
 	const handleSortChange = (selectedOption) => {
 		let sortedData = [...dataEducation];
@@ -99,12 +115,14 @@ export default function Education() {
 					setIsChecked={setInProgress}
 				/>
 				<span>
-					<SegmentedControls
-						size="small"
-						controls={viewModeOptions}
-						selectedControl={viewMode}
-						setSelectedControl={setViewMode}
-					/>
+					{!isMobile && (
+						<SegmentedControls
+							size="small"
+							controls={viewModeOptions}
+							selectedControl={viewMode}
+							setSelectedControl={setViewMode}
+						/>
+					)}
 					<SortDropdown
 						options={dropdownOptions}
 						onSelectOption={handleSortChange}
@@ -140,7 +158,8 @@ export default function Education() {
 								transition={{
 									duration: 0.15,
 									ease: [0.215, 0.61, 0.355, 1],
-								}}>
+								}}
+								className={styles.motionCard}>
 								<ListEducation
 									key={index}
 									education={education}

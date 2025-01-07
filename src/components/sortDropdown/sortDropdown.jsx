@@ -9,8 +9,8 @@ export default function SortDropdown({ options, onSelectOption }) {
 	// Manejar la selección de una opción
 	const handleOptionClick = (option) => {
 		setSelectedOption(option);
-		onSelectOption(option); // Notifica al padre
-		setIsDropdownOpen(false); // Cierra el dropdown
+		onSelectOption(option);
+		setIsDropdownOpen(false);
 	};
 
 	// Cerrar el dropdown al hacer clic fuera
@@ -79,7 +79,10 @@ export default function SortDropdown({ options, onSelectOption }) {
 							key={index}
 							className={`${styles.label} ${
 								selectedOption === option ? styles.selected : ""
-							}`}>
+							}`}
+							style={{
+								animationDelay: `${0.1 * (index + 1)}s`,
+							}}>
 							<input
 								type="radio"
 								name="filter"
@@ -107,6 +110,11 @@ export default function SortDropdown({ options, onSelectOption }) {
 					))}
 				</form>
 			</main>
+			<div
+				className={`${styles.coverDropdown} ${
+					isDropdownOpen ? styles.open : ""
+				}`}
+				onClick={() => setIsDropdownOpen(false)}></div>
 		</div>
 	);
 }

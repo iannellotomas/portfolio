@@ -13,3 +13,11 @@
   letter-spacing: -.5px;
   text-transform: uppercase;
 }
+
+@media (width <=768px) {
+  .chip {
+    font-size: 12px;
+    padding: 0 12px;
+    height: 24px;
+  }
+}

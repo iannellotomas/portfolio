@@ -1,5 +1,6 @@
 .footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 80px;
   padding: 20px;

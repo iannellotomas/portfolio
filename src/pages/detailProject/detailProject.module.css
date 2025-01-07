@@ -529,7 +529,6 @@
     max-height: 200px;
   }
 
-
   .primaryButton span {
     display: none;
   }
@@ -630,7 +629,6 @@
 
 @media (width <=768px) {
   .detailProject {
-    padding-bottom: 100px;
     padding: 0 4vw 100px 4vw;
   }
 
@@ -658,7 +656,6 @@
     background: var(--surface-primary);
     filter: blur(10px);
   }
-
 
   .cover {
     backdrop-filter: blur(0);
