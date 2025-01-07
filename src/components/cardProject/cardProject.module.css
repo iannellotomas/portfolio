@@ -333,10 +333,14 @@ a {
   }
 
   .cardFooter {
-    padding: 20px 10px 20px 0;
+    padding: 15px 10px 20px 0;
     height: max-content;
     border-radius: 0 0 20px 20px;
     background: none;
+  }
+
+  .cardFooter > span {
+    gap: 5px;
   }
 
   .cardFooter h3 {
