@@ -108,11 +108,24 @@ const DetailProject = () => {
 		setIsOptionsOpen((prev) => !prev);
 	};
 
-	const handleShowSnackbar = () => {
+	const handleShare = async () => {
 		const url = window.location.href;
 		const urlWithoutHash = url.split("#")[0];
-		navigator.clipboard.writeText(urlWithoutHash);
-		setIsSnackbarVisible(true);
+		
+		if (navigator.share) {
+			// Llamar a la Web Share API si está disponible
+			try {
+				await navigator.share({ url: urlWithoutHash });
+				console.log("Contenido compartido exitosamente");
+			} catch (error) {
+				console.error("Error al compartir:", error);
+			}
+		} else {
+			// Sino copiar al portapapeles
+			navigator.clipboard.writeText(urlWithoutHash);
+			setIsSnackbarVisible(true);
+			console.log("El enlace se ha copiado al portapapeles");
+		}
 	};
 
 	const handleCloseSnackbar = () => {
@@ -171,34 +184,40 @@ const DetailProject = () => {
 					onClose={handleCloseSnackbar}
 				/>
 				<div className={styles.cta}>
-					<button
-						className={styles.primaryButton}
-						onClick={handleShowSnackbar}>
-						<svg
-							width="19"
-							height="24"
-							viewBox="0 0 23 28"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M8.00065 14.0001C8.00065 14.8841 7.64946 15.732 7.02434 16.3571C6.39922 16.9822 5.55137 17.3334 4.66732 17.3334C3.78326 17.3334 2.93542 16.9822 2.3103 16.3571C1.68517 15.732 1.33398 14.8841 1.33398 14.0001C1.33398 13.116 1.68517 12.2682 2.3103 11.6431C2.93542 11.0179 3.78326 10.6667 4.66732 10.6667C5.55137 10.6667 6.39922 11.0179 7.02434 11.6431C7.64946 12.2682 8.00065 13.116 8.00065 14.0001Z"
-								stroke="#0C1884"
-								strokeWidth="2.5"
-							/>
-							<path
-								d="M14.6676 6.66675L8.00098 11.3334M14.6676 21.3334L8.00098 16.6667"
-								stroke="#0C1884"
-								strokeWidth="2.5"
-								strokeLinecap="round"
-							/>
-							<path
-								d="M21.3337 22.6667C21.3337 23.5507 20.9825 24.3986 20.3573 25.0237C19.7322 25.6488 18.8844 26 18.0003 26C17.1163 26 16.2684 25.6488 15.6433 25.0237C15.0182 24.3986 14.667 23.5507 14.667 22.6667C14.667 21.7826 15.0182 20.9348 15.6433 20.3096C16.2684 19.6845 17.1163 19.3333 18.0003 19.3333C18.8844 19.3333 19.7322 19.6845 20.3573 20.3096C20.9825 20.9348 21.3337 21.7826 21.3337 22.6667ZM21.3337 5.33333C21.3337 6.21739 20.9825 7.06523 20.3573 7.69036C19.7322 8.31548 18.8844 8.66667 18.0003 8.66667C17.1163 8.66667 16.2684 8.31548 15.6433 7.69036C15.0182 7.06523 14.667 6.21739 14.667 5.33333C14.667 4.44928 15.0182 3.60143 15.6433 2.97631C16.2684 2.35119 17.1163 2 18.0003 2C18.8844 2 19.7322 2.35119 20.3573 2.97631C20.9825 3.60143 21.3337 4.44928 21.3337 5.33333Z"
-								stroke="#0C1884"
-								strokeWidth="2.5"
-							/>
-						</svg>
-						<span>Compartir</span>
-					</button>
+					<Tooltip
+						text="Compartir"
+						anchorSide={innerWidth <= 768 ? "top" : "right"}
+						size={innerWidth <= 768 ? "minimal" : ""}
+						isDisabled={innerWidth > 1024 ? true : false}>
+						<button
+							className={styles.primaryButton}
+							onClick={handleShare}>
+							<svg
+								width="19"
+								height="24"
+								viewBox="0 0 23 28"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M8.00065 14.0001C8.00065 14.8841 7.64946 15.732 7.02434 16.3571C6.39922 16.9822 5.55137 17.3334 4.66732 17.3334C3.78326 17.3334 2.93542 16.9822 2.3103 16.3571C1.68517 15.732 1.33398 14.8841 1.33398 14.0001C1.33398 13.116 1.68517 12.2682 2.3103 11.6431C2.93542 11.0179 3.78326 10.6667 4.66732 10.6667C5.55137 10.6667 6.39922 11.0179 7.02434 11.6431C7.64946 12.2682 8.00065 13.116 8.00065 14.0001Z"
+									stroke="#0C1884"
+									strokeWidth="2.5"
+								/>
+								<path
+									d="M14.6676 6.66675L8.00098 11.3334M14.6676 21.3334L8.00098 16.6667"
+									stroke="#0C1884"
+									strokeWidth="2.5"
+									strokeLinecap="round"
+								/>
+								<path
+									d="M21.3337 22.6667C21.3337 23.5507 20.9825 24.3986 20.3573 25.0237C19.7322 25.6488 18.8844 26 18.0003 26C17.1163 26 16.2684 25.6488 15.6433 25.0237C15.0182 24.3986 14.667 23.5507 14.667 22.6667C14.667 21.7826 15.0182 20.9348 15.6433 20.3096C16.2684 19.6845 17.1163 19.3333 18.0003 19.3333C18.8844 19.3333 19.7322 19.6845 20.3573 20.3096C20.9825 20.9348 21.3337 21.7826 21.3337 22.6667ZM21.3337 5.33333C21.3337 6.21739 20.9825 7.06523 20.3573 7.69036C19.7322 8.31548 18.8844 8.66667 18.0003 8.66667C17.1163 8.66667 16.2684 8.31548 15.6433 7.69036C15.0182 7.06523 14.667 6.21739 14.667 5.33333C14.667 4.44928 15.0182 3.60143 15.6433 2.97631C16.2684 2.35119 17.1163 2 18.0003 2C18.8844 2 19.7322 2.35119 20.3573 2.97631C20.9825 3.60143 21.3337 4.44928 21.3337 5.33333Z"
+									stroke="#0C1884"
+									strokeWidth="2.5"
+								/>
+							</svg>
+							<span>Compartir</span>
+						</button>
+					</Tooltip>
 					<div ref={menuRef}>
 						<Tooltip
 							text={"Ver más opciones"}
