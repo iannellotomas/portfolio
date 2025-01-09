@@ -108,6 +108,7 @@
     bottom: 70px;
     z-index: 55;
     border-width: 3px;
+    clip-path: inset(100% 0 0 0);
     transform: translateX(-50%);
   }
 

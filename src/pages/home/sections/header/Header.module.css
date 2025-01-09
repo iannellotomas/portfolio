@@ -27,6 +27,7 @@
 .headerLeft .workTag {
   position: relative;
   height: 40px;
+  width: max-content;
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -37,7 +38,6 @@
   color: var(--text-primary);
   font-weight: var(--label-weight);
   border: 2px solid transparent;
-  /* background-image: linear-gradient(to right, var(--surface-success) 0%, var(--color-success) 50%, var(--surface-success) 100%); */
   background-image: linear-gradient(to right, var(--color-primary-light) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
   background-clip: padding-box;
 }

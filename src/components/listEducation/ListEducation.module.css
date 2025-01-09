@@ -241,3 +241,11 @@
     opacity: 1;
   }
 }
+
+@media (width <=500px) {
+  .gridItem {
+    width: 200px;
+    max-width: 100%;
+    min-width: 100%;
+  }
+}

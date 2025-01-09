@@ -190,7 +190,7 @@ const OptionsProject = ({
 							target="_blank"
 							rel="noreferrer"
 							className={styles.option}
-							style={{ animationDelay: `${index * 0.1}s` }}>
+							style={{ animationDelay: `${(index + 1) * 0.1}s` }}>
 							{linkInfo.icon}
 							<span>{linkInfo.text}</span>
 						</a>
@@ -200,13 +200,13 @@ const OptionsProject = ({
 			<span
 				className={styles.line}
 				style={{
-					animationDelay: `${links.length * 0.1}s`,
+					animationDelay: `${(links.length + 1)* 0.1}s`,
 				}}></span>
 			<div>
 				<button
 					className={styles.option}
 					style={{
-						animationDelay: `${(links.length + 0.1) * 0.1}s`,
+						animationDelay: `${(links.length + 1.1) * 0.1}s`,
 					}}
 					onClick={() => handleOpenFeedback()}>
 					<svg

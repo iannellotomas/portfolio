@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import headerImage from "../../../../assets/FotoPerfil.png";
+import headerImage from "../../../../assets/FotoPerfil.webp";
 import SocialButton from "../../../../components/socialButton/socialButton";
 
 export default function Header() {
@@ -73,7 +73,7 @@ export default function Header() {
 				/>
 				<div className={styles.workTag}>
 					<div className={styles.circle}></div>
-					<span>Disponible para trabajar</span>
+					<span>¡Buscando nuevos desafíos! 🚀</span>
 				</div>
 			</div>
 			<div className={styles.headerRight}>
@@ -96,16 +96,15 @@ export default function Header() {
 					</span>
 				</span>
 				<p>
-					Soy un apasionado diseñador que{" "}
+					Me apasiona transformar{" "}
 					<strong>
 						{" "}
-						transforma ideas creativas en experiencias digitales envolventes
+						ideas creativas en experiencias digitales envolventes
 					</strong>
-					, con el objetivo de mejorar la usabilidad y crear interfaces
-					impactantes. Estoy{" "}
+					, enfocándome en mejorar la usabilidad y la accesibilidad mientras diseño interfaces impactantes. Estoy{" "}
 					<strong>buscando progresar en mi carrera profesional</strong>,
 					contribuyendo a equipos innovadores mientras sigo aprendiendo y
-					adaptándome a las nuevas tendencias y tecnologías.
+					adaptándome a las nuevas tecnologías.
 				</p>
 				<div className={styles.cta}>
 					<a

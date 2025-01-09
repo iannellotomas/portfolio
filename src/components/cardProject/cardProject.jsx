@@ -1,64 +1,12 @@
-import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import styles from "./cardProject.module.css";
+import { Link } from "react-router-dom";
 import { dataCategories } from "../../data/dataCategories";
+import Carousel from "../carousel/carousel";
 import Chip from "../chip/chip";
 import LazyImage from "../lazyImage/LazyImage";
 
 export default function CardProject({ project }) {
-	const [currentImageIndex, setCurrentImageIndex] = useState(0);
-	const carouselRef = useRef(null);
-	const [isDragging, setIsDragging] = useState(false);
-	const [startX, setStartX] = useState(0);
-	const [deltaX, setDeltaX] = useState(0);
-
-	const THRESHOLD = 30; // Umbral para considerar el cambio de imagen
-
-	const handleDragStart = (e) => {
-		if (project.images.length <= 1) return;
-		setIsDragging(true);
-		setStartX(e.type === "mousedown" ? e.pageX : e.touches[0].pageX);
-		setDeltaX(0); // Resetea el desplazamiento al iniciar el drag
-	};
-
-	const handleDragMove = (e) => {
-		if (!isDragging || project.images.length <= 1) return;
-
-		const currentX = e.type === "mousemove" ? e.pageX : e.touches[0].pageX;
-		const distance = currentX - startX;
-		setDeltaX(distance); // Actualiza la distancia arrastrada
-
-		// Aplica una transformación visual para simular el movimiento
-		carouselRef.current.style.transform = `translateX(calc(-${
-			currentImageIndex * 100
-		}% + ${distance}px))`;
-	};
-
-	const handleDragEnd = () => {
-		if (project.images.length <= 1) return;
-		setIsDragging(false);
-
-		// Decide si pasar a la siguiente/previa imagen o quedarse en la actual
-		if (deltaX > THRESHOLD) {
-			// Arrastrar a la derecha: ir a la imagen anterior
-			setCurrentImageIndex(
-				(prevIndex) =>
-					(prevIndex - 1 + project.images.length) % project.images.length
-			);
-		} else if (deltaX < -THRESHOLD) {
-			// Arrastrar a la izquierda: ir a la siguiente imagen
-			setCurrentImageIndex(
-				(prevIndex) => (prevIndex + 1) % project.images.length
-			);
-		}
-
-		// Restaura la posición del carrusel al índice actual
-		carouselRef.current.style.transform = `translateX(-${
-			currentImageIndex * 100
-		}%)`;
-		setDeltaX(0); // Resetea la distancia
-	};
-
 	return (
 		<Link to={`/project/${project.url}`}>
 			<article className={styles.cardProject}>
@@ -82,7 +30,10 @@ export default function CardProject({ project }) {
 							</span>
 						))}
 					</div>
-					<header
+
+					<Carousel carouselImages={project.images} />
+
+					{/* <div
 						className={styles.carousel}
 						onTouchStart={handleDragStart}
 						onTouchMove={handleDragMove}
@@ -173,8 +124,9 @@ export default function CardProject({ project }) {
 								</div>
 							</>
 						)}
-					</header>
-					<footer className={styles.cardFooter}>
+					</div> */}
+
+					<div className={styles.cardFooter}>
 						<span>
 							<span>
 								<h3>{project.title}</h3>
@@ -190,7 +142,7 @@ export default function CardProject({ project }) {
 							</span>
 							<p>{project.shortDescription}</p>
 						</span>
-					</footer>
+					</div>
 				</div>
 			</article>
 		</Link>

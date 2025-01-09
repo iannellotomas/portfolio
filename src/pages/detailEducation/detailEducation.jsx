@@ -1,23 +1,21 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { dataEducation } from "../../data/dataEducation";
 import { dataInstitutions } from "../../data/dataInstitutions";
 import { formatDate } from "../../utils/formatDate";
 import { formatText } from "../../utils/formatText";
 import Chip from "../../components/chip/chip";
-import Tooltip from "../../components/tooltip/tooltip";
 import styles from "./detailEducation.module.css";
 import Footer from "../../components/footer/footer";
 import transition from "../pageTransition";
 import LazyImage from "../../components/lazyImage/LazyImage";
 import PDFViewer from "../../components/PDFViewer/PDFViewer";
+import BackButton from "../../components/backButton/backButton";
 
 const DetailEducation = () => {
 	const { id } = useParams();
 	const education = dataEducation.find((item) => item.url === id);
 	const institution = dataInstitutions[education.institution];
-	const navigate = useNavigate();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -31,28 +29,7 @@ const DetailEducation = () => {
 		<section className={styles.detailEducation}>
 			<header className={styles.header}>
 				<span>
-					<Tooltip
-						text="Volver al inicio"
-						anchorSide="left">
-						<button
-							onClick={() => navigate(-1)}
-							className={styles.backButton}>
-							<svg
-								width="26"
-								height="20"
-								viewBox="0 0 26 20"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M23.6667 10.25H2.33337M2.33337 10.25L10.3334 2.25M2.33337 10.25L10.3334 18.25"
-									stroke="#4557FB"
-									strokeWidth="3"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								/>
-							</svg>
-						</button>
-					</Tooltip>
+					<BackButton />
 					<div className={styles.title}>
 						<h3 className={styles.caption}>
 							{formatDate(education.startDate)} -{" "}

@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { dataProjects } from "../../data/dataProjects";
 import { formatDate } from "../../utils/formatDate";
 import { formatText } from "../../utils/formatText";
@@ -16,13 +16,13 @@ import Snackbar from "../../components/snackbar/snackbar";
 import styles from "./detailProject.module.css";
 import Feedback from "../../components/feedback/feedback";
 import Tooltip from "../../components/tooltip/tooltip";
+import BackButton from "../../components/backButton/backButton";
 
 const DetailProject = () => {
 	const { url } = useParams();
 	const project = dataProjects.find((item) => item.url === url);
 	const institution = dataInstitutions[project.institution];
 	const menuRef = useRef(null);
-	const navigate = useNavigate();
 
 	const [isOptionsOpen, setIsOptionsOpen] = useState(false);
 	const [openFeedback, setOpenFeedback] = useState(false);
@@ -83,7 +83,7 @@ const DetailProject = () => {
 
 	// Scrollear hasta la sección elegida
 	const handleScrollToSection = (index) => {
-		const targetSection = document.getElementById(`section-${index}`);
+		const targetSection = document.getElementById(`index-${index + 1}`);
 		if (targetSection) {
 			const headerHeight = document.querySelector("header").offsetHeight;
 			const offsetTop =
@@ -100,7 +100,7 @@ const DetailProject = () => {
 			setActiveIndex(index);
 
 			if (window.innerWidth <= 1024) {
-				setOpenIndex(0);
+				setTimeout(() => setOpenIndex(0), 100);
 			}
 		}
 	};
@@ -123,28 +123,7 @@ const DetailProject = () => {
 				className={`${styles.cover} ${isOptionsOpen ? styles.show : ""}`}></div>
 			<header className={styles.header}>
 				<div className={styles.info}>
-					<Tooltip
-						text="Volver al inicio"
-						anchorSide="left">
-						<button
-							onClick={() => navigate(-1)}
-							className={styles.backButton}>
-							<svg
-								width="26"
-								height="20"
-								viewBox="0 0 26 20"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M23.6667 10.25H2.33337M2.33337 10.25L10.3334 2.25M2.33337 10.25L10.3334 18.25"
-									stroke="#4557FB"
-									strokeWidth="3"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								/>
-							</svg>
-						</button>
-					</Tooltip>
+					<BackButton />
 					<span>
 						<h3 className={styles.caption}>
 							Proyecto&nbsp;
@@ -311,18 +290,25 @@ const DetailProject = () => {
 						</button>
 					</header>
 					<main className={styles.indexList}>
-						{indexes.map((item) => (
+						<h4 className={styles.caption}>Índice</h4>
+						{indexes.map((item, index) => (
 							<button
 								key={item.id}
 								className={`${styles.indexItem} ${
 									activeIndex === item.id ? styles.active : ""
 								}`}
-								onClick={() => handleScrollToSection(item.id)}>
+								onClick={() => handleScrollToSection(item.id)}
+								style={{
+									animationDelay: `${(index + 1) * 0.1}s`,
+								}}>
 								<span className={styles.circle}></span>
 								<p>{item.label}</p>
 							</button>
 						))}
 					</main>
+					<div
+						className={styles.coverAside}
+						onClick={() => setOpenIndex(false)}></div>
 				</aside>
 				<div className={styles.sheets}>
 					<div className={styles.action}>
@@ -349,7 +335,7 @@ const DetailProject = () => {
 						{project.sheet.map((item, index) => (
 							<div
 								key={index}
-								id={`section-${index}`}
+								id={`index-${index + 1}`}
 								ref={(el) => (sectionRefs.current[index] = el)}
 								className={styles.sheetSection}>
 								{item.type === "iframe" ? (

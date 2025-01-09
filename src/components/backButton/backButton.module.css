@@ -1,0 +1,17 @@
+.backButton {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--color-primary-light);
+  border-radius: 500px;
+  transition: var(--dynamic-fast-transition);
+}
+
+.backButton:hover {
+  background: var(--color-primary-light);
+}
+
+.backButton path {
+  stroke: var(--color-primary);
+}

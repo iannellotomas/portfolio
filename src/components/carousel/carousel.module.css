@@ -1,0 +1,125 @@
+.carousel {
+  width: 100%;
+  border-radius: 30px;
+  height: clamp(300px, 70vh, 400px);
+  overflow: hidden;
+  position: relative;
+  background: var(--surface-primary);
+}
+
+.carouselTrack {
+  height: 100%;
+  display: flex;
+  position: relative;
+  transition: transform var(--dynamic-transition);
+}
+
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.carouselImage img {
+  transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cardProject:hover .carouselImage img {
+  transform: scale(1.06);
+}
+
+.carouselControl {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.carouselButtonPrev,
+.carouselButtonNext {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-image);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--strong-shadow);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  transition: width .3s ease;
+}
+
+.carouselButtonPrev {
+  left: 10px;
+}
+
+.carouselButtonNext {
+  right: 10px;
+}
+
+.carouselButtonPrev:active,
+.carouselButtonNext:active {
+  opacity: .3;
+  transform: scale(1.1);
+}
+
+.carouselButtonPrev path,
+.carouselButtonNext path {
+  stroke: var(--text-primary);
+  stroke-width: 1.5px;
+}
+
+.stepbar {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+  padding: 0 20px;
+  border-radius: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  backdrop-filter: blur(10px);
+  background: var(--surface-image);
+  box-shadow: var(--strong-shadow);
+}
+
+.step {
+  width: 8px;
+  height: 8px;
+  border-radius: 500px;
+  background: var(--text-primary-transparent-2);
+  transition: width .3s ease;
+}
+
+.step.active {
+  width: 25px;
+  background: var(--color-primary);
+}
+
+
+/* MEDIA QUERIES */
+@media (width <=1100px) {
+  .carousel {
+    height: clamp(300px, 50vh, 400px);
+  }
+}
+
+@media (width <=768px) {
+
+  .carouselButtonPrev,
+  .carouselButtonNext {
+    display: none;
+  }
+}
+
+@media (width <=500px) {
+  .carousel {
+    height: clamp(300px, 30vh, 300px);
+  }
+}
