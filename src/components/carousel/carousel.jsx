@@ -146,22 +146,19 @@ export default function Carousel({
 						</div>
 					)}
 					{showStepbar && (
-						<div
-							className={styles.stepbar}
-							role="presentation"
-							aria-label="Indicador de posición del carrusel">
+						<ol className={styles.stepbar}>
 							{carouselImages.map((_, index) => (
-								<div
+								<li
 									key={index}
-									aria-label={`Imagen ${index}`}
+									aria-label={`Imagen ${index + 1}`}
 									aria-current={
 										index === currentImageIndex ? "step" : undefined
 									}
 									className={`${styles.step} ${
 										index === currentImageIndex ? styles.active : ""
-									}`}></div>
+									}`}></li>
 							))}
-						</div>
+						</ol>
 					)}
 				</>
 			)}

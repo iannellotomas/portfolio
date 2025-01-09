@@ -75,6 +75,7 @@
 .stepbar {
   position: absolute;
   bottom: 25px;
+  list-style: none;
   left: 50%;
   transform: translateX(-50%);
   height: 30px;
