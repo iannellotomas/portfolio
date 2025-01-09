@@ -47,3 +47,15 @@
 .link.secondary:hover path {
   fill: var(--color-primary);
 }
+
+button.link path {
+  fill: none !important;
+}
+
+button.link path {
+  stroke: var(--text-muted)
+}
+
+button.link:hover path {
+  stroke: var(--color-primary)
+}

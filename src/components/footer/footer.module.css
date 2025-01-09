@@ -2,12 +2,19 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  gap: 40px;
   margin-top: 80px;
   padding: 20px;
   justify-content: space-between;
   border-top: 2px solid var(--color-neutral);
   line-height: 140%;
   color: var(--text-muted);
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer strong {
@@ -28,6 +35,13 @@
 
 
 /* MEDIA QUERIES */
+@media (width <= 850px) {
+  .footerLeft span {
+    max-width: 190px;
+    text-align: left;
+  }
+}
+
 @media (width <= 768px) {
   .footer {
     flex-direction: column-reverse;

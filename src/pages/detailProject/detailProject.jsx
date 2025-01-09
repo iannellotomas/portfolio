@@ -6,6 +6,7 @@ import { formatDate } from "../../utils/formatDate";
 import { formatText } from "../../utils/formatText";
 import { dataInstitutions } from "../../data/dataInstitutions";
 import { dataCategories } from "../../data/dataCategories";
+import { handleShare } from "../../utils/share";
 import Chip from "../../components/chip/chip";
 import Footer from "../../components/footer/footer";
 import LazyImage from "../../components/lazyImage/LazyImage";
@@ -106,26 +107,6 @@ const DetailProject = () => {
 
 	const toggleOptions = () => {
 		setIsOptionsOpen((prev) => !prev);
-	};
-
-	const handleShare = async () => {
-		const url = window.location.href;
-		const urlWithoutHash = url.split("#")[0];
-		
-		if (navigator.share) {
-			// Llamar a la Web Share API si está disponible
-			try {
-				await navigator.share({ url: urlWithoutHash });
-				console.log("Contenido compartido exitosamente");
-			} catch (error) {
-				console.error("Error al compartir:", error);
-			}
-		} else {
-			// Sino copiar al portapapeles
-			navigator.clipboard.writeText(urlWithoutHash);
-			setIsSnackbarVisible(true);
-			console.log("El enlace se ha copiado al portapapeles");
-		}
 	};
 
 	const handleCloseSnackbar = () => {
