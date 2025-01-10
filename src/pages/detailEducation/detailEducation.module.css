@@ -94,13 +94,6 @@
   display: none;
 }
 
-.caption {
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 16px;
-  color: var(--text-muted);
-}
-
 
 /* MAIN */
 .main {
@@ -244,7 +237,7 @@
 .outstanding {
   font-weight: var(--paragraph-weight);
   color: var(--text-outstanding);
-  background: linear-gradient(to right, var(--surface-outstanding) 0%, var(--border-outstanding) 50%, var(--surface-outstanding) 100%);
+  background: linear-gradient(to right, transparent 0%, var(--border-outstanding) 50%, transparent 100%);
 }
 
 .hours,
@@ -329,7 +322,7 @@
     order: 3;
   }
 
-  .mainTop .caption {
+  .mainTop .col > span {
     display: none;
   }
 

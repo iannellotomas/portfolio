@@ -1,0 +1,5 @@
+.h3 {
+  color: var(--text-primary);
+  font-size: clamp(24px, calc(1rem + 1vw), 28px);
+  font-weight: var(--title-weight);
+}

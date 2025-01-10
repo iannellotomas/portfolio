@@ -101,9 +101,9 @@ function Feedback({ project, openFeedback, setOpenFeedback }) {
 				{project.images[0]}
 				<span>
 					<h3>{project.title}</h3>
-					<h5 className={styles.caption}>
+					<span className={styles.caption}>
 						Proyecto • {formatDate(project.publishedDate)}
-					</h5>
+					</span>
 				</span>
 			</div>
 			<main className={`${styles.main} ${isSubmit ? styles.submit : ""}`}>

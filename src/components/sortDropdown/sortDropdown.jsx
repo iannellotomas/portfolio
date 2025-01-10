@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./sortDropdown.module.css";
+import CaptionText from "../captionText/captionText";
 
 export default function SortDropdown({ options, onSelectOption }) {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -72,7 +73,7 @@ export default function SortDropdown({ options, onSelectOption }) {
 
 			{/* Opciones del Dropdown */}
 			<main className={styles.dropdownList}>
-				<span>Ordenar por</span>
+				<CaptionText text="Ordenar por" size="small" />
 				<form className={styles.containerOptions}>
 					{options.map((option, index) => (
 						<label

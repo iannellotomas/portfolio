@@ -7,6 +7,7 @@ import Checkbox from "../../../../components/checkbox/checkbox";
 import ListEducation from "../../../../components/listEducation/ListEducation";
 import SortDropdown from "../../../../components/sortDropdown/sortDropdown";
 import SegmentedControls from "../../../../components/segmentedControls/segmentedControls";
+import CaptionText from "../../../../components/captionText/captionText";
 
 const viewModeOptions = {
 	1: {
@@ -135,10 +136,10 @@ export default function Education() {
 				}`}>
 				<AnimatePresence>
 					<header>
-						<span>Carrera / Curso</span>
-						<span>Institución</span>
-						<span>Habilidades</span>
-						<span>Fecha</span>
+						<CaptionText text="Carrera / Curso"/>
+						<CaptionText text="Institución"/>
+						<CaptionText text="Habilidades"/>
+						<CaptionText text="Fecha"/>
 					</header>
 					{sortedListsEducation
 						.filter((education) => {

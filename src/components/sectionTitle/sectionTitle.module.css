@@ -1,0 +1,4 @@
+.h2 {
+  color: var(--text-primary);
+  font-size: clamp(32px, calc(2vw + 2rem), 55px);
+}

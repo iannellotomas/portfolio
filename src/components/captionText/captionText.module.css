@@ -1,0 +1,10 @@
+.caption {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.caption.small {
+  font-size: 14px;
+}

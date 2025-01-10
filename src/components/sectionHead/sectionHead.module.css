@@ -21,11 +21,6 @@
   gap: 5px;
 }
 
-.title {
-  color: var(--text-primary);
-  font-size: calc(2vw + 1.75rem);
-}
-
 .description {
   max-width: 800px;
 }

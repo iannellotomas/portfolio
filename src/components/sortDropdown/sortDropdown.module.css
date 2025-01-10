@@ -74,7 +74,7 @@
 .dropdownList {
   display: flex;
   width: 100%;
-  top: 25px;
+  top: 0;
   opacity: 0;
   pointer-events: none;
   z-index: 5;
@@ -97,11 +97,7 @@
 }
 
 .dropdownList>span {
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 14px;
   padding-left: 15px;
-  color: var(--text-muted);
 }
 
 .dropdownList .containerOptions {

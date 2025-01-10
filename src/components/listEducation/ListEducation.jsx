@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { dataInstitutions } from "../../data/dataInstitutions";
 import { formatDate } from "../../utils/formatDate";
 import Chip from "../../components/chip/chip";
+import CardTitle from "../cardTitle/cardTitle";
 
 export default function ListEducation({ education, index, viewMode }) {
 	const institution = dataInstitutions[education.institution];
-	const containerClass =
-		viewMode === 1 ? styles.listItem : styles.gridItem;
+	const containerClass = viewMode === 1 ? styles.listItem : styles.gridItem;
 
 	return (
 		<Link
@@ -18,7 +18,7 @@ export default function ListEducation({ education, index, viewMode }) {
 					className={`${styles.title} ${
 						education.endDate === "" ? styles.progress : ""
 					}`}>
-					<h3>{education.title}</h3>
+					<CardTitle text={education.title} />
 					<svg
 						width="20"
 						height="19"

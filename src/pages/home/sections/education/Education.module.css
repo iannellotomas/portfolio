@@ -15,9 +15,6 @@
     gap: 40px;
     padding: 0 40px 0 20px;
     padding-inline: 20px 40px;
-    text-transform: uppercase;
-    font-weight: 300;
-    color: var(--text-muted);
 
     span:nth-child(1) {
       margin-left: 20px;

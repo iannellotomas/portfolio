@@ -42,7 +42,8 @@ body.light-mode {
   /* OUTSTANDING */
   --surface-outstanding: #FAFF00;
   --surface-icon-outstanding: #D9DD04;
-  --text-outstanding: #1D1D1D;
+  --border-outstanding: #868902;
+  --text-outstanding: var(--text-primary);
   /* SHADOWS */
   --smooth-shadow: 0 4px 30px 10px #a1a5ce47;
   --strong-shadow: 0 4px 5px rgba(0, 0, 0, .25);
@@ -85,6 +86,8 @@ body.dark-mode {
   /* OUTSTANDING */
   --surface-outstanding: var(--surface-primary);
   --surface-icon-outstanding: #2F330D;
+  --border-outstanding: #FAFF00;
+
   --text-outstanding: #FAFF00;
   /* SHADOWS */
   --smooth-shadow: 0 4px 30px 10px #272a4872;

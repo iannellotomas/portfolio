@@ -34,18 +34,6 @@
   gap: 5px;
 }
 
-.header .caption {
-  display: flex;
-  gap: 5px;
-}
-
-.caption {
-  text-transform: uppercase;
-  font-weight: 400;
-  color: var(--text-muted);
-  font-size: 16px;
-}
-
 .cta {
   position: relative;
   display: flex;
@@ -487,7 +475,7 @@
   border-color: var(--color-primary);
 }
 
-.coverAside {
+.coverAside, .indexList > span {
   display: none;
 }
 
@@ -509,7 +497,7 @@
     display: none;
   }
 
-  .heroBottom .caption {
+  .heroBottom .col > span {
     display: none;
   }
 
@@ -577,7 +565,7 @@
     transition: clip-path var(--dynamic-fast-transition);
   }
 
-  .indexList h4 {
+  .indexList > span {
     display: block;
     margin: 0 0 -5px -20px;
   }

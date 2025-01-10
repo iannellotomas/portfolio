@@ -1,13 +1,12 @@
 import styles from "./sectionHead.module.css";
+import SectionTitle from "../sectionTitle/sectionTitle";
 
-export default function sectionHead({ title, description }) {
+export default function SectionHead({ title, description }) {
 	return (
 		<header className={styles.header}>
-			<div className={styles.icon}>
-			
-			</div>
+			<span className={styles.icon}></span>
 			<span>
-				<h2 className={styles.title}>{title}</h2>
+				<SectionTitle text={title} />
 				<p className={styles.description}>{description}</p>
 			</span>
 		</header>

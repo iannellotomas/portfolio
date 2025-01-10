@@ -11,6 +11,7 @@ import transition from "../pageTransition";
 import LazyImage from "../../components/lazyImage/LazyImage";
 import PDFViewer from "../../components/PDFViewer/PDFViewer";
 import BackButton from "../../components/backButton/backButton";
+import CaptionText from "../../components/captionText/captionText";
 
 const DetailEducation = () => {
 	const { id } = useParams();
@@ -31,10 +32,11 @@ const DetailEducation = () => {
 				<span>
 					<BackButton />
 					<div className={styles.title}>
-						<h3 className={styles.caption}>
-							{formatDate(education.startDate)} -{" "}
-							{formatDate(education.endDate)}
-						</h3>
+						<CaptionText
+							text={`${formatDate(education.startDate)} - ${formatDate(
+								education.endDate
+							)}`}
+						/>
 						<h1>{education.title}</h1>
 					</div>
 				</span>
@@ -76,7 +78,7 @@ const DetailEducation = () => {
 			<main className={styles.main}>
 				<div className={styles.mainTop}>
 					<div className={styles.col}>
-						<span className={styles.caption}>Institución</span>
+						<CaptionText text="Institución" />
 						<a
 							href={institution.link}
 							className={styles.institution}
@@ -88,7 +90,7 @@ const DetailEducation = () => {
 						</a>
 					</div>
 					<div className={styles.col}>
-						<span className={styles.caption}>Descripción</span>
+						<CaptionText text="Descripción" />
 						<p
 							dangerouslySetInnerHTML={{
 								__html: formatText(education.description),
@@ -96,7 +98,7 @@ const DetailEducation = () => {
 						/>
 					</div>
 					<div className={styles.col}>
-						<span className={styles.caption}>Habilidades</span>
+						<CaptionText text="Habilidades" />
 						<div className={styles.tags}>
 							{education.skills.map((skill, index) => (
 								<Chip

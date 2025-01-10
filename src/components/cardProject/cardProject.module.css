@@ -123,7 +123,7 @@ a {
 .cardFooter>span {
   display: flex;
   width: 100%;
-  gap: 10px;
+  gap: 7px;
   flex-direction: column;
 }
 
@@ -134,9 +134,6 @@ a {
 }
 
 .cardFooter h3 {
-  font-size: calc(1rem + 1vw);
-  color: var(--text-primary);
-  font-weight: var(--title-weight);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -174,6 +171,7 @@ a {
 
   .cardFooter {
     width: 70%;
+    max-width: 250px;
     height: 100%;
     align-items: start;
     padding-top: 30px;
@@ -223,9 +221,5 @@ a {
 
   .cardFooter>span {
     gap: 5px;
-  }
-
-  .cardFooter h3 {
-    font-size: 24px;
   }
 }

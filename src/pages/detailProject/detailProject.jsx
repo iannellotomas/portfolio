@@ -17,6 +17,7 @@ import styles from "./detailProject.module.css";
 import Feedback from "../../components/feedback/feedback";
 import Tooltip from "../../components/tooltip/tooltip";
 import BackButton from "../../components/backButton/backButton";
+import CaptionText from "../../components/captionText/captionText";
 
 const DetailProject = () => {
 	const { url } = useParams();
@@ -125,15 +126,12 @@ const DetailProject = () => {
 				<div className={styles.info}>
 					<BackButton />
 					<span>
-						<h3 className={styles.caption}>
-							Proyecto&nbsp;
-							{project.categories.map((category, index) => (
-								<React.Fragment key={index}>
-									{dataCategories[category].title}
-								</React.Fragment>
-							))}
-							&nbsp;• {formatDate(project.publishedDate)}
-						</h3>
+						<CaptionText
+							text={`Proyecto ${project.categories
+								.map((category) => dataCategories[category].title)
+								.join(", ")} • ${formatDate(project.publishedDate)}`}
+						/>
+						<h3 className={styles.caption}></h3>
 						<h1>{project.title}</h1>
 					</span>
 				</div>
@@ -233,7 +231,7 @@ const DetailProject = () => {
 				</div>
 				<div className={styles.heroBottom}>
 					<div className={styles.col}>
-						<span className={styles.caption}>Realizado para</span>
+						<CaptionText text="Realizado para" />
 						<a
 							href={institution.link}
 							className={styles.institution}
@@ -245,7 +243,7 @@ const DetailProject = () => {
 						</a>
 					</div>
 					<div className={styles.col}>
-						<span className={styles.caption}>¿De qué se trata?</span>
+						<CaptionText text="¿De qué se trata?" />
 						<p
 							dangerouslySetInnerHTML={{
 								__html: formatText(project.description),
@@ -253,7 +251,7 @@ const DetailProject = () => {
 						/>
 					</div>
 					<div className={styles.col}>
-						<span className={styles.caption}>Enfoque</span>
+						<CaptionText text="Enfoque" />
 						<div className={styles.tags}>
 							{project.tags.map((skill, index) => (
 								<Chip
@@ -269,7 +267,7 @@ const DetailProject = () => {
 			<main className={`${styles.main} ${openIndex ? styles.showIndex : ""}`}>
 				<aside className={styles.aside}>
 					<header className={styles.asideHeader}>
-						<h4 className={styles.caption}>Índice</h4>
+						<CaptionText text="Índice" />
 						<button
 							className={styles.closeIndex}
 							title="Ocultar índice"
@@ -290,7 +288,7 @@ const DetailProject = () => {
 						</button>
 					</header>
 					<main className={styles.indexList}>
-						<h4 className={styles.caption}>Índice</h4>
+						<CaptionText text="Índice" />
 						{indexes.map((item, index) => (
 							<button
 								key={item.id}
