@@ -90,15 +90,14 @@
 }
 
 .header h1 {
-  /* font-size: 80px; */
-  font-size: calc(3rem + 2.5vw);
+  font-size: clamp(2rem, calc(3rem + 2.5vw), 85px);
   line-height: 110%;
   color: var(--text-primary);
 }
 
 .header h2 {
   text-transform: uppercase;
-  font-size: calc(1.5rem + 2vw);
+  font-size: clamp(45px, calc(1.5rem + 2vw), 52px);
   font-weight: 400;
   line-height: 110%;
   background: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary-dark) 25%, var(--color-primary-dark) 75%, var(--color-primary) 100%);

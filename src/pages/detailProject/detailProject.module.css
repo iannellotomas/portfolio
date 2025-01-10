@@ -24,7 +24,7 @@
 }
 
 .header h1 {
-  font-size: calc(2vw + 2rem);
+  font-size: clamp(36px, calc(2vw + 2rem), 56px);
   line-height: 100%;
   color: var(--text-primary);
 }
@@ -475,7 +475,8 @@
   border-color: var(--color-primary);
 }
 
-.coverAside, .indexList > span {
+.coverAside,
+.indexList>span {
   display: none;
 }
 
@@ -497,7 +498,7 @@
     display: none;
   }
 
-  .heroBottom .col > span {
+  .heroBottom .col>span {
     display: none;
   }
 
@@ -565,7 +566,7 @@
     transition: clip-path var(--dynamic-fast-transition);
   }
 
-  .indexList > span {
+  .indexList>span {
     display: block;
     margin: 0 0 -5px -20px;
   }

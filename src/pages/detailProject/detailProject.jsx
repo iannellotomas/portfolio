@@ -268,24 +268,27 @@ const DetailProject = () => {
 				<aside className={styles.aside}>
 					<header className={styles.asideHeader}>
 						<CaptionText text="Índice" />
-						<button
-							className={styles.closeIndex}
-							title="Ocultar índice"
-							onClick={() => setOpenIndex(0)}>
-							<svg
-								width="14"
-								height="14"
-								viewBox="0 0 14 14"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M13 1L1 13M1 1L13 13"
-									stroke="white"
-									strokeWidth="1.5"
-									strokeLinecap="round"
-								/>
-							</svg>
-						</button>
+						<Tooltip
+							text="Ocultar"
+							size="minimal">
+							<button
+								className={styles.closeIndex}
+								onClick={() => setOpenIndex(0)}>
+								<svg
+									width="14"
+									height="14"
+									viewBox="0 0 14 14"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M13 1L1 13M1 1L13 13"
+										stroke="white"
+										strokeWidth="1.5"
+										strokeLinecap="round"
+									/>
+								</svg>
+							</button>
+						</Tooltip>
 					</header>
 					<main className={styles.indexList}>
 						<CaptionText text="Índice" />

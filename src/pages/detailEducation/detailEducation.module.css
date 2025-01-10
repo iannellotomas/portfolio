@@ -53,7 +53,7 @@
 }
 
 .header h1 {
-  font-size: calc(2rem + 1.5vw);
+  font-size: clamp(36px, calc(2vw + 2rem), 56px);
   line-height: 100%;
   color: var(--text-primary);
   max-width: calc(100% - 50px);

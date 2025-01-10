@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
-import LazyImage from "../lazyImage/LazyImage";
 import styles from "./carousel.module.css";
+import LazyImage from "../lazyImage/LazyImage";
+import Tooltip from "../tooltip/tooltip";
 
 export default function Carousel({
 	carouselImages,
@@ -89,60 +90,68 @@ export default function Carousel({
 				<>
 					{showControls && (
 						<div className={styles.carouselControl}>
-							<button
-								className={styles.carouselButtonPrev}
-								onClick={(e) => {
-									e.stopPropagation(); // Detiene la propagación del evento
-									e.preventDefault(); // Evita que el evento haga clic en el <Link>
-									setCurrentImageIndex(
-										(prevIndex) =>
-											(prevIndex - 1 + carouselImages.length) %
-											carouselImages.length
-									);
-								}}
-								title="Ver anterior imagen"
-								aria-label="Ver anterior imagen">
-								<svg
-									width="10"
-									height="19"
-									viewBox="0 0 10 19"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M8.42858 1.17993L1.57144 9.17993L8.42858 17.1799"
-										stroke="#1D1D1D"
-										strokeWidth="2"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-									/>
-								</svg>
-							</button>
-							<button
-								className={styles.carouselButtonNext}
-								onClick={(e) => {
-									e.stopPropagation(); // Detiene la propagación del evento
-									e.preventDefault(); // Evita que el evento haga clic en el <Link>
-									setCurrentImageIndex(
-										(prevIndex) => (prevIndex + 1) % carouselImages.length
-									);
-								}}
-								title="Ver siguiente imagen"
-								aria-label="Ver siguiente imagen">
-								<svg
-									width="10"
-									height="19"
-									viewBox="0 0 10 19"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M1.57142 1.17993L8.42856 9.17993L1.57142 17.1799"
-										stroke="#1D1D1D"
-										strokeWidth="2"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-									/>
-								</svg>
-							</button>
+							<Tooltip
+								anchorSide="top"
+								text="Anterior"
+								size="minimal">
+								<button
+									className={styles.carouselButtonPrev}
+									onClick={(e) => {
+										e.stopPropagation(); // Detiene la propagación del evento
+										e.preventDefault(); // Evita que el evento haga clic en el <Link>
+										setCurrentImageIndex(
+											(prevIndex) =>
+												(prevIndex - 1 + carouselImages.length) %
+												carouselImages.length
+										);
+									}}
+									aria-label="Ver anterior imagen">
+									<svg
+										width="10"
+										height="19"
+										viewBox="0 0 10 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M8.42858 1.17993L1.57144 9.17993L8.42858 17.1799"
+											stroke="#1D1D1D"
+											strokeWidth="2"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+										/>
+									</svg>
+								</button>
+							</Tooltip>
+							<Tooltip
+								text="Siguiente"
+								anchorSide="top"
+								size="minimal">
+								<button
+									className={styles.carouselButtonNext}
+									onClick={(e) => {
+										e.stopPropagation(); // Detiene la propagación del evento
+										e.preventDefault(); // Evita que el evento haga clic en el <Link>
+										setCurrentImageIndex(
+											(prevIndex) => (prevIndex + 1) % carouselImages.length
+										);
+									}}
+									aria-label="Ver siguiente imagen">
+									<svg
+										width="10"
+										height="19"
+										viewBox="0 0 10 19"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M1.57142 1.17993L8.42856 9.17993L1.57142 17.1799"
+											stroke="#1D1D1D"
+											strokeWidth="2"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+										/>
+									</svg>
+								</button>
+							</Tooltip>
 						</div>
 					)}
 					{showStepbar && (
