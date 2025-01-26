@@ -17,6 +17,7 @@
   align-items: center;
   padding: 20px 40px 20px 20px;
   border-bottom: 2px solid var(--color-neutral);
+  transition: var(--dynamic-fast-transition);
 }
 
 .title {

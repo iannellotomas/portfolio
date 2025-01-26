@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./segmentedControls.module.css";
+import Tooltip from "../tooltip/tooltip";
 
 export default function SegmentedControls({
 	size = "large",
@@ -44,6 +45,17 @@ export default function SegmentedControls({
 		}
 	}, [selectedControl, size, formattedControls]);
 
+	const wrapWithTooltip = (content, title) =>
+		size == "small" ? (
+			<Tooltip
+				text={title}
+				size="minimal">
+				{content}
+			</Tooltip>
+		) : (
+			content
+		);
+
 	return (
 		<div
 			ref={containerRef}
@@ -54,39 +66,41 @@ export default function SegmentedControls({
 				className={styles.highlight}></div>
 			{formattedControls.map((control) => (
 				<React.Fragment key={control.id}>
-					<label
-						className={`${styles.label} ${
-							selectedControl === control.id ? styles.active : ""
-						}`}
-						title={size == "small" ? control.title : ""}>
-						<input
-							type="radio"
-							name="filter"
-							value={control.id}
-							checked={selectedControl === control.id}
-							onChange={handleRadioChange}
-						/>
-						{control.svg ? control.svg : null}
-						{size == "large" && <span>{control.title}</span>}
-
-						<span
-							className={`${styles.check} ${
-								selectedControl === control.id ? styles.checked : ""
+					{wrapWithTooltip(
+						<label
+							className={`${styles.label} ${
+								selectedControl === control.id ? styles.active : ""
 							}`}>
-							<svg
-								viewBox="0 0 52 52"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M10 26L20 36L42 14"
-									stroke="#007bff"
-									strokeWidth="4"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								/>
-							</svg>
-						</span>
-					</label>
+							<input
+								type="radio"
+								name="filter"
+								value={control.id}
+								checked={selectedControl === control.id}
+								onChange={handleRadioChange}
+							/>
+							{control.svg ? control.svg : null}
+							{size == "large" && <span>{control.title}</span>}
+
+							<span
+								className={`${styles.check} ${
+									selectedControl === control.id ? styles.checked : ""
+								}`}>
+								<svg
+									viewBox="0 0 52 52"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M10 26L20 36L42 14"
+										stroke="#007bff"
+										strokeWidth="4"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+									/>
+								</svg>
+							</span>
+						</label>,
+						control.title
+					)}
 					{(size == "large") & (control.id !== formattedControls.length) ? (
 						<span className={styles.line}></span>
 					) : null}

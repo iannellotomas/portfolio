@@ -16,11 +16,15 @@ input[type="radio"] {
   height: 56px;
 }
 
+.filters > div:not(.highlight) {
+  height: 100%;
+}
+
 .label {
   position: relative;
   display: flex;
   align-items: center;
-  height: calc(100% + 4px);
+  height: 100%;
   padding: 0 20px;
   font-weight: var(--label-weight);
   gap: 10px;

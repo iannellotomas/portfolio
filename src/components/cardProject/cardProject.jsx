@@ -31,7 +31,7 @@ export default function CardProject({ project }) {
 							</span>
 						))}
 					</div>
-					<Carousel carouselImages={project.images} />
+					<Carousel carouselImages={project.images} motionId={project.url} />
 					<div className={styles.cardFooter}>
 						<span>
 							<span>

@@ -16,6 +16,10 @@
   background: var(--hover-primary-light);
 }
 
+.link:active {
+  transform: scale(.9);
+}
+
 .link svg {
   width: 24px;
 }

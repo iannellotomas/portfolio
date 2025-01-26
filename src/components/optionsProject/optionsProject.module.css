@@ -1,11 +1,11 @@
 .optionsContainer {
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% + 5px);
   right: 0;
   width: 300px;
   padding: 10px;
   border-radius: 20px;
-  background: var(--surface-primary-transparent-2);
+  background: var(--surface-primary-transparent);
   backdrop-filter: blur(20px);
   border: 2px solid var(--text-primary-transparent);
   display: flex;
@@ -21,7 +21,7 @@
   opacity: 1;
   pointer-events: all;
   clip-path: inset(0 0 0 0);
-  transition: clip-path var(--dynamic-fast-transition);
+  transition: clip-path var(--dynamic-medium-transition);
 }
 
 .optionsContainer .line {
@@ -102,6 +102,7 @@
   .optionsContainer {
     width: calc(100vw - 8vw);
     max-width: 400px;
+    background: var(--surface-primary-transparent-2);
     padding: 30px 10px 10px 10px;
     left: 50%;
     top: auto;

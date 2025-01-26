@@ -7,6 +7,7 @@ export default function Carousel({
 	carouselImages,
 	showControls = true,
 	showStepbar = true,
+	motionId,
 }) {
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const carouselRef = useRef(null);
@@ -82,6 +83,7 @@ export default function Carousel({
 							src={image.props.src}
 							alt={`${image.props.alt} ${index + 1}`}
 							style={{ width: "100%", height: "auto" }}
+							motionId={index == 0 && motionId}
 						/>
 					</div>
 				))}

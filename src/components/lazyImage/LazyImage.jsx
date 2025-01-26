@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./LazyImage.module.css";
 
-const LazyImage = ({ src, alt, ...props }) => {
+export default function LazyImage({ src, alt, motionId, ...props }) {
 	const [isVisible, setIsVisible] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const imgRef = useRef(null);
@@ -43,10 +43,12 @@ const LazyImage = ({ src, alt, ...props }) => {
 				{...props}
 				className={styles.image}
 				onLoad={handleLoad}
-				style={{ opacity: isLoaded ? 1 : 0 }}
+				style={{
+					viewTransitionName: motionId && motionId,
+					opacity: isLoaded ? 1 : 0,
+				}}
+				viewTransitionName={motionId}
 			/>
 		</div>
 	);
-};
-
-export default LazyImage;
+}

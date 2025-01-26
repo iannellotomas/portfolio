@@ -2,7 +2,6 @@ import Mostaza1 from "../assets/Projects/Mostaza1.jpg";
 import Mostaza2 from "../assets/Projects/Mostaza2.jpg";
 import Mostaza3 from "../assets/Projects/Mostaza3.jpg";
 import Mostaza4 from "../assets/Projects/Mostaza4.jpg";
-import MostazaHero from "../assets/Projects/MostazaHero.png";
 import MostazaSheet1 from "../assets/Projects/MostazaSheet1.jpg";
 import MostazaSheet2 from "../assets/Projects/MostazaSheet2.jpg";
 import MostazaSheet3 from "../assets/Projects/MostazaSheet3.jpg";
@@ -18,7 +17,6 @@ import Amazon2 from "../assets/Projects/Amazon2.jpg";
 import Amazon3 from "../assets/Projects/Amazon3.jpg";
 import Amazon4 from "../assets/Projects/Amazon4.jpg";
 import Amazon5 from "../assets/Projects/Amazon5.jpg";
-import AmazonHero from "../assets/Projects/AmazonHero.png";
 import AmazonSheet1 from "../assets/Projects/AmazonSheet1.jpg";
 import AmazonSheet2 from "../assets/Projects/AmazonSheet2.jpg";
 import AmazonSheet3 from "../assets/Projects/AmazonSheet3.jpg";
@@ -94,14 +92,7 @@ export const dataProjects = [
 		id: 1,
 		title: "Mostaza",
 		categories: [1],
-		url: "mostaza-app",
-		hero: (
-			<img
-				src={MostazaHero}
-				alt="Mockup protagonista del proyecto de Mostaza"
-				loading="eager"
-			/>
-		),
+		url: "mostaza",
 		images: [
 			<img
 				src={Mostaza1}
@@ -132,7 +123,6 @@ export const dataProjects = [
 			"Se aborda la **baja tasa de pedidos** en la app de Mostaza, analizando factores influyentes y buscando soluciones efectivas para mejorar la experiencia del usuario. El objetivo es identificar necesidades y puntos de dolor para **diseñar estrategias que impulsen el compromiso y la fidelización** de los nuevos usuarios.",
 		shortDescription:
 			"Plan de investigación para aumentar la tasa de pedidos y de fidelización de nuevos usuarios.",
-		institution: 2,
 		links: [
 			{
 				type: "figma",
@@ -198,13 +188,6 @@ export const dataProjects = [
 		title: "Amazon",
 		categories: [1],
 		url: "amazon",
-		hero: (
-			<img
-				src={AmazonHero}
-				alt="Mockup protagonista del proyecto de Amazon"
-				loading="eager"
-			/>
-		),
 		images: [
 			<img
 				src={Amazon1}
@@ -232,7 +215,6 @@ export const dataProjects = [
 			"Una reimaginación completa de la experiencia y el diseño visual de esta famosa plataforma de ecommerce. Desde una profunda investigación y análisis hasta el diseño de un Design System, **se logra un experiencia de búsqueda y compra de productos mucho más eficiente**. Con fases que incluyen investigación exhaustiva, desarrollo de arquitecturas claras, con mejor navegación y accesibilidad, ofreciendo una experiencia envolvente y estéticamente agradable para **millones de usuarios en todo el mundo**.",
 		shortDescription:
 			"Una reinvención de la experiencia y diseño visual, eficientizando la búsqueda y compra de productos.",
-		institution: 2,
 		links: [
 			{
 				type: "figma",
@@ -350,7 +332,6 @@ export const dataProjects = [
 			"Te doy la bienvenida a SkillSwap, la app móvil de aprendizaje en línea que **conecta a estudiantes de todo el mundo** en un ambiente colaborativo y enriquecedor. Esta app tiene como objetivo revolucionar la forma en que las personas **adquieren conocimientos y comparten experiencias de aprendizaje**.",
 		shortDescription:
 			"Busca revolucionar la forma en que aprendemos y compartimos experiencias de aprendizaje.",
-		institution: 2,
 		links: [
 			{
 				type: "figma",

@@ -23,7 +23,7 @@ body.light-mode {
   /* TEXT */
   --text-primary: #1D1D1D;
   --text-primary-transparent: rgba(0, 0, 0, 0.1);
-  --text-primary-transparent-2: var(--hover-primary-light);
+  --text-primary-transparent-2: rgba(0, 0, 0, 0.2);
   --text-primary-transparent-3: #0e176d4f;
   --text-secondary: #464646;
   --text-alternative: #FFF;
@@ -165,7 +165,8 @@ textarea {
 }
 
 button:active {
-  transform: scale(1.1);
+  transform: scale(.9);
+  transition: transform var(--dynamic-fast-transition);
 }
 
 input,

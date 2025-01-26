@@ -169,6 +169,10 @@
   border-color: var(--color-primary);
 }
 
+.cta>a:active {
+  transform: scale(.9);
+}
+
 .cta .social {
   display: flex;
   align-items: center;
