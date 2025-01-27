@@ -16,6 +16,7 @@ import Tooltip from "../../components/tooltip/tooltip";
 import BackButton from "../../components/backButton/backButton";
 import CaptionText from "../../components/captionText/captionText";
 import Accordion from "../../components/accordion/accordion";
+import Carousel from "../../components/carousel/carousel";
 
 export default function DetailProject() {
 	const { url } = useParams();
@@ -173,23 +174,13 @@ export default function DetailProject() {
 			</nav>
 			<header className={styles.header}>
 				<div className={styles.headerLeft}>
-					<img
-						src={project.images[0].props.src}
-						style={{
-							viewTransitionName: `project-image-${project.url}`,
-							transform: "scale(1)",
-							transition: "transform 0.5s ease",
-						}}
+					<Carousel
+						carouselImages={project.images}
+						isHero={true}
+						showControls={false}
+						showStepbar={false}
+						showThumbnail={true}
 					/>
-					<div className={styles.thumbnail}>
-						{project.images.map((item, index) => (
-							<button
-								key={index}
-								className={styles.thumbnailItem}>
-								{item}
-							</button>
-						))}
-					</div>
 				</div>
 				<div className={styles.headerRight}>
 					<div

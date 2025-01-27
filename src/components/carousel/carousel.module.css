@@ -7,6 +7,11 @@
   background: var(--surface-primary);
 }
 
+.carousel.hero {
+  height: clamp(400px, 60vh, 450px);
+  outline: 2px solid var(--text-primary-transparent);
+}
+
 .carouselTrack {
   height: 100%;
   display: flex;
@@ -30,6 +35,8 @@
   transform: scale(1.06);
 }
 
+
+/* ARROW CONTROLS */
 .carouselControl {
   display: flex;
   gap: 5px;
@@ -77,6 +84,8 @@
   stroke-width: 1.5px;
 }
 
+
+/* STEPBAR */
 .stepbar {
   position: absolute;
   bottom: 25px;
@@ -109,10 +118,112 @@
 }
 
 
+/* THUMBNAIL */
+.thumbnail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.thumbnail.overflow {
+  justify-content: start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+}
+
+.thumbnail.overflow::before {
+  display: block;
+}
+
+.thumbnailItem {
+  position: relative;
+  min-width: 100px;
+  max-width: 100px;
+  height: 80px;
+  padding: 10px;
+  border: 2px solid var(--text-primary-transparent);
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.thumbnailItem::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: var(--color-primary);
+  filter: blur(25px);
+  z-index: -1;
+  transform: scale(0);
+  transition: var(--dynamic-medium-transition);
+}
+
+.thumbnail.overflow .thumbnailItem::before {
+  width: 35px;
+  height: 35px;
+  filter: blur(15px);
+}
+
+.thumbnailItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.polygon {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  transition: var(--dynamic-medium-transition);
+}
+
+.thumbnail.overflow .polygon,
+.thumbnail.overflow .frameThumbnail {
+  display: none;
+}
+
+.thumbnailItem.active {
+  pointer-events: none;
+}
+
+.thumbnail.overflow .thumbnailItem.active {
+  border: 3px solid var(--color-primary);
+}
+
+.thumbnailItem.active::before {
+  transform: scale(1);
+}
+
+.frameThumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 80px;
+  border: 3px solid var(--color-primary);
+  border-radius: 20px;
+  transition: var(--dynamic-fast-transition);
+}
+
+
 /* MEDIA QUERIES */
 @media (width <=1100px) {
   .carousel {
     height: clamp(300px, 50vh, 400px);
+  }
+}
+
+@media (width <=1024px) {
+  .thumbnail {
+    scrollbar-width: none;
   }
 }
 

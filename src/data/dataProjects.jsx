@@ -800,9 +800,19 @@ export const dataProjects = [
 		],
 		tags: ["Daily UI", "Mobile", "Mockup"],
 		description:
-			"Es una app de calculadora para teléfonos que ofrece una experiencia de usuario optimizada mediante una vista principal para realizar cálculos básicos y una funcionalidad adicional para convertir unidades. La interfaz está diseñada para ser intuitiva y fácil de usar, permitiendo a los usuarios realizar operaciones matemáticas simples y convertir entre diferentes unidades de medida de manera eficiente.",
+			"Se trata de una app de calculadora que ofrece una experiencia optimizada mediante una **vista principal para realizar cálculos básicos** y una funcionalidad adicional para convertir unidades. La interfaz está diseñada para ser intuitiva y fácil de usar, **permitiendo a los usuarios realizar operaciones matemáticas rápidamente y convertir entre diferentes unidades de medida** de manera eficiente.",
 		shortDescription:
 			"App de calculadora con funciones básicas de cálculo y un conversor de unidades.",
+		links: [
+			{
+				type: "figma",
+				url: "https://www.figma.com/design/8uwWrBlTqXgSbnFzA9HpEZ/DailyUI?node-id=0-1&t=bMUBnkFiArNIpafJ-1",
+			},
+			{
+				type: "dribbble",
+				url: "https://dribbble.com/shots/22606614-Daily-UI-004-Calculation-Design",
+			},
+		],
 		publishedDate: "2023-09",
 	},
 ];
