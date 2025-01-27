@@ -9,7 +9,9 @@ import CardTitle from "../cardTitle/cardTitle";
 
 export default function CardProject({ project }) {
 	return (
-		<Link to={`/project/${project.url}`}>
+		<Link
+			to={`/project/${project.url}`}
+			state={{ transitionName: `project-image-${project.url}` }}>
 			<article className={styles.cardProject}>
 				{/* Imagen duplicada con blur al hover */}
 				<div className={styles.blurOverlay}>
@@ -31,7 +33,10 @@ export default function CardProject({ project }) {
 							</span>
 						))}
 					</div>
-					<Carousel carouselImages={project.images} motionId={project.url} />
+					<Carousel
+						carouselImages={project.images}
+						motionId={project.url}
+					/>
 					<div className={styles.cardFooter}>
 						<span>
 							<span>

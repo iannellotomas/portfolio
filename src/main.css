@@ -22,8 +22,8 @@ body.light-mode {
   --accent-skeleton: #8d8ead;
   /* TEXT */
   --text-primary: #1D1D1D;
-  --text-primary-transparent: rgba(0, 0, 0, 0.1);
-  --text-primary-transparent-2: rgba(0, 0, 0, 0.2);
+  --text-primary-transparent: rgba(29, 29, 29, 0.1);
+  --text-primary-transparent-2: rgba(29, 29, 29, 0.2);
   --text-primary-transparent-3: #0e176d4f;
   --text-secondary: #464646;
   --text-alternative: #FFF;
@@ -214,6 +214,27 @@ strong {
   transform-origin: top;
 }
 
+
+@keyframes scaleAndMove {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    transform: scale(1.2) translateX(50px);
+  }
+}
+
+/* Aplicar la animación a la imagen */
+::view-transition-old {
+  animation: scaleAndMove 0.5s ease-in-out forwards;
+}
+
+::view-transition-new {
+  animation: scaleAndMove 0.5s ease-in-out forwards;
+}
+
+
+/* MEDIA QUERIES */
 @media (width <=550px) {
   p {
     font-size: 14px;

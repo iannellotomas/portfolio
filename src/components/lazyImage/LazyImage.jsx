@@ -44,10 +44,9 @@ export default function LazyImage({ src, alt, motionId, ...props }) {
 				className={styles.image}
 				onLoad={handleLoad}
 				style={{
-					viewTransitionName: motionId && motionId,
 					opacity: isLoaded ? 1 : 0,
+					viewTransitionName: motionId && `project-image-${motionId}`,
 				}}
-				viewTransitionName={motionId}
 			/>
 		</div>
 	);

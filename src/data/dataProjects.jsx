@@ -63,6 +63,11 @@ import SharpFusion2 from "../assets/Projects/SharpFusion2.jpg";
 import SharpFusion3 from "../assets/Projects/SharpFusion3.jpg";
 import SharpFusion4 from "../assets/Projects/SharpFusion4.jpg";
 import SharpFusion5 from "../assets/Projects/SharpFusion5.jpg";
+import SharpFusionSheet1 from "../assets/Projects/SharpFusionSheet1.jpg";
+import SharpFusionSheet2 from "../assets/Projects/SharpFusionSheet2.jpg";
+import SharpFusionSheet3 from "../assets/Projects/SharpFusionSheet3.jpg";
+import SharpFusionSheet4 from "../assets/Projects/SharpFusionSheet4.jpg";
+import SharpFusionSheet5 from "../assets/Projects/SharpFusionSheet5.jpg";
 
 import Streaming1 from "../assets/Projects/Streaming1.jpg";
 import Streaming2 from "../assets/Projects/Streaming2.jpg";
@@ -114,6 +119,7 @@ export const dataProjects = [
 		tags: [
 			"Rediseño",
 			"App",
+			"Research",
 			"Comida rápida",
 			"Mobile",
 			"Doble diamante",
@@ -134,6 +140,11 @@ export const dataProjects = [
 			},
 		],
 		publishedDate: "2024-04",
+		details: [
+			"La app de Mostaza presentó una **caída en pedidos**, señalando una pérdida de usuarios debido a una experiencia deficiente, falta de incentivos y competencia con otras apps. El objetivo fue **analizar comportamientos, motivaciones y puntos de dolor** para optimizar la experiencia, **fidelizar clientes y fortalecer su posición en el mercado**.",
+			"Apliqué el enfoque del doble diamante, explorando en la primera fase los comportamientos y necesidades de los usuarios a través de **investigación cualitativa**. En la segunda fase, describimos los puntos de dolor y oportunidades clave **mediante el análisis de datos**. Luego, generamos soluciones enfocadas en prototipos interactivos, y finalmente, **evaluamos estas propuestas con pruebas de usabilidad**, asegurando una experiencia optimizada y alineada con las expectativas del usuario.",
+			"Gracias al estratégico plan de investigación, logré mejorar la usabilidad  en un 83%, **simplificando la arquitectura y la navegación** para adaptarla a las necesidades reales de los usuarios. Esto se tradujo en una reducción significativa del **tiempo al hacer un pedido** y un **aumento de la confianza** en la app. Además, descubrí la importancia de **personalizar la experiencia del usuario a través de incentivos, lo que resultó en una mayor fidelización.",
+		],
 		sheet: [
 			{
 				index: "Plan de investigación",
@@ -423,6 +434,16 @@ export const dataProjects = [
 			"A lo largo de 5 meses trabajando de manera híbrida en equipo, tuve la oportunidad de poner en práctica distintas áreas esenciales para llevar a cabo la creación de una landing page desde cero. Empezamos con el Diseño UX/UI, seguimos con el Desarrollo Frontend y aprendimos a gestionar el Hosting del sitio web. También logramos optimizar las búsquedas con técnicas de SEO y hacer más eficiente el rendimiento de la página en los diferentes dispositivos.",
 		shortDescription:
 			"Landing page adaptable y resolutiva para una empresa de envasado de productos.",
+		links: [
+			{
+				type: "website",
+				url: "https://ajakaenvases.com.ar/",
+			},
+			{
+				type: "code",
+				url: "https://github.com/iannellotomas/ajakaenvases",
+			},
+		],
 		publishedDate: "2023-12",
 	},
 	{
@@ -457,6 +478,20 @@ export const dataProjects = [
 			"Participé en un proyecto freelance para la consultora de negocios, colaborando estrechamente con un equipo de diseño y de desarrollo para la página web de la consultora. Mi rol incluyó la creación de una interfaz intuitiva y la optimización de la experiencia del usuario, reflejando la visión y profesionalismo, destacando la calidad y el compromiso del equipo.",
 		shortDescription:
 			"Landing atractiva y funcional que destaca la presencia en línea de una consultora de negocios.",
+		links: [
+			{
+				type: "website",
+				url: "https://emmanuelmansilla.vercel.app/",
+			},
+			{
+				type: "uxreport",
+				url: "https://docs.google.com/presentation/d/18wdIVddg95Awx5Jm_bFdjx8mZMASn4xAdP7IiM2SRH0/edit?usp=sharing",
+			},
+			{
+				type: "code",
+				url: "https://github.com/iannellotomas/consultora-negocios",
+			},
+		],
 		publishedDate: "2023-11",
 	},
 	{
@@ -491,7 +526,43 @@ export const dataProjects = [
 			"Diseñé un manual de marca para una barbería ficticia que combina lo clásico con lo moderno, usando colores oscuros y metálicos para una estética sofisticada. El logo y las tipografías reflejan elegancia y modernidad, abarcando una identidad visual y comunicación clara, dirigida a hombres jóvenes y adultos que buscan una experiencia de barbería única y de alta calidad.",
 		shortDescription:
 			"Identidad de marca para una barbería que combina técnicas tradicionales con estilos modernos.",
+		links: [
+			{
+				type: "figma",
+				url: "https://www.figma.com/design/Cx5372CNtcsc4AEOSw21v2/Sharp-Fusion---Proyecto-Final-Ps-%26-Ai---Tom%C3%A1s-Iannello?node-id=0-1&t=MDj2xMf6bS44yyaB-1",
+			},
+			{
+				type: "behance",
+				url: "https://www.behance.net/gallery/203418995/Sharp-Fusion-Photoshop-Illustrator",
+			},
+		],
 		publishedDate: "2024-07",
+		sheet: [
+			{
+				index: "Idea rectora",
+				src: SharpFusionSheet1,
+				alt: "Slide del proyecto de Sharp Fusion",
+			},
+			{
+				index: "Moodboard",
+				src: SharpFusionSheet2,
+				alt: "Slide del proyecto de Sharp Fusion",
+			},
+			{
+				index: "Logo",
+				src: SharpFusionSheet3,
+				alt: "Slide del proyecto de Sharp Fusion",
+			},
+			{
+				index: "Mockups",
+				src: SharpFusionSheet4,
+				alt: "Slide del proyecto de Sharp Fusion",
+			},
+			{
+				src: SharpFusionSheet5,
+				alt: "Slide del proyecto de Sharp Fusion",
+			},
+		],
 	},
 	{
 		id: 7,
@@ -514,9 +585,19 @@ export const dataProjects = [
 		],
 		tags: ["Daily UI", "Mobile", "Mockup"],
 		description:
-			"Descubre una nueva era en el entretenimiento con Pherb, la plataforma de streaming que transforma tu experiencia audiovisual. Con un enfoque en la comunidad y la interacción social, Pherb te permite ver películas antes de su estreno, conectarte con amigos para disfrutar juntos de tus series y películas favoritas, y unirte a salas de chat en vivo con otros cinéfilos. Vive una experiencia de entretenimiento única, solo en Pherb.",
+			"Descubre una nueva era en el entretenimiento con Pherb, la plataforma de streaming que **transforma tu experiencia audiovisual**. Con un enfoque en la **comunidad y la interacción social**, Pherb te permite ver películas antes de su estreno, conectarte con amigos para disfrutar juntos de tus series y películas favoritas, y unirte a salas de chat en vivo con otros cinéfilos.",
 		shortDescription:
 			"Streaming con una forma de entretenimiento innovadora y centrada en la interacción social.",
+		links: [
+			{
+				type: "figma",
+				url: "https://www.figma.com/design/8uwWrBlTqXgSbnFzA9HpEZ/DailyUI?node-id=0-1&t=bMUBnkFiArNIpafJ-1",
+			},
+			{
+				type: "dribbble",
+				url: "https://dribbble.com/shots/22733996-Daily-UI-048-Coming-Soon",
+			},
+		],
 		publishedDate: "2023-10",
 	},
 	{
@@ -539,6 +620,16 @@ export const dataProjects = [
 			"Diseñé una interfaz de usuario para una billetera digital que optimiza el proceso de checkout de tarjeta de crédito, proporcionando una experiencia de pago clara y fluida. El diseño se centra en la simplicidad y la eficiencia, asegurando que los usuarios puedan completar sus transacciones de manera rápida y sin fricciones, con una visualización intuitiva y moderna que mejora la usabilidad y la confianza en el proceso de pago.",
 		shortDescription:
 			"Checkout de tarjeta de crédito con una experiencia de pago clara para una billetera digital.",
+		links: [
+			{
+				type: "figma",
+				url: "https://www.figma.com/design/8uwWrBlTqXgSbnFzA9HpEZ/DailyUI?node-id=0-1&t=bMUBnkFiArNIpafJ-1",
+			},
+			{
+				type: "dribbble",
+				url: "https://dribbble.com/shots/22606264-Daily-UI-002-Credit-Card-Checkout",
+			},
+		],
 		publishedDate: "2023-09",
 	},
 	{
@@ -577,6 +668,7 @@ export const dataProjects = [
 			"Creé el frontend de una landing page para un restaurante ficticio, partiendo de un diseño en línea que me inspiró. El proyecto incluye la incorporación de nuevos logos, la adición de secciones personalizadas y la implementación de funcionalidades para enriquecer la experiencia del usuario. Utilizando HTML5, CSS3 y JavaScript, la página está optimizada para ofrecer una experiencia visualmente atractiva y completamente funcional, con un diseño receptivo que asegura una navegación fluida en todos los dispositivos.",
 		shortDescription:
 			"Landing page para un restaurante moderno y elegante, inspirándome en otros diseños.",
+
 		publishedDate: "2023-01",
 	},
 	{
@@ -596,9 +688,19 @@ export const dataProjects = [
 		],
 		tags: ["Daily UI", "Mobile", "Mockup"],
 		description:
-			"En esta interfaz se incluye una vista detallada de la canción en reproducción y una navegación eficiente por playlists, y también integra una pantalla de suscripción premium de manera estratégica. Mi enfoque se centró en ofrecer una experiencia de usuario excepcional, con un diseño atractivo y funcional que facilita el acceso a las canciones, mejora la gestión de playlists y motiva a los usuarios a optar por una suscripción premium, elevando así la experiencia general del reproductor de música.",
+			"La app de reproducción de música que incluye una **vista detallada de la canción que estás escuchando y un recorrido por tus playlists favoritas**, junto con una pantalla de suscripción premium. Me enfoqué en ofrecer un diseño funcional y atractivo que facilite el acceso a las canciones y motive a los usuarios a optar por una **experiencia llena de beneficios premium**.",
 		shortDescription:
 			"Reproductor de música con una vista de playlists, canciones y suscripciones premium.",
+		links: [
+			{
+				type: "figma",
+				url: "https://www.figma.com/design/8uwWrBlTqXgSbnFzA9HpEZ/DailyUI?node-id=0-1&t=bMUBnkFiArNIpafJ-1",
+			},
+			{
+				type: "dribbble",
+				url: "https://dribbble.com/shots/22605920-Daily-UI-009-Music-Player",
+			},
+		],
 		publishedDate: "2023-09",
 	},
 	{
@@ -614,9 +716,19 @@ export const dataProjects = [
 		],
 		tags: ["Daily UI", "Mobile", "Mockup"],
 		description:
-			"En esta interfaz se incluye una vista detallada de la canción en reproducción y una navegación eficiente por playlists, y también integra una pantalla de suscripción premium de manera estratégica. Mi enfoque se centró en ofrecer una experiencia de usuario excepcional, con un diseño atractivo y funcional que facilita el acceso a las canciones, mejora la gestión de playlists y motiva a los usuarios a optar por una suscripción premium, elevando así la experiencia general del reproductor de música.",
+			"Esta app está diseñada para inspirar y facilitar el registro de donadores, **impulsando el acceso de niños a una educación de calidad**. Con un diseño atractivo y un flujo intuitivo, guía a los usuarios de manera eficiente, **motivándolos a apoyar esta causa** y marcando la diferencia en cada paso.",
 		shortDescription:
 			"Facilita el registro de donadores para apoyar a niños en su acceso a educación de calidad.",
+		links: [
+			{
+				type: "figma",
+				url: "https://www.figma.com/design/8uwWrBlTqXgSbnFzA9HpEZ/DailyUI?node-id=0-1&t=bMUBnkFiArNIpafJ-1",
+			},
+			{
+				type: "dribbble",
+				url: "https://dribbble.com/shots/22606366-Daily-UI-001-Sign-Up",
+			},
+		],
 		publishedDate: "2023-09",
 	},
 	{
@@ -644,24 +756,35 @@ export const dataProjects = [
 			"Desarrollé una versión frontend del popular juego Preguntados, incorporando una base de datos con cientos de preguntas aleatorias para ofrecer una experiencia de juego dinámica y envolvente. El proyecto incluye una interfaz de usuario intuitiva y atractiva que facilita la navegación y la interacción con el juego, permitiendo a los jugadores desafiar sus conocimientos en diversas categorías. Utilizando tecnologías modernas, el diseño asegura que cada partida sea única y entretenida, mientras que la integración de una base de datos garantiza una variedad continua de preguntas para mantener el interés y el desafío.",
 		shortDescription:
 			"Imitación del famoso preguntados, con una base de datos con cientos de preguntas aleatorias.",
+
 		publishedDate: "2022-11",
 	},
 	{
 		id: 13,
-		title: "Perfil",
+		title: "Perfil social",
 		categories: [2],
-		url: "social-network",
+		url: "social-profile",
 		images: [
 			<img
 				src={RedSocial1}
 				alt="Mockup del proyecto de Perfil de Red Social"
 			/>,
 		],
-		tags: ["Daily UI", "Mobile", "Mockup"],
+		tags: ["Daily UI", "Mobile", "Social", "Mockup", "Inglés"],
 		description:
-			"Diseñé una interfaz de perfil para una red social que optimiza la navegación y gestión de contenido al organizar secciones específicas para posts, shorts y amigos. La funcionalidad del diseño permite a los usuarios acceder fácilmente a sus publicaciones, visualizar videos cortos y conectar con sus amigos de manera intuitiva. Cada sección está cuidadosamente diseñada para ofrecer una experiencia fluida y coherente, mejorando la interacción y la visibilidad de la información personal en el perfil.",
+			"Creé una interfaz de perfil para una red social que **organiza publicaciones, videos cortos y amigos** en secciones claras e intuitivas. El diseño optimiza la navegación y fomenta conexiones, ofreciendo una experiencia fluida que **mejora la interacción y la visibilidad del contenido personal**.",
 		shortDescription:
 			"Perfil de usuario de una red social que facilita la navegación entre posts, shorts y amigos.",
+		links: [
+			{
+				type: "figma",
+				url: "https://www.figma.com/design/8uwWrBlTqXgSbnFzA9HpEZ/DailyUI?node-id=0-1&t=bMUBnkFiArNIpafJ-1",
+			},
+			{
+				type: "dribbble",
+				url: "https://dribbble.com/shots/24666815-Daily-UI-006-User-profile",
+			},
+		],
 		publishedDate: "2024-03",
 	},
 	{

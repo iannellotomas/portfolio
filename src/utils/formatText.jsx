@@ -1,5 +1,11 @@
 export function formatText(text) {
-  // Expresión regular para encontrar "**texto**" y reemplazarlo por "<strong>texto</strong>"
-  const regex = /\*\*(.*?)\*\*/g;
-  return text.replace(regex, "<strong>$1</strong>");
+	// Reemplazar **texto** por <strong>texto</strong> para negrita
+	const boldRegex = /\*\*(.*?)\*\*/g;
+	let formattedText = text.replace(boldRegex, "<strong>$1</strong>");
+
+	// Reemplazar ~~ por <br> para saltos de línea
+	const lineBreakRegex = /~~/g;
+	formattedText = formattedText.replace(lineBreakRegex, "<br>");
+
+	return formattedText;
 }

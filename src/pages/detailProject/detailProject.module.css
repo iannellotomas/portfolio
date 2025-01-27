@@ -45,6 +45,10 @@
   transition: var(--dynamic-fast-transition);
 }
 
+.nav.scrolled .coverNav::before {
+  opacity: 1;
+}
+
 .nav h2 {
   font-size: clamp(36px, calc(2vw + 2rem), 56px);
   line-height: 100%;
@@ -61,11 +65,24 @@
   border: 1px solid var(--color-primary-light);
   background: var(--surface-primary-transparent);
   backdrop-filter: blur(10px);
-  transition: var(--dynamic-fast-transition);
+  transition: transform var(--dynamic-transition);
+  transform: translateY(-30px);
+  pointer-events: none;
+  opacity: 0;
 }
 
 .nav .info:hover {
   background: var(--color-primary-light);
+}
+
+.nav.scrolled .info {
+  pointer-events: all;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.gap {
+  width: 90px;
 }
 
 .info>img {
@@ -123,23 +140,6 @@
   pointer-events: none;
 }
 
-.nav .info {
-  pointer-events: none;
-  transform: translateY(-30px);
-  opacity: 0;
-  transition: transform var(--dynamic-transition);
-}
-
-.nav.scrolled .info {
-  pointer-events: all;
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.nav.scrolled .coverNav::before {
-  opacity: 1;
-}
-
 .cover {
   position: fixed;
   pointer-events: none;
@@ -195,12 +195,13 @@
   width: 50%;
   height: max-content;
   position: sticky;
-  top: 40px;
+  top: calc(5vh + 20px);
   min-width: 400px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   z-index: 2;
+  transition: var(--dynamic-fast-transition);
 }
 
 .headerLeft>img {
@@ -263,16 +264,26 @@
   font-size: clamp(2rem, calc(3rem + 2.5vw), 65px);
   line-height: 80%;
   margin-top: 5px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .hero {
   width: 100%;
   display: flex;
+  flex-direction: column;
+}
+
+.hero>div {
+  display: flex;
+  gap: 20px;
   justify-content: space-between;
   align-items: end;
 }
 
-.hero>div>span {
+.hero>span {
   font-size: 18px;
   color: var(--text-primary);
   opacity: .5;
@@ -295,13 +306,15 @@
   display: flex;
   gap: 5px;
   z-index: 8;
+  margin-bottom: -3px;
 }
 
 .cta.fixed {
   position: fixed;
   z-index: 105;
-  right: 4vw;
+  right: calc(4vw + 2px);
   top: 20px;
+  margin: 0;
   animation: var(--dynamic-transition) toBottom forwards;
 }
 
@@ -309,6 +322,7 @@
   from {
     transform: translateY(-30px);
   }
+
   to {
     transform: translateY(0);
   }
@@ -351,9 +365,14 @@
   background: var(--text-primary-transparent-2);
 }
 
+.cta.fixed .moreOptions,
+.cta.fixed .primaryButton {
+  height: 60px;
+  border: 1px solid var(--color-primary-light);
+}
+
 .cta.fixed .moreOptions {
   background: var(--surface-primary-transparent);
-  border: 1px solid var(--color-primary-light);
 }
 
 .cta.fixed .moreOptions:hover {
@@ -429,7 +448,7 @@
 
 .openIndex {
   position: sticky;
-  top: 130px;
+  top: 110px;
   width: 50px;
   height: 50px;
   transform: translateX(20px);
@@ -497,7 +516,7 @@
   width: 0;
   position: sticky;
   height: max-content;
-  top: 120px;
+  top: 110px;
   display: flex;
   flex-direction: column;
   gap: 15px;

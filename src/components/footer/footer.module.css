@@ -6,7 +6,7 @@
   margin-top: 80px;
   padding: 20px;
   justify-content: space-between;
-  border-top: 2px solid var(--color-neutral);
+  border-top: 2px solid var(--color-primary-light);
   line-height: 140%;
   color: var(--text-muted);
 }
