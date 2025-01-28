@@ -69,7 +69,11 @@ export default function DetailProject() {
 			<div
 				className={`${styles.cover} ${isOptionsOpen ? styles.show : ""}`}></div>
 			<div className={styles.background}>
-				<img src={project.images[0].props.src} />
+				<img
+					src={project.images[0].props.src}
+					alt="Fondo difuminado resaltando la portada del proyecto"
+					loading="lazy"
+				/>
 				<span className={styles.noise}></span>
 				<span className={styles.shadow}></span>
 			</div>
@@ -212,7 +216,7 @@ export default function DetailProject() {
 						</div>
 					</div>
 					<hr className={styles.divisor} />
-					<div className={styles.tags}>
+					<ul className={styles.tags}>
 						{project.tags.map((skill, index) => (
 							<Chip
 								tag={skill}
@@ -220,7 +224,7 @@ export default function DetailProject() {
 								key={index}
 							/>
 						))}
-					</div>
+					</ul>
 					<p
 						dangerouslySetInnerHTML={{
 							__html: formatText(project.description),

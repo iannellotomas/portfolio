@@ -167,7 +167,7 @@
   margin-block: 30px 100px;
 }
 
-.header::after, 
+.header::after,
 .header::before {
   content: "";
   position: absolute;
@@ -198,11 +198,33 @@
 }
 
 .background img {
-  width: 100%;
+  width: 500%;
   height: 350px;
   object-fit: cover;
-  filter: blur(40px);
-  opacity: .7;
+  filter: blur(50px);
+  animation: scale 6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1.05) translate(0, 0);
+  }
+
+  25% {
+    transform: scale(1.1) translate(-50px, -50px);
+  }
+
+  50% {
+    transform: scale(1.2) translate(0, -50px);
+  }
+
+  75% {
+    transform: scale(1.1) translate(50px, 50px);
+  }
+
+  100% {
+    transform: scale(1.05) translate(0, 0);
+  }
 }
 
 .background .shadow {
@@ -221,10 +243,11 @@
   height: 500px;
   top: 0;
   left: 0;
-  background-image: url('../../assets/Ilustrations/NoiseDetailProject.svg'), linear-gradient(to bottom, transparent, var(--surface-primary));
+  background-image: url('../../assets/Ilustrations/NoiseDetailProject.png'), linear-gradient(to bottom, transparent, var(--surface-primary));
   background-size: contain;
   background-blend-mode: overlay;
-  opacity: .3;
+  mix-blend-mode: hard-light;
+  opacity: .6;
 }
 
 .headerLeft {
@@ -504,7 +527,7 @@
     line-height: 80%;
     margin-top: 5px;
   }
-  
+
   .hero>span {
     font-size: 16px;
   }
@@ -588,6 +611,6 @@
   }
 
   .background .noise {
-    height: calc(450px + 15vh);
+    height: calc(450px + 20vh);
   }
 }

@@ -138,6 +138,7 @@ function Feedback({ project, openFeedback, setOpenFeedback }) {
 									<img
 										src={emoji.src}
 										alt={emoji.label}
+										loading="lazy"
 									/>
 									<span className={styles.check}>
 										<svg
@@ -166,7 +167,7 @@ function Feedback({ project, openFeedback, setOpenFeedback }) {
 						className={`${styles.error} ${styles.firstError} ${
 							errors.rating ? styles.show : ""
 						}`}>
-						<span>
+						<span className={styles.iconError}>
 							<svg
 								width="8"
 								height="9"
@@ -181,7 +182,7 @@ function Feedback({ project, openFeedback, setOpenFeedback }) {
 								/>
 							</svg>
 						</span>
-						<h5>Elegí una valoración antes de enviar</h5>
+						<span>Elegí una valoración antes de enviar</span>
 					</div>
 					<label className={styles.labelTextArea}>
 						<textarea
@@ -195,7 +196,7 @@ function Feedback({ project, openFeedback, setOpenFeedback }) {
 					</label>
 					<div
 						className={`${styles.error} ${errors.message ? styles.show : ""}`}>
-						<span>
+						<span className={styles.iconError}>
 							<svg
 								width="8"
 								height="9"
@@ -210,13 +211,14 @@ function Feedback({ project, openFeedback, setOpenFeedback }) {
 								/>
 							</svg>
 						</span>
-						<h5>Contame tu opinión antes de enviar</h5>
+						<span>Contame tu opinión antes de enviar</span>
 					</div>
 				</section>
 				<section className={styles.thankSection}>
 					<img
 						src={Thanks}
 						alt="Ilustración de un icono de mensaje con corazones"
+						loading="lazy"
 					/>
 					<span>
 						<h2>¡Gracias por tu feedback!</h2>

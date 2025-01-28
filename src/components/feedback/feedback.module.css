@@ -357,13 +357,16 @@
   gap: 7px;
   padding-left: 10px;
   margin-top: -10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--error);
   pointer-events: none;
   height: 0;
   opacity: 0;
   transform: translateY(-10px);
 }
 
-.error>span {
+.iconError {
   display: grid;
   place-items: center;
   width: 20px;
@@ -372,14 +375,8 @@
   border-radius: 50%;
 }
 
-.error path {
+.iconError path {
   stroke: var(--surface-primary);
-}
-
-.error h5 {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--error);
 }
 
 .firstError {

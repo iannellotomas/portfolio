@@ -13,8 +13,8 @@ html {
 
 body.light-mode {
   /* SURFACE */
-  --surface-primary: #FFF;
-  --surface-primary-transparent: #FFFFFFBF;
+  --surface-primary: #F6F6FB;
+  --surface-primary-transparent: #f6f6fb8d;
   --surface-primary-transparent-2: rgba(255, 255, 255, 0.8);
   --surface-image: var(--surface-primary);
   --hover-background: #0000001a;
@@ -34,10 +34,10 @@ body.light-mode {
   --paragraph-weight: 400;
   --inverse-weight: 500;
   /* COLOR */
-  --color-neutral: #e7e7e9;
+  --color-neutral: #E2E2EA;
   --color-primary: #4557FB;
-  --color-primary-light: #DBDDF2;
-  --hover-primary-light: #cdd0f3;
+  --color-primary-light: #d5d7ee;
+  --hover-primary-light: #c5c8ee;
   --color-primary-dark: #202981;
   /* OUTSTANDING */
   --surface-outstanding: #FAFF00;
@@ -76,7 +76,7 @@ body.dark-mode {
   --color-neutral: #111329;
   --color-primary: #7D8AFF;
   --color-primary-light: #1D1F34;
-  --hover-primary-light: #272a48;
+  --hover-primary-light: #252845;
   --color-primary-dark: #AAB2F9;
   --title-weight: 600;
   --label-weight: 500;
