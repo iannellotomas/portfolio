@@ -8,8 +8,24 @@
 }
 
 .carousel.hero {
-  height: clamp(400px, 60vh, 450px);
+  height: clamp(300px, 65vh, 450px);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--text-primary-transparent);
   outline: 2px solid var(--text-primary-transparent);
+}
+
+@media (width <= 1024px) {
+  .carousel.hero {
+    height: clamp(350px, 40vh, 400px);
+  }
+}
+
+@media (width <= 500px) {
+  .carousel.hero {
+    height: clamp(250px, 30vh, 300px);
+  }
 }
 
 .carouselTrack {
@@ -148,6 +164,7 @@
   border-radius: 20px;
   display: grid;
   place-items: center;
+  transition: var(--dynamic-fast-transition);
 }
 
 .thumbnailItem::before {
@@ -185,6 +202,10 @@
   transition: var(--dynamic-medium-transition);
 }
 
+.polygon path {
+  fill: var(--color-primary);
+}
+
 .thumbnail.overflow .polygon,
 .thumbnail.overflow .frameThumbnail {
   display: none;
@@ -192,6 +213,11 @@
 
 .thumbnailItem.active {
   pointer-events: none;
+}
+
+.thumbnailItem:not(.active):hover {
+  border-color: var(--text-primary-transparent-2);
+  background: var(--text-primary-transparent);
 }
 
 .thumbnail.overflow .thumbnailItem.active {
@@ -224,6 +250,7 @@
 @media (width <=1024px) {
   .thumbnail {
     scrollbar-width: none;
+    margin-bottom: 17px;
   }
 }
 
@@ -238,5 +265,24 @@
 @media (width <=500px) {
   .carousel {
     height: clamp(300px, 30vh, 300px);
+  }
+
+  .thumbnailItem {
+    position: relative;
+    min-width: 80px;
+    max-width: 80px;
+    height: 60px;
+    padding: 7px;
+    border-radius: 17px;
+  }
+
+  .polygon {
+    width: 80px;
+  }
+
+  .frameThumbnail {
+    width: 80px;
+    height: 60px;
+    border-radius: 17px;
   }
 }

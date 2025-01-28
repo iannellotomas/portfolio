@@ -142,7 +142,7 @@ export default function DetailProject() {
 				className={`${styles.nav} ${isScrolled && styles.scrolled}`}>
 				<div className={styles.coverNav}></div>
 				<BackButton type="transparent" />
-				<Tooltip text="Volver arriba">
+				<Tooltip text="Ir arriba">
 					<button
 						onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
 						className={styles.info}>

@@ -34,7 +34,7 @@
 }
 
 .accordionHeader .icon {
-  width: 50px;
+  min-width: 50px;
   height: 100%;
   border: 2px solid var(--color-primary-light);
   outline: 3px solid transparent;
@@ -172,4 +172,22 @@
 .accordionItem.completed .description::after {
   height: 100%;
   transition: height var(--dynamic-medium-transition);
+}
+
+/* MEDIA QUERIES */
+@media (width <=768px) {
+  .arrow::before {
+    display: none;
+  }
+}
+
+@media (width <=768px) {
+  .accordionHeader h3 {
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  .description {
+    padding: 15px 0 20px 70px;
+  }
 }

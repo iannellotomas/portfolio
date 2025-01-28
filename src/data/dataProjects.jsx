@@ -221,9 +221,9 @@ export const dataProjects = [
 				alt="Mockup del proyecto de Amazon"
 			/>,
 		],
-		tags: ["Rediseño", "Web"],
+		tags: ["Rediseño", "Web", "E-commerce", "Benchmark", "Lean UX", "Journey Map", "Tree testing", "Design System"],
 		description:
-			"Una reimaginación completa de la experiencia y el diseño visual de esta famosa plataforma de ecommerce. Desde una profunda investigación y análisis hasta el diseño de un Design System, **se logra un experiencia de búsqueda y compra de productos mucho más eficiente**. Con fases que incluyen investigación exhaustiva, desarrollo de arquitecturas claras, con mejor navegación y accesibilidad, ofreciendo una experiencia envolvente y estéticamente agradable para **millones de usuarios en todo el mundo**.",
+			"Una reimaginación completa de la experiencia de esta plataforma de ecommerce. Desde una profunda investigación y análisis hasta el diseño de un Design System, **se logra un experiencia de búsqueda y compra de productos mucho más eficiente**. Con fases que incluyen investigación exhaustiva, desarrollo de arquitecturas claras, con mejor navegación y accesibilidad, ofreciendo una experiencia envolvente y estéticamente agradable para **millones de usuarios en todo el mundo**.",
 		shortDescription:
 			"Una reinvención de la experiencia y diseño visual, eficientizando la búsqueda y compra de productos.",
 		links: [
@@ -431,7 +431,7 @@ export const dataProjects = [
 		],
 		tags: ["Responsive", "Web", "Landing page", "Hosting"],
 		description:
-			"A lo largo de 5 meses trabajando de manera híbrida en equipo, tuve la oportunidad de poner en práctica distintas áreas esenciales para llevar a cabo la creación de una landing page desde cero. Empezamos con el Diseño UX/UI, seguimos con el Desarrollo Frontend y aprendimos a gestionar el Hosting del sitio web. También logramos optimizar las búsquedas con técnicas de SEO y hacer más eficiente el rendimiento de la página en los diferentes dispositivos.",
+			"A lo largo de 5 meses trabajando de manera híbrida en equipo, tuve la oportunidad de poner en práctica distintas áreas esenciales para llevar a cabo la creación de una **landing page desde cero**. Empezamos con el Diseño UX/UI, seguimos con el Desarrollo Frontend y aprendimos a gestionar el Hosting del sitio web. También logramos **optimizar las búsquedas con técnicas de SEO** y hacer **más eficiente el rendimiento** de la página en los diferentes dispositivos. Elaboré un manual de marca para una **barbería que combina lo clásico con lo moderno**, usando colores oscuros y metálicos para una estética sofisticada. El logo y las tipografías reflejan elegancia y modernidad, **abarcando una identidad visual y comunicación clara**, dirigida a hombres jóvenes y adultos que buscan una experiencia de barbería única y de alta calidad.Elaboré un manual de marca para una **barbería que combina lo clásico con lo moderno**, usando colores oscuros y metálicos para una estética sofisticada. El logo y las tipografías reflejan elegancia y modernidad, **abarcando una identidad visual y comunicación clara**, dirigida a hombres jóvenes y adultos que buscan una experiencia de barbería única y de alta calidad.Elaboré un manual de marca para una **barbería que combina lo clásico con lo moderno**, usando colores oscuros y metálicos para una estética sofisticada. El logo y las tipografías reflejan elegancia y modernidad, **abarcando una identidad visual y comunicación clara**, dirigida a hombres jóvenes y adultos que buscan una experiencia de barbería única y de alta calidad. ",
 		shortDescription:
 			"Landing page adaptable y resolutiva para una empresa de envasado de productos.",
 		links: [
@@ -521,9 +521,18 @@ export const dataProjects = [
 				alt="Mockup del proyecto de Sharp Fusion"
 			/>,
 		],
-		tags: ["Brandbook", "Logo", "Photoshop", "Illustrator", "Desde cero"],
+		tags: [
+			"Brandbook",
+			"Photoshop",
+			"Illustrator",
+			"Logo",
+			"Tipografía",
+			"Comunicación visual",
+			"Moodboard",
+			"Mockups",
+		],
 		description:
-			"Diseñé un manual de marca para una barbería ficticia que combina lo clásico con lo moderno, usando colores oscuros y metálicos para una estética sofisticada. El logo y las tipografías reflejan elegancia y modernidad, abarcando una identidad visual y comunicación clara, dirigida a hombres jóvenes y adultos que buscan una experiencia de barbería única y de alta calidad.",
+			"Elaboré un manual de marca para una **barbería que combina lo clásico con lo moderno**, usando colores oscuros y metálicos para una estética sofisticada. El logo y las tipografías reflejan elegancia y modernidad, **abarcando una identidad visual y comunicación clara**, dirigida a hombres jóvenes y adultos que buscan una experiencia de barbería única y de alta calidad.",
 		shortDescription:
 			"Identidad de marca para una barbería que combina técnicas tradicionales con estilos modernos.",
 		links: [
@@ -566,9 +575,9 @@ export const dataProjects = [
 	},
 	{
 		id: 7,
-		title: "Pherb",
+		title: "Streaming",
 		categories: [2],
-		url: "pherb-streaming",
+		url: "streaming",
 		images: [
 			<img
 				src={Streaming1}

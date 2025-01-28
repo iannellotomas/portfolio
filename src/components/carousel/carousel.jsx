@@ -234,7 +234,9 @@ export default function Carousel({
 							className={`${styles.thumbnailItem} ${
 								currentImageIndex == index && styles.active
 							}`}
-							ref={(el) => (thumbnailRefs.current[index] = el)}>
+							ref={(el) => (thumbnailRefs.current[index] = el)}
+							aria-label={`Ver imagen ${index + 1}`}
+							aria-current={currentImageIndex == index ? true : undefined}>
 							<LazyImage
 								src={image.props.src}
 								alt={`Ver ${image.props.alt} ${index + 1}`}

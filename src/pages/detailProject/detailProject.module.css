@@ -49,10 +49,8 @@
   opacity: 1;
 }
 
-.nav h2 {
-  font-size: clamp(36px, calc(2vw + 2rem), 56px);
-  line-height: 100%;
-  color: var(--text-primary);
+.nav>*:nth-child(3) {
+  max-width: calc(100% - 90px);
 }
 
 .nav .info {
@@ -60,12 +58,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0 20px 0 5px;
+  width: 100%;
+  padding: 0 57px 0 5px;
   border-radius: 50px;
   border: 1px solid var(--color-primary-light);
   background: var(--surface-primary-transparent);
   backdrop-filter: blur(10px);
-  transition: transform var(--dynamic-transition);
+  transition: transform var(--dynamic-transition), background var(--dynamic-fast-transition);
   transform: translateY(-30px);
   pointer-events: none;
   opacity: 0;
@@ -92,23 +91,39 @@
   pointer-events: none;
 }
 
-.info>span>span {
-  font-size: 12px;
-  font-weight: 500;
-}
-
 .info span {
   display: flex;
   flex-direction: column;
   align-items: start;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.info>span>span {
+  font-size: 12px;
+  font-weight: 500;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .info h2 {
   font-size: 24px;
+  text-align: left;
+  color: var(--text-primary);
+  line-height: 100%;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .info>svg {
   margin-left: 10px;
+  right: 20px;
+  position: absolute;
   transition: var(--dynamic-fast-transition);
 }
 
@@ -152,7 +167,8 @@
   margin-block: 30px 100px;
 }
 
-.header::after {
+.header::after, 
+.header::before {
   content: "";
   position: absolute;
   right: 0;
@@ -160,6 +176,15 @@
   width: 2px;
   height: 50px;
   background: linear-gradient(var(--text-primary-transparent-2), var(--surface-primary));
+}
+
+.header::before {
+  left: 0;
+  display: none;
+}
+
+.header::after {
+  right: 0;
 }
 
 .background {
@@ -207,7 +232,7 @@
   height: max-content;
   position: sticky;
   top: 80px;
-  min-width: 400px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -239,17 +264,6 @@
   z-index: -1;
 }
 
-.headerRight h1 {
-  color: var(--text-primary);
-  font-size: clamp(2rem, calc(3rem + 2.5vw), 65px);
-  line-height: 80%;
-  margin-top: 5px;
-  width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
 .hero {
   width: 100%;
   display: flex;
@@ -261,6 +275,17 @@
   gap: 20px;
   justify-content: space-between;
   align-items: end;
+}
+
+.hero h1 {
+  color: var(--text-primary);
+  font-size: clamp(2rem, calc(3rem + 2.5vw), 65px);
+  line-height: 80%;
+  margin-top: 5px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .hero>span {
@@ -291,7 +316,7 @@
 
 .cta.fixed {
   position: fixed;
-  z-index: 105;
+  z-index: 100;
   right: calc(4vw + 2px);
   top: 20px;
   margin: 0;
@@ -338,6 +363,7 @@
   border-radius: 20px 80px 80px 20px;
   padding-right: 3px;
   background: var(--text-primary-transparent);
+  backdrop-filter: blur(10px);
   transition: var(--dynamic-fast-transition);
 }
 
@@ -667,34 +693,66 @@
 /* MEDIA QUERIES */
 
 @media (width <=1024px) {
-  .heroBottom {
-    display: flex;
+  .nav .info {
+    width: 100%;
+  }
+
+  .header {
     flex-direction: column;
-    margin-top: 20px;
-    gap: 20px;
+    margin-block: 20px 50px;
   }
 
-  .heroBottom .col:nth-child(2) {
-    order: 3;
+  .header::before {
+    display: block;
   }
 
-  .heroBottom .col:nth-child(1) {
-    display: none;
+  .headerLeft,
+  .headerRight {
+    width: 100%;
   }
 
-  .heroBottom .col>span {
-    display: none;
+  .headerLeft {
+    position: static;
   }
 
-  .heroTop span {
-    min-height: 150px;
-    max-height: 200px;
+  .headerRight {
+    margin: 0;
+    padding: 50px;
+    border-radius: 50px 50px 0 0;
+    border-left: 2px solid var(--text-primary-transparent-2);
   }
 
-  .primaryButton {
-    width: 60px;
+  .background img {
+    height: calc(500px + 10vh);
+  }
+
+  .background .shadow {
+    top: calc(500px + 10vh);
+    height: 300px;
+    filter: blur(100px);
+  }
+
+  .background .noise {
+    height: calc(550px + 15vh);
+  }
+
+  .cta .primaryButton,
+  .cta.fixed .primaryButton {
+    height: 50px;
     padding: 0;
-    justify-content: center;
+    border: none;
+  }
+
+  .cta .moreOptions,
+  .cta.fixed .moreOptions {
+    height: 50px;
+    background: var(--color-primary-light);
+    border: none;
+  }
+
+  .cta .moreOptions:hover,
+  .cta.fixed .moreOptions:hover {
+    background: var(--hover-primary-light);
   }
 
   .aside {
@@ -794,7 +852,6 @@
   }
 }
 
-
 @media (width <=768px) {
   .detailProject {
     padding: 0 4vw 100px 4vw;
@@ -802,17 +859,37 @@
 
   .nav {
     border: none;
+    justify-content: start;
   }
 
-  .nav .cta {
+  .nav>.gap {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, calc(2rem + 2vw), 65px);
+    line-height: 80%;
+    margin-top: 5px;
+  }
+  
+  .hero>span {
+    font-size: 16px;
+  }
+
+  .cta,
+  .cta.fixed {
     position: fixed;
+    top: auto;
+    right: auto;
     bottom: 2vh;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 55;
+    animation: none;
+    z-index: 80;
+    margin: 0;
   }
 
-  .nav .cta::before {
+  .cta::before {
     content: "";
     top: calc(100% + 50px);
     left: 50%;
@@ -842,16 +919,6 @@
     backdrop-filter: blur(5px);
   }
 
-  .hero {
-    margin: 0;
-  }
-
-  .heroTop span {
-    max-height: 100%;
-    height: 100%;
-    border-radius: 20px;
-  }
-
   .main {
     margin-top: 20px;
   }
@@ -866,5 +933,45 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+@media (width <=500px) {
+  .nav>*:nth-child(3) {
+    width: calc(100% - 90px);
+  }
+
+  .nav .info {
+    max-width: 100%;
+  }
+
+  .nav .info>span {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .headerRight {
+    padding: 30px 30px 0 30px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .hero>span {
+    font-size: 14px;
+  }
+
+  .background img {
+    height: calc(400px + 15vh);
+  }
+
+  .background .shadow {
+    top: calc(400px + 15vh);
+    height: 300px;
+    filter: blur(100px);
+  }
+
+  .background .noise {
+    height: calc(450px + 15vh);
   }
 }
