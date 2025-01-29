@@ -38,7 +38,7 @@ body.light-mode {
   --color-primary: #4557FB;
   --color-primary-light: #d5d7ee;
   --hover-primary-light: #c5c8ee;
-  --color-primary-dark: #202981;
+  --color-primary-dark: #2d3cc4;
   /* OUTSTANDING */
   --surface-outstanding: #FAFF00;
   --surface-icon-outstanding: #D9DD04;
@@ -77,7 +77,7 @@ body.dark-mode {
   --color-primary: #7D8AFF;
   --color-primary-light: #1D1F34;
   --hover-primary-light: #252845;
-  --color-primary-dark: #AAB2F9;
+  --color-primary-dark: #9ea6ff;
   --title-weight: 600;
   --label-weight: 500;
   --active-label-weight: 800;

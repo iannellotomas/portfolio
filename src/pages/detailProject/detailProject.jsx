@@ -2,9 +2,10 @@ import React from "react";
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { dataProjects } from "../../data/dataProjects";
+import { dataCategories } from "../../data/dataCategories";
+import { dataTools } from "../../data/dataTools";
 import { formatDate } from "../../utils/formatDate";
 import { formatText } from "../../utils/formatText";
-import { dataCategories } from "../../data/dataCategories";
 import { handleShare } from "../../utils/share";
 import Chip from "../../components/chip/chip";
 import Footer from "../../components/footer/footer";
@@ -60,6 +61,19 @@ export default function DetailProject() {
 		setIsOptionsOpen((prev) => !prev);
 	};
 
+	const isNextOtherCategory = (toolName, index) => {
+		const nextToolName = project.tools[index + 1];
+
+		if (
+			nextToolName &&
+			dataTools[nextToolName]?.category !== dataTools[toolName]?.category
+		) {
+			return true;
+		}
+
+		return false;
+	};
+
 	if (!project) {
 		return <div>Proyecto no encontrado</div>;
 	}
@@ -92,6 +106,7 @@ export default function DetailProject() {
 								text={`Proyecto ${project.categories
 									.map((category) => dataCategories[category].title)
 									.join(", ")}`}
+								weight="500"
 							/>
 							<h2>{project.title}</h2>
 						</span>
@@ -122,7 +137,7 @@ export default function DetailProject() {
 						showThumbnail={true}
 					/>
 				</div>
-				<div className={styles.headerRight}>
+				<div className={styles.headerRight} data-header-right>
 					<div
 						ref={heroRef}
 						className={styles.hero}>
@@ -235,6 +250,40 @@ export default function DetailProject() {
 							category={project.categories[0]}
 							descriptions={project.details}
 						/>
+					)}
+					{project.tools && (
+						<section className={styles.tools}>
+							<hr className={styles.divisor} />
+							<CaptionText
+								text="Herramientas"
+								weight="500"
+							/>
+							<ul>
+								{project.tools.map((toolName, index) => {
+									const tool = dataTools[toolName]; // Accedes al objeto de la herramienta usando su nombre
+									if (!tool) return null;
+									return (
+										<React.Fragment key={index}>
+											<Tooltip
+												text={tool.title}
+												caption={innerWidth > 1024 && tool.caption}
+												size={innerWidth <= 1024 && "minimal"}
+												anchorSide={innerWidth > 1024? "left" : "center"}>
+												<li className={styles.toolItem}>
+													<img
+														src={Object.values(tool.logo)}
+														alt={`Logo de ${tool.title}`}
+													/>
+												</li>
+											</Tooltip>
+											{isNextOtherCategory(toolName, index) && (
+												<span className={styles.heightDivisor}></span>
+											)}
+										</React.Fragment>
+									);
+								})}
+							</ul>
+						</section>
 					)}
 				</div>
 			</header>

@@ -93,3 +93,48 @@
 .tooltip.disabled {
   display: none;
 }
+
+/* EXPANDED */
+.tooltip.expanded {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: start;
+  padding-inline: 10px;
+  border-radius: 0 15px 15px 15px;
+  gap: 5px;
+  height: 60px;
+  color: var(--text-primary);
+  background: var(--color-primary-light);
+  border: 2px solid var(--hover-primary-light);
+}
+
+.tooltip.expanded.show {
+  top: calc(100% + 10px);
+}
+
+.tooltip.expanded svg {
+  display: none;
+}
+
+.tooltip h3 {
+  font-size: 16px;
+  height: 32px;
+  line-height: 200%;
+  font-weight: var(--title-weight);
+  width: 100%;
+  border-bottom: 2px solid var(--hover-primary-light);
+  padding-bottom: 3px;
+}
+
+.tooltip > span {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+
+.tooltip.overflowRight {
+  left: auto;
+  right: 0;
+  border-radius: 15px 0 15px 15px;
+}

@@ -102,7 +102,6 @@
 
 .info>span>span {
   font-size: 12px;
-  font-weight: 500;
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -164,7 +163,7 @@
 .header {
   position: relative;
   display: flex;
-  margin-block: 30px 100px;
+  margin-block: 30px 70px;
 }
 
 .header::after,
@@ -201,7 +200,9 @@
   width: 500%;
   height: 350px;
   object-fit: cover;
-  filter: blur(50px);
+  filter: blur(40px);
+  opacity: .8;
+  animation: scale 6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
 }
 
 @keyframes scale {
@@ -218,7 +219,7 @@
   }
 
   75% {
-    transform: scale(1.1) translate(50px, 50px);
+    transform: scale(1.1) translate(50px, -20px);
   }
 
   100% {
@@ -265,7 +266,7 @@
 .headerRight {
   position: relative;
   width: 60%;
-  padding: 50px 50px 0 70px;
+  padding: 50px 50px 70px 70px;
   margin: 100px 0 0 -20px;
   border: 2px solid var(--text-primary-transparent-2);
   border-bottom: 0;
@@ -333,13 +334,20 @@
 .cta {
   position: relative;
   display: flex;
+  height: 50px;
   gap: 5px;
   z-index: 8;
   margin-bottom: -3px;
 }
 
+.cta>div,
+.cta>div:nth-child(2)>div:nth-child(1) {
+  height: 100%;
+}
+
 .cta.fixed {
   position: fixed;
+  height: 60px;
   z-index: 100;
   right: calc(4vw + 2px);
   top: 20px;
@@ -364,13 +372,16 @@
   gap: 15px;
   font-weight: var(--active-label-weight);
   width: 60px;
-  height: 50px;
+  height: 100%;
   border-radius: 80px 20px 20px 80px;
   transition: .15s cubic-bezier(0.165, 0.84, 0.44, 1);
   background: var(--color-primary);
   color: var(--text-alternative);
   font-size: 16px;
-  border: 2px solid transparent;
+}
+
+.primaryButton:hover {
+  background: var(--color-primary-dark);
 }
 
 .primaryButton svg path,
@@ -381,13 +392,13 @@
 .moreOptions {
   position: relative;
   width: 60px;
-  height: 50px;
+  height: 100%;
   display: grid;
   place-items: center;
   border-radius: 20px 80px 80px 20px;
   padding-right: 3px;
-  background: var(--text-primary-transparent);
   backdrop-filter: blur(10px);
+  background: var(--text-primary-transparent);
   transition: var(--dynamic-fast-transition);
 }
 
@@ -441,7 +452,80 @@
   top: 50%;
 }
 
+.tools {
+  display: flex;
+  flex-direction: column;
+}
+
+.tools ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-block: 15px 0;
+}
+
+.tools ul>div {
+  border-radius: 15px;
+}
+
+.toolItem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  background: var(--color-primary-light);
+  border-radius: 15px;
+  transition: var(--dynamic-fast-transition);
+}
+
+.toolItem img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  transition: var(--dynamic-fast-transition);
+}
+
+.heightDivisor {
+  width: 2px;
+  height: 30px;
+  border-radius: 5px;
+  background: var(--text-primary-transparent);
+}
+
+
 /* MEDIA QUERIES */
+@media (width > 1024px) {
+  .toolItem::before {
+    content: "";
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    background: var(--hover-primary-light);
+    transition: bottom var(--dynamic-fast-transition);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .toolItem:hover {
+    background: var(--hover-primary-light);
+    border-radius: 15px 15px 0 0;
+  }
+
+  .toolItem:hover::before {
+    bottom: -20px;
+  }
+
+  .toolItem:hover img {
+    transform: translateY(8px);
+  }
+}
 
 @media (width <=1024px) {
   .nav .info {
@@ -486,25 +570,6 @@
   .background .noise {
     height: calc(550px + 15vh);
   }
-
-  .cta .primaryButton,
-  .cta.fixed .primaryButton {
-    height: 50px;
-    padding: 0;
-    border: none;
-  }
-
-  .cta .moreOptions,
-  .cta.fixed .moreOptions {
-    height: 50px;
-    background: var(--color-primary-light);
-    border: none;
-  }
-
-  .cta .moreOptions:hover,
-  .cta.fixed .moreOptions:hover {
-    background: var(--hover-primary-light);
-  }
 }
 
 @media (width <=768px) {
@@ -527,7 +592,8 @@
     margin-top: 5px;
   }
 
-  .hero>span {
+  .hero>span,
+  .tools>span {
     font-size: 16px;
   }
 
@@ -555,6 +621,44 @@
     height: 200px;
     background: var(--surface-primary);
     filter: blur(10px);
+  }
+
+  .cta,
+  .cta.fixed {
+    height: 50px;
+  }
+
+  .cta .moreOptions,
+  .cta.fixed .moreOptions {
+    background: var(--color-primary-light);
+  }
+
+  .cta .moreOptions:hover,
+  .cta.fixed .moreOptions:hover {
+    background: var(--hover-primary-light);
+  }
+
+  .cta .moreOptions,
+  .cta.fixed .moreOptions,
+  .cta .primaryButton,
+  .cta.fixed .primaryButton {
+    border: none;
+    height: 50px;
+  }
+
+  .tools ul {
+    gap: 10px;
+  }
+
+  .toolItem {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+  }
+
+  .toolItem img {
+    width: 26px;
+    height: 26px;
   }
 
   .cover {
@@ -595,7 +699,8 @@
     border-radius: 30px 30px 0 0;
   }
 
-  .hero>span {
+  .hero>span,
+  .tools>span {
     font-size: 14px;
   }
 

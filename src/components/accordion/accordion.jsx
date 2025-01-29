@@ -96,7 +96,8 @@ export default function Accordion({ category, descriptions }) {
 					} ${index < openItem && styles.completed}`}>
 					<button
 						className={styles.accordionHeader}
-						onClick={() => handleAccordion(index)}>
+						onClick={() => handleAccordion(index)}
+						aria-expanded={index == openItem ? true : null}>
 						<span>
 							<span className={styles.icon}>{currentCategory[index].icon}</span>
 							<h3>{currentCategory[index].title}</h3>
@@ -122,7 +123,9 @@ export default function Accordion({ category, descriptions }) {
 							</span>
 						</Tooltip>
 					</button>
-					<div className={styles.description}>
+					<div
+						className={styles.description}
+						aria-hidden={index != openItem ? true : null}>
 						<p
 							dangerouslySetInnerHTML={{
 								__html: formatText(item),

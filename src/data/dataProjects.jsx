@@ -84,13 +84,15 @@ import Restaurante4 from "../assets/Projects/Restaurante4.jpg";
 import MusicPlayer1 from "../assets/Projects/MusicPlayer1.jpg";
 import MusicPlayer2 from "../assets/Projects/MusicPlayer2.jpg";
 
+import Casino1 from "../assets/Projects/Casino1.jpg";
+import Casino2 from "../assets/Projects/Casino2.jpg";
+import Casino3 from "../assets/Projects/Casino3.jpg";
+
 import SignUp1 from "../assets/Projects/SignUp1.jpg";
 
 import Trivia1 from "../assets/Projects/Trivia1.jpg";
 
 import RedSocial1 from "../assets/Projects/RedSocial1.jpg";
-
-import Calculadora1 from "../assets/Projects/Calculadora1.jpg";
 
 export const dataProjects = [
 	{
@@ -125,6 +127,7 @@ export const dataProjects = [
 			"Doble diamante",
 			"Gamification",
 		],
+		tools: ["figma", "canva", "optimalworkshop", "gdocs", "gsheets"],
 		description:
 			"Se aborda la **baja tasa de pedidos** en la app de Mostaza, analizando factores influyentes y buscando soluciones efectivas para mejorar la experiencia del usuario. El objetivo es identificar necesidades y puntos de dolor para **diseñar estrategias que impulsen el compromiso y la fidelización** de los nuevos usuarios.",
 		shortDescription:
@@ -142,7 +145,7 @@ export const dataProjects = [
 		publishedDate: "2024-04",
 		details: [
 			"La app de Mostaza presentó una **caída en pedidos**, señalando una pérdida de usuarios debido a una experiencia deficiente, falta de incentivos y competencia con otras apps. El objetivo fue **analizar comportamientos, motivaciones y puntos de dolor** para optimizar la experiencia, **fidelizar clientes y fortalecer su posición en el mercado**.",
-			"Apliqué el enfoque del doble diamante, explorando en la primera fase los comportamientos y necesidades de los usuarios a través de **investigación cualitativa**. En la segunda fase, describimos los puntos de dolor y oportunidades clave **mediante el análisis de datos**. Luego, generamos soluciones enfocadas en prototipos interactivos, y finalmente, **evaluamos estas propuestas con pruebas de usabilidad**, asegurando una experiencia optimizada y alineada con las expectativas del usuario.",
+			"Apliqué el enfoque del doble diamante, explorando en la primera fase los comportamientos y necesidades de los usuarios a través de **investigación cualitativa**. En la segunda fase, describí los puntos de dolor y oportunidades clave **mediante el análisis de datos**. Luego, creé soluciones enfocadas en prototipos interactivos, y finalmente, **evalué estas propuestas con pruebas de usabilidad**, asegurando una experiencia optimizada y alineada con las expectativas del usuario.",
 			"Gracias al estratégico plan de investigación, logré mejorar la usabilidad  en un 83%, **simplificando la arquitectura y la navegación** para adaptarla a las necesidades reales de los usuarios. Esto se tradujo en una reducción significativa del **tiempo al hacer un pedido** y un **aumento de la confianza** en la app. Además, descubrí la importancia de **personalizar la experiencia del usuario a través de incentivos, lo que resultó en una mayor fidelización.",
 		],
 		sheet: [
@@ -221,7 +224,17 @@ export const dataProjects = [
 				alt="Mockup del proyecto de Amazon"
 			/>,
 		],
-		tags: ["Rediseño", "Web", "E-commerce", "Benchmark", "Lean UX", "Journey Map", "Tree testing", "Design System"],
+		tags: [
+			"Rediseño",
+			"Web",
+			"E-commerce",
+			"Benchmark",
+			"Lean UX",
+			"Journey Map",
+			"Tree testing",
+			"Design System",
+		],
+		tools: ["figma", "canva", "optimalworkshop", "gdocs", "gslides", "gsheets"],
 		description:
 			"Una reimaginación completa de la experiencia de esta plataforma de ecommerce. Desde una profunda investigación y análisis hasta el diseño de un Design System, **se logra un experiencia de búsqueda y compra de productos mucho más eficiente**. Con fases que incluyen investigación exhaustiva, desarrollo de arquitecturas claras, con mejor navegación y accesibilidad, ofreciendo una experiencia envolvente y estéticamente agradable para **millones de usuarios en todo el mundo**.",
 		shortDescription:
@@ -338,7 +351,18 @@ export const dataProjects = [
 				alt="Mockup del proyecto de SkillSwap"
 			/>,
 		],
-		tags: ["Creación", "App", "Android", "Material Design"],
+		tags: [
+			"Creación",
+			"App",
+			"Material Design",
+			"Card sorting",
+			"Heurísticas",
+			"MVP",
+			"Storytelling",
+			"Wireframing",
+			"Testeos",
+		],
+		tools: ["figma", "canva", "optimalworkshop", "gdocs", "gslides", "gsheets"],
 		description:
 			"Te doy la bienvenida a SkillSwap, la app móvil de aprendizaje en línea que **conecta a estudiantes de todo el mundo** en un ambiente colaborativo y enriquecedor. Esta app tiene como objetivo revolucionar la forma en que las personas **adquieren conocimientos y comparten experiencias de aprendizaje**.",
 		shortDescription:
@@ -429,9 +453,20 @@ export const dataProjects = [
 				alt="Mockup del proyecto de Ajaka Envases"
 			/>,
 		],
-		tags: ["Responsive", "Web", "Landing page", "Hosting"],
+		tags: [
+			"Responsive",
+			"Web",
+			"Landing page",
+			"En equipo",
+			"Wireframes",
+			"React Router",
+			"SEO",
+			"Hosting",
+			"Google Search Console",
+		],
+		tools: ["figma", "gdocs", "reactjs", "css", "hostinger"],
 		description:
-			"A lo largo de 5 meses trabajando de manera híbrida en equipo, tuve la oportunidad de poner en práctica distintas áreas esenciales para llevar a cabo la creación de una **landing page desde cero**. Empezamos con el Diseño UX/UI, seguimos con el Desarrollo Frontend y aprendimos a gestionar el Hosting del sitio web. También logramos **optimizar las búsquedas con técnicas de SEO** y hacer **más eficiente el rendimiento** de la página en los diferentes dispositivos.",
+			"A lo largo de 5 meses trabajando de manera híbrida en equipo, tuve la oportunidad de aplicar diversas áreas clave para la **creación de una landing page desde cero**. Empecé a definir los requerimientos del sitio web para luego prototipar el MVP y validarlo con pruebas de usabilidad. Continué con el desarrollo del frontend y aprendí a gestionar el **Hosting del sitio web**. Además, optimizé las búsquedas con **estrategias de SEO**, mejoré el rendimiento en distintos dispositivos y, como paso final, logré que la web fuese indexada para destacar en las **búsquedas relevantes de Google**.",
 		shortDescription:
 			"Landing page adaptable y resolutiva para una empresa de envasado de productos.",
 		links: [
@@ -474,8 +509,9 @@ export const dataProjects = [
 			/>,
 		],
 		tags: ["Responsive", "Web", "Landing page", "En equipo", "Pasantía"],
+		tools: ["figma", "gdocs", "gsheets", "reactjs", "css", "vercel", "github"],
 		description:
-			"Participé en un proyecto freelance para la consultora de negocios, colaborando estrechamente con un equipo de diseño y de desarrollo para la página web de la consultora. Mi rol incluyó la creación de una interfaz intuitiva y la optimización de la experiencia del usuario, reflejando la visión y profesionalismo, destacando la calidad y el compromiso del equipo.",
+			"Participé en un proyecto freelance para la consultora de negocios, colaborando estrechamente con un **equipo de diseño y desarrollo para la página web** de la consultora. Mi rol incluyó la creación de una interfaz intuitiva y la **optimización de la experiencia y performance de la web**, reflejando la visión y profesionalismo, y logrando destacar la calidad y el compromiso del equipo.",
 		shortDescription:
 			"Landing atractiva y funcional que destaca la presencia en línea de una consultora de negocios.",
 		links: [
@@ -531,6 +567,7 @@ export const dataProjects = [
 			"Moodboard",
 			"Mockups",
 		],
+		tools: ["photoshop", "illustrator", "figma"],
 		description:
 			"Elaboré un manual de marca para una **barbería que combina lo clásico con lo moderno**, usando colores oscuros y metálicos para una estética sofisticada. El logo y las tipografías reflejan elegancia y modernidad, **abarcando una identidad visual y comunicación clara**, dirigida a hombres jóvenes y adultos que buscan una experiencia de barbería única y de alta calidad.",
 		shortDescription:
@@ -592,7 +629,8 @@ export const dataProjects = [
 				alt="Mockup del proyecto de Plataforma de Streaming"
 			/>,
 		],
-		tags: ["Daily UI", "Mobile", "Mockup"],
+		tags: ["Daily UI", "Web", "Mockup"],
+		tools: ["figma", "shots"],
 		description:
 			"Descubre una nueva era en el entretenimiento con Pherb, la plataforma de streaming que **transforma tu experiencia audiovisual**. Con un enfoque en la **comunidad y la interacción social**, Pherb te permite ver películas antes de su estreno, conectarte con amigos para disfrutar juntos de tus series y películas favoritas, y unirte a salas de chat en vivo con otros cinéfilos.",
 		shortDescription:
@@ -625,8 +663,9 @@ export const dataProjects = [
 			/>,
 		],
 		tags: ["Daily UI", "Mobile", "Mockup"],
+		tools: ["figma", "shots"],
 		description:
-			"Diseñé una interfaz de usuario para una billetera digital que optimiza el proceso de checkout de tarjeta de crédito, proporcionando una experiencia de pago clara y fluida. El diseño se centra en la simplicidad y la eficiencia, asegurando que los usuarios puedan completar sus transacciones de manera rápida y sin fricciones, con una visualización intuitiva y moderna que mejora la usabilidad y la confianza en el proceso de pago.",
+			"Diseñé una billetera digital que optimiza el proceso de **checkout de tarjeta de crédito**, proporcionando una **experiencia de pago clara y fluida**. El diseño se centra en la simplicidad y la eficiencia, asegurando que los usuarios puedan completar sus transacciones de manera rápida y sin fricciones, con una visualización intuitiva y moderna que **mejora la usabilidad y la confianza en el proceso de pago**.",
 		shortDescription:
 			"Checkout de tarjeta de crédito con una experiencia de pago clara para una billetera digital.",
 		links: [
@@ -645,7 +684,7 @@ export const dataProjects = [
 		id: 9,
 		title: "Restaurante",
 		categories: [3],
-		url: "restaurante-grilli",
+		url: "restaurante",
 		images: [
 			<img
 				src={Restaurante1}
@@ -664,20 +703,22 @@ export const dataProjects = [
 				alt="Mockup del proyecto de Restaurante"
 			/>,
 		],
-		tags: [
-			"Responsive",
-			"Web",
-			"Landing page",
-			"HTML5",
-			"CSS3",
-			"Vanilla JS",
-			"En inglés",
-		],
+		tags: ["Responsive", "Web", "Landing page", "SEO", "Hosting", "En inglés"],
+		tools: ["html", "css", "js", "vercel", "github"],
 		description:
-			"Creé el frontend de una landing page para un restaurante ficticio, partiendo de un diseño en línea que me inspiró. El proyecto incluye la incorporación de nuevos logos, la adición de secciones personalizadas y la implementación de funcionalidades para enriquecer la experiencia del usuario. Utilizando HTML5, CSS3 y JavaScript, la página está optimizada para ofrecer una experiencia visualmente atractiva y completamente funcional, con un diseño receptivo que asegura una navegación fluida en todos los dispositivos.",
+			"Desarrollé el frontend de una landing page para un restaurante ficticio, partiendo de un diseño que me inspiró. El proyecto incluye la incorporación de **nuevos logos, secciones personalizadas y la implementación de funcionalidades** para enriquecer la experiencia del usuario. Utilizando HTML5, CSS3 y JavaScript, la página está optimizada para ofrecer una experiencia visualmente atractiva y completamente funcional, con un **diseño receptivo que asegura una navegación fluida en todos los dispositivos**.",
 		shortDescription:
 			"Landing page para un restaurante moderno y elegante, inspirándome en otros diseños.",
-
+		links: [
+			{
+				type: "website",
+				url: "https://grilli-iannello.vercel.app/",
+			},
+			{
+				type: "code",
+				url: "https://github.com/iannellotomas/grilli-restaurant",
+			},
+		],
 		publishedDate: "2023-01",
 	},
 	{
@@ -696,6 +737,7 @@ export const dataProjects = [
 			/>,
 		],
 		tags: ["Daily UI", "Mobile", "Mockup"],
+		tools: ["figma", "shots"],
 		description:
 			"La app de reproducción de música que incluye una **vista detallada de la canción que estás escuchando y un recorrido por tus playlists favoritas**, junto con una pantalla de suscripción premium. Me enfoqué en ofrecer un diseño funcional y atractivo que facilite el acceso a las canciones y motive a los usuarios a optar por una **experiencia llena de beneficios premium**.",
 		shortDescription:
@@ -714,6 +756,43 @@ export const dataProjects = [
 	},
 	{
 		id: 11,
+		title: "Casino",
+		categories: [2],
+		url: "casino",
+		images: [
+			<img
+				src={Casino1}
+				alt="Mockup del proyecto de Casino"
+			/>,
+			<img
+				src={Casino2}
+				alt="Mockup del proyecto de Casino"
+			/>,
+			<img
+				src={Casino3}
+				alt="Mockup del proyecto de Casino"
+			/>,
+		],
+		tags: ["Daily UI", "Web", "Mockup", "Gamification"],
+		tools: ["figma", "shots"],
+		description:
+			"Consiste en el diseño de la home para una **plataforma de casino online y apuestas deportivas**. Utilicé cards interactivas para organizar y mostrar de manera clara las **apuestas recientes, juegos disponibles, desafíos diarios y categorías de juegos**. El enfoque principal fue ofrecer una experiencia amigable y visualmente atractiva, facilitando la navegación y manteniendo a los usuarios comprometidos a través de elementos de gamificación.",
+		shortDescription:
+			"Plataforma de apuestas online con un diseño inmersivo que potencia la interacción y el engagement.",
+		links: [
+			{
+				type: "figma",
+				url: "https://www.figma.com/design/8uwWrBlTqXgSbnFzA9HpEZ/DailyUI?node-id=0-1&t=bMUBnkFiArNIpafJ-1",
+			},
+			{
+				type: "dribbble",
+				url: "https://dribbble.com/shots/24726015-Daily-UI-045-Card-Info-for-Online-Betting",
+			},
+		],
+		publishedDate: "2024-09",
+	},
+	{
+		id: 12,
 		title: "Sign up",
 		categories: [2],
 		url: "sign-up",
@@ -724,6 +803,7 @@ export const dataProjects = [
 			/>,
 		],
 		tags: ["Daily UI", "Mobile", "Mockup"],
+		tools: ["figma", "shots"],
 		description:
 			"Esta app está diseñada para inspirar y facilitar el registro de donadores, **impulsando el acceso de niños a una educación de calidad**. Con un diseño atractivo y un flujo intuitivo, guía a los usuarios de manera eficiente, **motivándolos a apoyar esta causa** y marcando la diferencia en cada paso.",
 		shortDescription:
@@ -741,7 +821,7 @@ export const dataProjects = [
 		publishedDate: "2023-09",
 	},
 	{
-		id: 12,
+		id: 13,
 		title: "Trivia",
 		categories: [3],
 		url: "triviannello",
@@ -751,25 +831,26 @@ export const dataProjects = [
 				alt="Mockup del proyecto de Trivia"
 			/>,
 		],
-		tags: [
-			"Juego",
-			"Web",
-			"Responsive",
-			"Gamification",
-			"Base de datos",
-			"HTML5",
-			"CSS3",
-			"Vanilla JS",
-		],
+		tags: ["Juego", "Web", "Responsive", "Gamification", "Base de datos"],
+		tools: ["html", "css", "js", "github"],
 		description:
-			"Desarrollé una versión frontend del popular juego Preguntados, incorporando una base de datos con cientos de preguntas aleatorias para ofrecer una experiencia de juego dinámica y envolvente. El proyecto incluye una interfaz de usuario intuitiva y atractiva que facilita la navegación y la interacción con el juego, permitiendo a los jugadores desafiar sus conocimientos en diversas categorías. Utilizando tecnologías modernas, el diseño asegura que cada partida sea única y entretenida, mientras que la integración de una base de datos garantiza una variedad continua de preguntas para mantener el interés y el desafío.",
+			"Desarrollé una versión frontend del popular juego Preguntados, incorporando una base de datos con cientos de preguntas aleatorias para ofrecer una **experiencia de juego dinámica y envolvente**. El proyecto incluye una interfaz de usuario intuitiva que facilita la interacción con el juego, permitiendo a los jugadores **desafiar sus conocimientos en diversas categorías**. Utilizando tecnologías modernas, el diseño asegura que cada partida sea única y entretenida, mientras que la **integración de una base de datos** garantiza una variedad continua de preguntas para mantener el interés y el desafío.",
 		shortDescription:
 			"Imitación del famoso preguntados, con una base de datos con cientos de preguntas aleatorias.",
-
+		links: [
+			{
+				type: "website",
+				url: "https://triviannello.netlify.app/",
+			},
+			{
+				type: "code",
+				url: "https://github.com/iannellotomas/triviannello",
+			},
+		],
 		publishedDate: "2022-11",
 	},
 	{
-		id: 13,
+		id: 14,
 		title: "Perfil social",
 		categories: [2],
 		url: "social-profile",
@@ -780,6 +861,7 @@ export const dataProjects = [
 			/>,
 		],
 		tags: ["Daily UI", "Mobile", "Social", "Mockup", "Inglés"],
+		tools: ["figma", "shots"],
 		description:
 			"Creé una interfaz de perfil para una red social que **organiza publicaciones, videos cortos y amigos** en secciones claras e intuitivas. El diseño optimiza la navegación y fomenta conexiones, ofreciendo una experiencia fluida que **mejora la interacción y la visibilidad del contenido personal**.",
 		shortDescription:
@@ -795,33 +877,5 @@ export const dataProjects = [
 			},
 		],
 		publishedDate: "2024-03",
-	},
-	{
-		id: 14,
-		title: "Calculadora",
-		categories: [2],
-		url: "calculator-design",
-		images: [
-			<img
-				src={Calculadora1}
-				alt="Mockup del proyecto de Calculadora"
-			/>,
-		],
-		tags: ["Daily UI", "Mobile", "Mockup"],
-		description:
-			"Se trata de una app de calculadora que ofrece una experiencia optimizada mediante una **vista principal para realizar cálculos básicos** y una funcionalidad adicional para convertir unidades. La interfaz está diseñada para ser intuitiva y fácil de usar, **permitiendo a los usuarios realizar operaciones matemáticas rápidamente y convertir entre diferentes unidades de medida** de manera eficiente.",
-		shortDescription:
-			"App de calculadora con funciones básicas de cálculo y un conversor de unidades.",
-		links: [
-			{
-				type: "figma",
-				url: "https://www.figma.com/design/8uwWrBlTqXgSbnFzA9HpEZ/DailyUI?node-id=0-1&t=bMUBnkFiArNIpafJ-1",
-			},
-			{
-				type: "dribbble",
-				url: "https://dribbble.com/shots/22606614-Daily-UI-004-Calculation-Design",
-			},
-		],
-		publishedDate: "2023-09",
 	},
 ];

@@ -102,6 +102,9 @@
   .optionsContainer {
     width: calc(100vw - 8vw);
     max-width: 400px;
+    max-height: calc(70vh - 80px);
+    overflow-y: auto;
+    scrollbar-width: none;
     background: var(--surface-primary-transparent-2);
     padding: 30px 10px 10px 10px;
     left: 50%;

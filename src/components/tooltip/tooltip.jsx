@@ -1,15 +1,19 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./tooltip.module.css";
+import CaptionText from "../captionText/captionText";
 
 export default function Tooltip({
 	children,
 	text,
+	caption,
 	anchorSide = "center",
 	size = "normal",
 	isDisabled = null,
 	ariaLabel = "",
 }) {
 	const [showTooltip, setShowTooltip] = useState(false);
+	const [isOverflowing, setIsOverflowing] = useState(false);
+	const tooltipRef = useRef(null);
 	const longPressTimer = useRef(null);
 
 	// Manejo del hover y long press
@@ -24,6 +28,32 @@ export default function Tooltip({
 		setShowTooltip(false);
 	};
 
+	const getHeaderRightContainer = (element) => {
+		let parent = element.parentElement;
+		while (parent) {
+			if (parent.dataset.headerRight) return parent; // Marcamos el div con data-header-right
+			parent = parent.parentElement;
+		}
+		return null;
+	};
+
+	// Verifica si el tooltip se corta en horizontal
+	useEffect(() => {
+		if (showTooltip && caption && tooltipRef.current) {
+			const rect = tooltipRef.current.getBoundingClientRect();
+			const headerRight = getHeaderRightContainer(tooltipRef.current);
+
+			if (headerRight) {
+				const containerRect = headerRight.getBoundingClientRect();
+				setIsOverflowing(rect.right > containerRect.right);
+			} else {
+				setIsOverflowing(false);
+			}
+		} else {
+			setIsOverflowing(false);
+		}
+	}, [showTooltip, caption]);
+
 	return text ? (
 		<div
 			style={{ position: "relative", display: "inline-block" }}
@@ -37,10 +67,13 @@ export default function Tooltip({
 				  })
 				: children}
 			<div
+				ref={tooltipRef}
 				className={`${styles.tooltip} ${showTooltip ? styles.show : ""} ${
 					styles[anchorSide]
 				} ${isDisabled ? styles.disabled : ""} ${
 					size == "minimal" ? styles.minimal : ""
+				} ${caption && styles.expanded} ${
+					isOverflowing ? styles.overflowRight : ""
 				}`}
 				aria-hidden={!showTooltip}>
 				<svg
@@ -54,7 +87,17 @@ export default function Tooltip({
 						fill="#D9D9D9"
 					/>
 				</svg>
-				{text}
+				{caption ? (
+					<>
+						<h3>{text}</h3>
+						<CaptionText
+							text={caption}
+							weight="500"
+						/>
+					</>
+				) : (
+					text
+				)}
 			</div>
 		</div>
 	) : (

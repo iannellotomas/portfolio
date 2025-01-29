@@ -19,6 +19,7 @@
   position: relative;
   background: var(--surface-primary);
   z-index: 2;
+  cursor: pointer;
 }
 
 .accordionHeader>span {
@@ -51,7 +52,7 @@
 
 .accordionHeader h3 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: var(--title-weight);
   color: var(--text-primary);
   transition: var(--dynamic-fast-transition);
   text-align: left;
