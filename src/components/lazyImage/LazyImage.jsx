@@ -1,13 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./LazyImage.module.css";
 
-export default function LazyImage({
-	src,
-	alt,
-	motionId,
-	radius = 0,
-	...props
-}) {
+export default function LazyImage({ src, alt, radius = 0, ...props }) {
 	const [isVisible, setIsVisible] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const imgRef = useRef(null);
@@ -42,7 +36,8 @@ export default function LazyImage({
 		<div
 			className={styles.imageContainer}
 			style={{ borderRadius: radius }}>
-			<div className={`${styles.skeleton} ${isLoaded ? styles.hide : null}`}></div>
+			<div
+				className={`${styles.skeleton} ${isLoaded ? styles.hide : null}`}></div>
 			<img
 				ref={imgRef}
 				src={isVisible ? src : ""}
@@ -52,7 +47,6 @@ export default function LazyImage({
 				onLoad={handleLoad}
 				style={{
 					opacity: isLoaded ? 1 : 0,
-					viewTransitionName: motionId && `project-image-${motionId}`,
 				}}
 			/>
 		</div>

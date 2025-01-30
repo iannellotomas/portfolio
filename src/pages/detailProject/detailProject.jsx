@@ -26,13 +26,24 @@ export default function DetailProject() {
 
 	const [isOptionsOpen, setIsOptionsOpen] = useState(false);
 	const [openFeedback, setOpenFeedback] = useState(false);
+	const [headerLoaded, setHeaderLoaded] = useState(false);
 
 	const heroRef = useRef(null);
 	const navRef = useRef(null);
 	const [isScrolled, setIsScrolled] = useState(false);
 
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setHeaderLoaded(true);
+		}, 900);
+
+		return () => clearTimeout(timeout);
+	}, []);
+
 	// Mostrar navbar completo al hacer scroll
 	useEffect(() => {
+		scrollTo(0, 0);
+
 		const handleScroll = () => {
 			if (heroRef.current) {
 				const heroBottom = heroRef.current.getBoundingClientRect().bottom;
@@ -45,8 +56,6 @@ export default function DetailProject() {
 	}, []);
 
 	useEffect(() => {
-		scrollTo(0, 0);
-
 		const handleClickOutside = (event) => {
 			if (menuRef.current && !menuRef.current.contains(event.target)) {
 				setIsOptionsOpen(false);
@@ -91,6 +100,7 @@ export default function DetailProject() {
 				<span className={styles.noise}></span>
 				<span className={styles.shadow}></span>
 			</div>
+
 			<nav
 				ref={navRef}
 				className={`${styles.nav} ${isScrolled && styles.scrolled}`}>
@@ -135,9 +145,12 @@ export default function DetailProject() {
 						showControls={false}
 						showStepbar={false}
 						showThumbnail={true}
+						motionId={project.url}
 					/>
 				</div>
-				<div className={styles.headerRight} data-header-right>
+				<div
+					className={`${styles.headerRight} ${headerLoaded && styles.loaded}`}
+					data-header-right>
 					<div
 						ref={heroRef}
 						className={styles.hero}>
@@ -268,7 +281,7 @@ export default function DetailProject() {
 												text={tool.title}
 												caption={innerWidth > 1024 && tool.caption}
 												size={innerWidth <= 1024 && "minimal"}
-												anchorSide={innerWidth > 1024? "left" : "center"}>
+												anchorSide={innerWidth > 1024 ? "left" : "center"}>
 												<li className={styles.toolItem}>
 													<img
 														src={Object.values(tool.logo)}

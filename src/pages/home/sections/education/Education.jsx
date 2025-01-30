@@ -97,10 +97,6 @@ export default function Education() {
 		setSortedListsEducation(sortedData); // Actualizar el estado con los proyectos ordenados
 	};
 
-	const handleModeChange = (event) => {
-		setViewMode(event.target.value);
-	};
-
 	return (
 		<section
 			id="education"

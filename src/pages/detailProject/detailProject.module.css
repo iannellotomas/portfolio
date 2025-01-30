@@ -135,21 +135,6 @@
   animation: var(--dynamic-transition) toTop alternate;
 }
 
-@keyframes toTop {
-
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
 .nav>div:nth-child(2) {
   pointer-events: none;
 }
@@ -198,40 +183,18 @@
 
 .background img {
   width: 500%;
-  height: 350px;
+  height: 370px;
   object-fit: cover;
   filter: blur(40px);
   opacity: .8;
   animation: scale 6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
 }
 
-@keyframes scale {
-  0% {
-    transform: scale(1.05) translate(0, 0);
-  }
-
-  25% {
-    transform: scale(1.1) translate(-50px, -50px);
-  }
-
-  50% {
-    transform: scale(1.2) translate(0, -50px);
-  }
-
-  75% {
-    transform: scale(1.1) translate(50px, -20px);
-  }
-
-  100% {
-    transform: scale(1.05) translate(0, 0);
-  }
-}
-
 .background .shadow {
   width: 100%;
   position: absolute;
   top: 300px;
-  height: 300px;
+  height: 320px;
   border-radius: 500px;
   filter: blur(50px);
   background: var(--surface-primary);
@@ -240,7 +203,7 @@
 .background .noise {
   position: absolute;
   width: 100%;
-  height: 500px;
+  height: 520px;
   top: 0;
   left: 0;
   background-image: url('../../assets/Ilustrations/NoiseDetailProject.png'), linear-gradient(to bottom, transparent, var(--surface-primary));
@@ -267,7 +230,7 @@
   position: relative;
   width: 60%;
   padding: 50px 50px 70px 70px;
-  margin: 100px 0 0 -20px;
+  margin: 120px 0 0 -20px;
   border: 2px solid var(--text-primary-transparent-2);
   border-bottom: 0;
   border-left: 0;
@@ -353,16 +316,6 @@
   top: 20px;
   margin: 0;
   animation: var(--dynamic-transition) toBottom forwards;
-}
-
-@keyframes toBottom {
-  from {
-    transform: translateY(-30px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
 }
 
 .primaryButton {
@@ -525,6 +478,19 @@
   .toolItem:hover img {
     transform: translateY(8px);
   }
+
+  /* DESKTOP REVEAL ANIMATION */
+  .headerRight:not(.loaded) {
+    transform: translateY(100%);
+    animation: move var(--dynamic-transition) forwards;
+    animation-delay: .5s;
+  }
+
+  .nav>div:nth-child(2)>button {
+    transform: translateY(-100px);
+    animation: move var(--dynamic-medium-transition) forwards;
+    animation-delay: .3s;
+  }
 }
 
 @media (width <=1024px) {
@@ -584,6 +550,10 @@
 
   .nav>.gap {
     display: none;
+  }
+
+  .headerLeft {
+    overflow: hidden;
   }
 
   .hero h1 {
@@ -716,5 +686,71 @@
 
   .background .noise {
     height: calc(450px + 20vh);
+  }
+}
+
+/* CUSTOM ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes move {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes toTop {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes toBottom {
+  from {
+    transform: translateY(-30px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1.05) translate(0, 0);
+  }
+
+  25% {
+    transform: scale(1.1) translate(-50px, -50px);
+  }
+
+  50% {
+    transform: scale(1.2) translate(0, -50px);
+  }
+
+  75% {
+    transform: scale(1.1) translate(50px, -20px);
+  }
+
+  100% {
+    transform: scale(1.05) translate(0, 0);
   }
 }

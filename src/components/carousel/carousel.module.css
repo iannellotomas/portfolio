@@ -5,6 +5,7 @@
   overflow: hidden;
   position: relative;
   background: var(--surface-primary);
+  z-index: 5;
 }
 
 .carousel.hero {
@@ -141,6 +142,17 @@
   justify-content: center;
   gap: 10px;
   width: 100%;
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: fadeDown var(--dynamic-medium-transition) forwards;
+  animation-delay: .5s;
+}
+
+@keyframes fadeDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .thumbnail.overflow {
