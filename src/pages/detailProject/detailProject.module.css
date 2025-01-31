@@ -5,6 +5,8 @@
   margin: 0 auto;
   padding: 0 4vw 0 4vw;
   scroll-behavior: smooth;
+  opacity: 0;
+  animation: fade .3s ease forwards;
 }
 
 /* NAV */
@@ -183,27 +185,27 @@
 
 .background img {
   width: 500%;
-  height: 370px;
+  height: 100vh;
+  transform: scale(1.05);
   object-fit: cover;
   filter: blur(40px);
-  opacity: .8;
-  animation: scale 6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
 }
 
 .background .shadow {
   width: 100%;
   position: absolute;
-  top: 300px;
+  top: 100vh;
   height: 320px;
   border-radius: 500px;
   filter: blur(50px);
   background: var(--surface-primary);
+  transition: var(--dynamic-transition);
 }
 
 .background .noise {
   position: absolute;
   width: 100%;
-  height: 520px;
+  height: calc(100vh + 200px);
   top: 0;
   left: 0;
   background-image: url('../../assets/Ilustrations/NoiseDetailProject.png'), linear-gradient(to bottom, transparent, var(--surface-primary));
@@ -211,6 +213,7 @@
   background-blend-mode: overlay;
   mix-blend-mode: hard-light;
   opacity: .6;
+  transition: var(--dynamic-transition);
 }
 
 .headerLeft {
@@ -483,13 +486,28 @@
   .headerRight:not(.loaded) {
     transform: translateY(100%);
     animation: move var(--dynamic-transition) forwards;
-    animation-delay: .5s;
+    animation-delay: .7s;
   }
 
   .nav>div:nth-child(2)>button {
     transform: translateY(-100px);
     animation: move var(--dynamic-medium-transition) forwards;
     animation-delay: .3s;
+  }
+
+  .background.animated img {
+    transition: height .5s ease;
+    height: 370px;
+    animation: scale 6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+    animation-delay: .5s;
+  }
+  
+  .background.animated .shadow {
+    top: 300px;
+  }
+  
+  .background.animated .noise {
+    height: 520px;
   }
 }
 
@@ -690,6 +708,12 @@
 }
 
 /* CUSTOM ANIMATIONS */
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -27,6 +27,7 @@ export default function DetailProject() {
 	const [isOptionsOpen, setIsOptionsOpen] = useState(false);
 	const [openFeedback, setOpenFeedback] = useState(false);
 	const [headerLoaded, setHeaderLoaded] = useState(false);
+	const [backgroundAnimated, setbackgroundAnimated] = useState(false);
 
 	const heroRef = useRef(null);
 	const navRef = useRef(null);
@@ -35,7 +36,15 @@ export default function DetailProject() {
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			setHeaderLoaded(true);
-		}, 900);
+		}, 1200);
+
+		return () => clearTimeout(timeout);
+	}, []);
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setbackgroundAnimated(true);
+		}, 700);
 
 		return () => clearTimeout(timeout);
 	}, []);
@@ -91,7 +100,10 @@ export default function DetailProject() {
 		<section className={styles.detailProject}>
 			<div
 				className={`${styles.cover} ${isOptionsOpen ? styles.show : ""}`}></div>
-			<div className={styles.background}>
+			<div
+				className={`${styles.background} ${
+					backgroundAnimated && styles.animated
+				}`}>
 				<img
 					src={project.images[0].props.src}
 					alt="Fondo difuminado resaltando la portada del proyecto"

@@ -145,7 +145,7 @@
   opacity: 0;
   transform: translateY(-100%);
   animation: fadeDown var(--dynamic-medium-transition) forwards;
-  animation-delay: .5s;
+  animation-delay: .6s;
 }
 
 @keyframes fadeDown {
