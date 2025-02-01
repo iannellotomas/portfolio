@@ -3,6 +3,7 @@
 .main {
   display: flex;
   gap: 40px;
+  margin-bottom: 80px;
 }
 
 .sheets {
@@ -13,13 +14,13 @@
   border-radius: 30px;
 }
 
-.images {
+.containerSheets {
   border-radius: 30px;
   z-index: 3;
   overflow: hidden;
 }
 
-.images>* {
+.containerSheets .image {
   margin-bottom: -5px;
 }
 
@@ -27,32 +28,37 @@
   display: flex;
   position: absolute;
   width: 100%;
-  height: 100%;
-  padding-top: 20px;
+  height: calc(100% - 100px);
+  padding-top: 40px;
   pointer-events: none;
 }
 
 .openIndex {
   position: sticky;
   top: 110px;
-  width: 50px;
+  width: 70px;
+  padding-left: 10px;
   height: 50px;
-  transform: translateX(20px);
+  interpolate-size: allow-keywords;
+  transform: translateX(-2px);
   z-index: 5;
-  border-radius: 50%;
+  border-radius: 0 80px 80px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   font-size: 16px;
   font-weight: 600;
   color: var(--color-primary);
   background: var(--surface-primary);
-  transition: var(--dynamic-fast-transition) padding;
-  border: 2px solid var(--color-primary-light);
-  overflow: hidden;
-  margin: 0;
+  border: 2px solid var(--color-neutral);
+  border-left: 0;
   opacity: 0;
+  transition: width var(--dynamic-medium-transition), padding var(--dynamic-medium-transition);
+}
+
+.openIndex svg {
+  transition: var(--dynamic-medium-transition);
 }
 
 .main:not(.showIndex) .openIndex {
@@ -61,27 +67,28 @@
 }
 
 .openIndex>span {
-  position: absolute;
-  transform: translateX(50px);
-  width: max-content;
+  transform: translateX(-10px);
+  white-space: nowrap;
   opacity: 0;
-  pointer-events: none;
+  width: 0;
+  interpolate-size: allow-keywords;
+  transition: transform var(--dynamic-medium-transition);
 }
 
 .openIndex:hover {
-  width: max-content;
   padding-inline: 30px;
-  border-radius: 50px;
+  width: auto;
 }
 
 .openIndex:hover span {
-  position: static;
   transform: translateX(0);
   opacity: 1;
+  width: auto;
 }
 
 .openIndex:active {
-  transform: translateX(20px) scale(1);
+  transform: scale(1);
+  background: var(--color-primary-light);
 }
 
 .openIndex path {
@@ -161,6 +168,7 @@
 
 .indexList {
   width: 220px;
+  list-style: none;
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -176,6 +184,7 @@
   position: relative;
   width: 100%;
   height: 40px;
+  cursor: pointer;
   padding-inline: 5px 0;
   border-radius: 50px;
   user-select: none;
@@ -292,7 +301,7 @@
     transition: var(--dynamic-fast-transition);
   }
 
-  .aside header {
+  .asideHeader {
     display: none;
   }
 
@@ -358,6 +367,10 @@
     inset: 0;
     width: 100%;
     height: 100%;
+  }
+
+  iframe {
+    display: none;
   }
 }
 
