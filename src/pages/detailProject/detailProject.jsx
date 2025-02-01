@@ -114,6 +114,7 @@ export default function DetailProject() {
 			</div>
 
 			<nav
+				id="project-nav"
 				ref={navRef}
 				className={`${styles.nav} ${isScrolled && styles.scrolled}`}>
 				<div className={styles.coverNav}></div>
