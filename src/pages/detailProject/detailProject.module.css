@@ -175,12 +175,15 @@
 
 .background {
   width: 100%;
+  max-height: 130vh;
   inset: 0;
   position: absolute;
   z-index: -1;
   display: flex;
   justify-content: center;
   overflow: hidden;
+  user-select: none;
+  pointer-events: none;
 }
 
 .background img {
@@ -453,7 +456,6 @@
   background: var(--text-primary-transparent);
 }
 
-
 /* MEDIA QUERIES */
 @media (width > 1024px) {
   .toolItem::before {
@@ -543,6 +545,7 @@
 
   .background img {
     height: calc(500px + 10vh);
+    animation: scale 6s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
   }
 
   .background .shadow {

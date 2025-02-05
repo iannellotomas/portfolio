@@ -1,24 +1,24 @@
-import FigmaLogo from "../assets/Logos/Figma.png";
-import CanvaLogo from "../assets/Logos/Canva.png";
-import GoogleDocsLogo from "../assets/Logos/GoogleDocs.png";
-import GoogleSlidesLogo from "../assets/Logos/GoogleSlides.png";
-import GoogleSheetsLogo from "../assets/Logos/GoogleSheets.png";
-import OptimalWorkshopLogo from "../assets/Logos/OptimalWorkshop.png";
-import NotionLogo from "../assets/Logos/Notion.png";
+import FigmaLogo from "../../public/logos/Figma.png";
+import CanvaLogo from "../../public/logos/Canva.png";
+import GoogleDocsLogo from "../../public/logos/GoogleDocs.png";
+import GoogleSlidesLogo from "../../public/logos/GoogleSlides.png";
+import GoogleSheetsLogo from "../../public/logos/GoogleSheets.png";
+import OptimalWorkshopLogo from "../../public/logos/OptimalWorkshop.png";
+import NotionLogo from "../../public/logos/Notion.png";
 
-import ShotsLogo from "../assets/Logos/Shots.png";
+import ShotsLogo from "../../public/logos/Shots.png";
 
-import HTMLLogo from "../assets/Logos/HTML.png";
-import CSSLogo from "../assets/Logos/CSS.png";
-import JSLogo from "../assets/Logos/JS.png";
-import ReactLogo from "../assets/Logos/ReactJS.png";
-import VercelLogo from "../assets/Logos/Vercel.png";
-import FirebaseLogo from "../assets/Logos/Firebase.png";
-import HostingerLogo from "../assets/Logos/Hostinger.png";
-import GithubLogo from "../assets/Logos/Github.png";
+import HTMLLogo from "../../public/logos/HTML.png";
+import CSSLogo from "../../public/logos/CSS.png";
+import JSLogo from "../../public/logos/JS.png";
+import ReactLogo from "../../public/logos/ReactJS.png";
+import VercelLogo from "../../public/logos/Vercel.png";
+import FirebaseLogo from "../../public/logos/Firebase.png";
+import HostingerLogo from "../../public/logos/Hostinger.png";
+import GithubLogo from "../../public/logos/Github.png";
 
-import PhotoshopLogo from "../assets/Logos/Photoshop.png";
-import IllustratorLogo from "../assets/Logos/Illustrator.png";
+import PhotoshopLogo from "../../public/logos/Photoshop.png";
+import IllustratorLogo from "../../public/logos/Illustrator.png";
 
 export const dataTools = {
 	// UX/UI TOOLS

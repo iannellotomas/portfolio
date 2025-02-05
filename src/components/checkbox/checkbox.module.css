@@ -1,4 +1,3 @@
-
 /* CHECKBOX */
 .checkbox {
   min-width: 220px;
@@ -21,7 +20,7 @@
   opacity: 0;
 }
 
-.checkbox > span {
+.checkbox>span {
   width: calc(100% - 50px);
   padding-right: 25px;
   height: 25px;

@@ -14,7 +14,7 @@ export default function BackButton({ type }) {
 
 	return (
 		<Tooltip
-			text="Volver al inicio"
+			text="Volver atrás"
 			anchorSide="left">
 			<button
 				onClick={handleBack}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
 import styles from "./carousel.module.css";
 import LazyImage from "../lazyImage/LazyImage";
 import Tooltip from "../tooltip/tooltip";
@@ -11,6 +12,7 @@ export default function Carousel({
 	showThumbnail = false,
 	motionId,
 }) {
+	const { url } = useParams();
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 	const carouselRef = useRef(null);
 
@@ -89,7 +91,7 @@ export default function Carousel({
 		return () => {
 			window.removeEventListener("resize", updatePolygonPosition);
 		};
-	}, [currentImageIndex]);
+	}, [currentImageIndex, url]);
 
 	// Detectar desbordamiento de los thumbnails
 	const checkOverflow = () => {
@@ -108,7 +110,7 @@ export default function Carousel({
 		return () => {
 			window.removeEventListener("resize", checkOverflow);
 		};
-	}, [currentImageIndex]);
+	}, [currentImageIndex, url]);
 
 	return (
 		<>

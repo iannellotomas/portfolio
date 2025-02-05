@@ -18,6 +18,7 @@ import CaptionText from "../../components/captionText/captionText";
 import Carousel from "../../components/carousel/carousel";
 import Accordion from "../../components/accordion/accordion";
 import SheetProject from "../../components/sheetProject/sheetProject";
+import CarouselProjects from "../../components/carouselProjects/carouselProjects";
 
 export default function DetailProject() {
 	const { url } = useParams();
@@ -32,27 +33,46 @@ export default function DetailProject() {
 	const heroRef = useRef(null);
 	const navRef = useRef(null);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [relatedProjects, setRelatedProjects] = useState([]);
 
+	// Scrollear arriba del todo al cargar un nuevo proyecto
+	useEffect(() => {
+		scrollTo({ top: 0 });
+		setRelatedProjects(getRelatedProjects());
+	}, [url]);
+
+	// Filtrar los proyectos relacionados
+	const getRelatedProjects = () => {
+		return dataProjects.filter((item) => {
+			return (
+				item.id !== project.id &&
+				item.categories.some((category) =>
+					project.categories.includes(category)
+				)
+			);
+		});
+	};
+
+	// Definir cuando animar el header
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			setHeaderLoaded(true);
 		}, 1200);
 
 		return () => clearTimeout(timeout);
-	}, []);
+	}, [url]);
 
+	// Definir cuando animar el fondo
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			setbackgroundAnimated(true);
 		}, 700);
 
 		return () => clearTimeout(timeout);
-	}, []);
+	}, [url]);
 
 	// Mostrar navbar completo al hacer scroll
 	useEffect(() => {
-		scrollTo(0, 0);
-
 		const handleScroll = () => {
 			if (heroRef.current) {
 				const heroBottom = heroRef.current.getBoundingClientRect().bottom;
@@ -114,6 +134,7 @@ export default function DetailProject() {
 			</div>
 
 			<nav
+				id="project-nav"
 				ref={navRef}
 				className={`${styles.nav} ${isScrolled && styles.scrolled}`}>
 				<div className={styles.coverNav}></div>
@@ -313,6 +334,9 @@ export default function DetailProject() {
 				</div>
 			</header>
 			{project.sheet && <SheetProject sheets={project.sheet} />}
+			{relatedProjects.length > 0 && (
+				<CarouselProjects projects={relatedProjects} />
+			)}
 			<Feedback
 				project={project}
 				openFeedback={openFeedback}

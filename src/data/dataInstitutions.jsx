@@ -1,8 +1,8 @@
-import LogoUBA from "../assets/Logos/UBA.jpg";
-import LogoCoder from "../assets/Logos/CODER.jpg";
-import LogoEduIT from "../assets/Logos/IT.jpg";
-import LogoGCBA from "../assets/Logos/GCBA.jpg";
-import LogoIPE from "../assets/Logos/IPE.jpg";
+import LogoUBA from "../../public/logos/UBA.jpg";
+import LogoCoder from "../../public/logos/CODER.jpg";
+import LogoEduIT from "../../public/logos/IT.jpg";
+import LogoGCBA from "../../public/logos/GCBA.jpg";
+import LogoIPE from "../../public/logos/IPE.jpg";
 
 export const dataInstitutions = {
 	1: {
