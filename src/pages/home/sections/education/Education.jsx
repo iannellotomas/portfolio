@@ -103,6 +103,7 @@ export default function Education() {
 			className={styles.education}>
 			<SectionHead
 				title="Educación"
+				imageName="book"
 				description="Mis estudios en Diseño UX/UI y Gráfico me permiten una comprensión profunda del diseño centrado en el usuario y la comunicación visual, que se complementan con mis habilidades en Frontend."
 			/>
 			<section className={styles.tools}>
@@ -132,10 +133,10 @@ export default function Education() {
 				}`}>
 				<AnimatePresence>
 					<header>
-						<CaptionText text="Carrera / Curso"/>
-						<CaptionText text="Institución"/>
-						<CaptionText text="Habilidades"/>
-						<CaptionText text="Fecha"/>
+						<CaptionText text="Carrera / Curso" />
+						<CaptionText text="Institución" />
+						<CaptionText text="Habilidades" />
+						<CaptionText text="Fecha" />
 					</header>
 					{sortedListsEducation
 						.filter((education) => {
