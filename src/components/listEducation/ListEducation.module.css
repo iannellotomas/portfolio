@@ -16,7 +16,7 @@
   justify-items: start;
   align-items: center;
   padding: 20px 40px 20px 20px;
-  border-bottom: 2px solid var(--color-neutral);
+  border-bottom: 1px solid var(--color-primary-light);
   transition: var(--dynamic-fast-transition);
 }
 
@@ -114,7 +114,6 @@
   position: absolute;
   border-radius: 20px;
   transition: var(--dynamic-fast-transition) transform;
-  border: 1px solid var(--text-primary-transparent);
   background: var(--color-neutral);
   transform-origin: left;
   opacity: 0;
@@ -188,7 +187,7 @@
 .gridItem .tags {
   margin-block: 15px;
   padding-top: 20px;
-  border-top: 2px solid var(--color-neutral);
+  border-top: 1px solid var(--color-primary-light);
 }
 
 .listItem .title.progress {
@@ -227,13 +226,25 @@
   .gridItem {
     width: 100%;
     min-width: 350px;
-    border: 2px solid var(--color-neutral);
+    border: 1px solid var(--color-primary-light);
+  }
+
+  .gridItem .title {
+    width: 100%;
+  }
+
+  .gridItem .title::before {
+    content: none;
   }
 
   .gridItem .title svg {
-    right: -20px;
+    right: 20px;
     transform: translateY(0);
     opacity: 1;
+  }
+
+  .gridItem .title path {
+    stroke-width: 1.5;
   }
 }
 

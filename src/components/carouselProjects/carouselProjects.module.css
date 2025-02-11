@@ -3,20 +3,18 @@
   flex-direction: column;
   padding-top: 30px;
   margin-top: 70px;
-  border-top: 2px solid var(--color-primary-light);
+  border-top: 1px solid var(--color-primary-light);
 }
 
-.relatedProjects h2 {
-  margin-bottom: 20px;
-  font-size: clamp(30px, calc(2rem + 2vw), 32px);
-  font-weight: 600;
-  color: var(--text-primary);
+.relatedProjects > span {
+  z-index: 10;
 }
 
 .containerCarousel {
   width: 100%;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  margin-top: -50px;
 }
 
 .containerCarousel::before,
@@ -50,7 +48,7 @@
   gap: 30px;
   overflow-x: auto;
   scrollbar-width: none;
-  padding-top: 20px;
+  padding-top: 70px;
 }
 
 .carouselCards>a {
@@ -60,7 +58,7 @@
 
 .slideControl {
   position: absolute;
-  top: 115px;
+  top: 165px;
   background: var(--text-primary);
   border-radius: 60px;
   z-index: 5;

@@ -159,7 +159,7 @@
   position: absolute;
   right: 0;
   top: calc(100%);
-  width: 2px;
+  width: 1px;
   height: 50px;
   background: linear-gradient(var(--text-primary-transparent-2), var(--surface-primary));
 }
@@ -237,7 +237,7 @@
   width: 60%;
   padding: 50px 50px 70px 70px;
   margin: 120px 0 0 -20px;
-  border: 2px solid var(--text-primary-transparent-2);
+  border: 1px solid var(--text-primary-transparent-2);
   border-bottom: 0;
   border-left: 0;
   border-radius: 0 50px 0 0;
@@ -295,7 +295,7 @@
 .divisor {
   width: 100%;
   border: none;
-  height: 2px;
+  height: 1px;
   background: var(--text-primary-transparent-2);
   margin-block: 20px;
 }
@@ -450,10 +450,10 @@
 }
 
 .heightDivisor {
-  width: 2px;
+  width: 1px;
   height: 30px;
   border-radius: 5px;
-  background: var(--text-primary-transparent);
+  background: var(--color-primary-light);
 }
 
 /* MEDIA QUERIES */
@@ -540,7 +540,7 @@
     margin: 0;
     padding: 50px;
     border-radius: 50px 50px 0 0;
-    border-left: 2px solid var(--text-primary-transparent-2);
+    border-left: 1px solid var(--text-primary-transparent-2);
   }
 
   .background img {

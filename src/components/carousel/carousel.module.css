@@ -14,7 +14,7 @@
   max-width: 600px;
   margin: 0 auto;
   background: var(--text-primary-transparent);
-  outline: 2px solid var(--text-primary-transparent);
+  outline: 1px solid var(--text-primary-transparent);
 }
 
 @media (width <= 1024px) {
@@ -45,7 +45,7 @@
 }
 
 .carouselImage img {
-  transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: var(--dynamic-transition);
 }
 
 .cardProject:hover .carouselImage img {
@@ -172,7 +172,7 @@
   max-width: 100px;
   height: 80px;
   padding: 10px;
-  border: 2px solid var(--text-primary-transparent);
+  border: 1px solid var(--color-primary-light);
   border-radius: 20px;
   display: grid;
   place-items: center;

@@ -193,7 +193,9 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 						<span>Educación</span>
 					</button>
 				</div>
-				<button className={`${styles.primaryButton}`}>
+				<button
+					className={`${styles.primaryButton}`}
+					onClick={() => handleScroll("contact")}>
 					<span>Contáctame</span>
 				</button>
 			</div>

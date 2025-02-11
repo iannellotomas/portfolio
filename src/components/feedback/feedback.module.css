@@ -224,7 +224,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  height: 2px;
+  height: 1px;
   background: var(--color-primary-light);
 }
 
@@ -241,7 +241,7 @@
   min-height: 120px;
   line-height: 140%;
   border-radius: 20px;
-  border: 2px solid var(--color-primary-light);
+  border: 1px solid var(--color-primary-light);
   transition: var(--dynamic-fast-transition);
   padding: 20px;
   font-size: 16px;

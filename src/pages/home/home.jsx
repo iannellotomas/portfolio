@@ -3,6 +3,7 @@ import Nav from "./sections/nav/Nav";
 import Header from "./sections/header/Header";
 import Projects from "./sections/projects/Projects";
 import Education from "./sections/education/Education";
+import Contact from "./sections/contact/Contact";
 import Footer from "../../components/footer/footer";
 
 export default function Home({ isDarkMode, toggleDarkMode }) {
@@ -17,6 +18,7 @@ export default function Home({ isDarkMode, toggleDarkMode }) {
 			<Header />
 			<Projects />
 			<Education />
+			<Contact />
 			<Footer />
 		</div>
 	);

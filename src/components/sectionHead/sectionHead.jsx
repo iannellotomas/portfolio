@@ -2,6 +2,7 @@ import styles from "./sectionHead.module.css";
 import SectionTitle from "../sectionTitle/sectionTitle";
 import ProyectsSectionHead from "../../assets/Ilustrations/ProyectsSectionHead.webp";
 import EducationSectionHead from "../../assets/Ilustrations/EducationSectionHead.webp";
+import ContactSectionHead from "../../assets/Ilustrations/ContactSectionHead.webp";
 
 const images = {
 	paint: (
@@ -14,6 +15,12 @@ const images = {
 		<img
 			src={EducationSectionHead}
 			alt="Ilustración 3D de libro animado con índice"
+		/>
+	),
+	message: (
+		<img
+			src={ContactSectionHead}
+			alt="Ilustración 3D de globo de mensaje"
 		/>
 	),
 };

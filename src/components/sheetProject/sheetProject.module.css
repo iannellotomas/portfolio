@@ -8,7 +8,7 @@
 .sheets {
   width: 100%;
   position: relative;
-  border: 2px solid var(--color-neutral);
+  border: 1px solid var(--color-primary-light);
   background: var(--color-neutral);
   border-radius: 30px;
 }
@@ -50,7 +50,7 @@
   font-weight: 600;
   color: var(--color-primary);
   background: var(--surface-primary);
-  border: 2px solid var(--color-neutral);
+  border: 1px solid var(--color-primary-light);
   border-left: 0;
   opacity: 0;
   transition: width var(--dynamic-medium-transition), padding var(--dynamic-medium-transition);
@@ -172,7 +172,6 @@
   gap: 20px;
   flex-direction: column;
   padding-left: 25px;
-  overflow: hidden;
 }
 
 .indexList h4 {
@@ -183,17 +182,19 @@
   position: relative;
   width: 100%;
   height: 40px;
+  padding-inline: 2px 0;
   cursor: pointer;
-  padding-inline: 5px 0;
   border-radius: 50px;
   user-select: none;
   background: var(--color-primary-light);
-  border: 2px solid var(--color-primary-light);
+  border: 1px solid var(--color-primary-light);
+  outline: 3px solid transparent;
+  outline-offset: -2px;
   transition: var(--dynamic-fast-transition);
 }
 
 .indexItem:hover {
-  padding-inline: 20px 0;
+  padding-inline: 15px 0;
 }
 
 .indexItem:active {
@@ -205,7 +206,7 @@
   position: absolute;
   top: calc(100% - 2px);
   left: -20px;
-  width: 3px;
+  width: 2px;
   height: 25px;
   border-radius: 5px;
   background: var(--color-primary-light);
@@ -243,8 +244,9 @@
   width: 12px;
   height: 12px;
   border-radius: 50px;
-  background: var(--color-primary-light);
-  border: 3px solid transparent;
+  border: 2px solid var(--color-primary-light);
+  outline: 3px solid transparent;
+  outline-offset: -3px;
   position: absolute;
   left: -25px;
   top: 50%;
@@ -253,7 +255,8 @@
 
 .indexItem.active {
   background: var(--color-primary);
-  border-color: var(--color-primary);
+  outline-color: var(--color-primary);
+  border-color: transparent;
   padding-inline: 20px 0;
   pointer-events: none;
 }
@@ -264,8 +267,8 @@
 }
 
 .indexItem.active .circle {
-  background: var(--surface-primary);
-  border-color: var(--color-primary);
+  border-color: transparent;
+  outline-color: var(--color-primary);
 }
 
 .coverAside,

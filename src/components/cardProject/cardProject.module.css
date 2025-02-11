@@ -32,6 +32,7 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 50px;
   overflow: hidden;
   top: 0;
   left: 0;
@@ -41,13 +42,30 @@ a {
   z-index: -1;
 }
 
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(.5);
+  }
+
+  20% {
+    opacity: .5;
+    transform: scale(1.15);
+  }
+
+  100% {
+    opacity: .4;
+    transform: scale(1);
+  }
+}
+
 .blurImage {
   width: 100%;
   height: 100%;
 }
 
 .cardProject:hover .blurOverlay {
-  opacity: .4;
+  animation: 1s ease-out scaleIn forwards;
 }
 
 .category {
@@ -166,21 +184,35 @@ a {
   border-radius: 0;
 }
 
+.cardProject.minimal .blurOverlay {
+  max-height: 200px;
+  border-radius: 50px;
+  transition: .3s ease;
+}
+
 .cardProject.minimal .cardImage {
   width: 100%;
   height: 230px;
-  border-radius: 20px 20px 20px 5px;
+  border-radius: 30px 30px 30px 10px;
   overflow: hidden;
-  border: 2px solid var(--text-primary-transparent);
+  padding: 10px;
+  border: 1px solid var(--color-primary-light);
+  outline: 3px solid transparent;
+  outline-offset: -3px;
+  transition: var(--dynamic-fast-transition);
 }
 
 .cardImage img {
-  transition: var(--dynamic-transition);
   object-fit: cover;
+  border-radius: 20px 20px 20px 5px;
+}
+
+.cardProject.minimal:hover .cardImage {
+  outline-color: var(--text-primary);
 }
 
 .cardProject.minimal:hover .cardImage img {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .cardProject.minimal .category {
@@ -192,6 +224,7 @@ a {
   padding: 15px 0 0 0;
   border-radius: 0;
   background: none;
+  backdrop-filter: none;
 }
 
 .cardProject.minimal .cardFooter>span {
@@ -242,7 +275,7 @@ a {
   }
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
   .cardProject.minimal .cardImage {
     height: 170px;
   }

@@ -3,7 +3,7 @@
   height: 60px;
   display: grid;
   place-items: center;
-  border: 2px solid var(--color-primary-light);
+  border: 1px solid var(--color-primary-light);
   border-radius: 500px;
   transition: var(--dynamic-fast-transition);
   pointer-events: all;

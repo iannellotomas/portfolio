@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./feedback.module.css";
 import emailjs from "emailjs-com";
 import { formatDate } from "../../utils/formatDate";
+import { formatDateToSubmit } from "../../utils/formatDate";
 import { useDisableBodyScroll } from "../../hooks/useDisableBodyScroll";
 import Emoji1 from "../../assets/Ilustrations/Emoji1.png";
 import Emoji2 from "../../assets/Ilustrations/Emoji2.png";
@@ -40,20 +41,7 @@ function Feedback({ project, openFeedback, setOpenFeedback }) {
 
 		if (ratingSelected != null && userMessage !== "") {
 			setIsSubmit(true);
-			const now = new Date();
-
-			// Formatear la fecha
-			const formattedDate = now.toLocaleDateString("es-ES", {
-				day: "2-digit",
-				month: "long",
-				year: "numeric",
-			});
-
-			// Formatear la hora
-			const formattedHour = now.toLocaleTimeString("es-ES", {
-				hour: "2-digit",
-				minute: "2-digit",
-			});
+			const [formattedDate, formattedHour] = formatDateToSubmit();
 
 			const formData = {
 				project: project.title,
@@ -73,10 +61,10 @@ function Feedback({ project, openFeedback, setOpenFeedback }) {
 				)
 				.then(
 					(result) => {
-						console.log("Correo enviado con éxito:", result.text);
+						console.log("Correo enviado con éxito: ", result.text);
 					},
 					(error) => {
-						console.error("Error al enviar el correo:", error.text);
+						console.error("Error al enviar el correo: ", error.text);
 					}
 				);
 		}

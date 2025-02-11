@@ -15,16 +15,13 @@ export default function CardProject({ project, isMinimal }) {
 			<article
 				className={`${styles.cardProject} ${isMinimal && styles.minimal}`}>
 				{/* Imagen duplicada con blur al hover */}
-				{!isMinimal && (
-					<div className={styles.blurOverlay}>
-						<LazyImage
-							src={project.images[0].props.src}
-							alt={project.images[0].props.alt}
-							className={styles.blurImage}
-						/>
-					</div>
-				)}
-
+				<div className={styles.blurOverlay}>
+					<LazyImage
+						src={project.images[0].props.src}
+						alt={project.images[0].props.alt}
+						className={styles.blurImage}
+					/>
+				</div>
 				<div className={styles.content}>
 					<div className={styles.category}>
 						{project.categories.map((category) => (
