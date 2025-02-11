@@ -8,7 +8,6 @@
   display: flex;
   gap: 50px;
   padding-top: 20px;
-  padding-inline: 20px;
 }
 
 /* CONTACT SOCIAL */
@@ -163,7 +162,6 @@
 @media (width <= 1024px) {
   .contact {
     flex-direction: column;
-    padding-inline: 0;
   }
 
   .contactLeft {
