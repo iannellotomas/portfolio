@@ -44,6 +44,10 @@ body.light-mode {
   --surface-icon-outstanding: #D9DD04;
   --border-outstanding: #868902;
   --text-outstanding: var(--text-primary);
+  /* CAREERS */
+  --diamond-blue: #4270B3;
+  --emerald-green: #187B77;
+  --ruby-red: #CC495C;
   /* SHADOWS */
   --smooth-shadow: 0 4px 30px 10px #a1a5ce47;
   --strong-shadow: 0 4px 5px rgba(0, 0, 0, .25);
@@ -87,8 +91,11 @@ body.dark-mode {
   --surface-outstanding: var(--surface-primary);
   --surface-icon-outstanding: #2F330D;
   --border-outstanding: #FAFF00;
-
   --text-outstanding: #FAFF00;
+  /* CAREERS */
+  --diamond-blue: #3D8ED4;
+  --emerald-green: #3AAC8C;
+  --ruby-red: #D26859;
   /* SHADOWS */
   --smooth-shadow: 0 4px 30px 10px #272a4872;
   --strong-shadow: none;
@@ -219,6 +226,7 @@ strong {
   0% {
     transform: scale(1) translateX(0);
   }
+
   100% {
     transform: scale(1.2) translateX(50px);
   }

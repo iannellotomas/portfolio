@@ -1,6 +1,7 @@
 import styles from "./home.module.css";
 import Nav from "./sections/nav/Nav";
 import Header from "./sections/header/Header";
+import Careers from "./sections/careers/Careers";
 import Projects from "./sections/projects/Projects";
 import Education from "./sections/education/Education";
 import Contact from "./sections/contact/Contact";
@@ -16,6 +17,7 @@ export default function Home({ isDarkMode, toggleDarkMode }) {
 				toggleDarkMode={toggleDarkMode}
 			/>
 			<Header />
+			<Careers />
 			<Projects />
 			<Education />
 			<Contact />

@@ -1,6 +1,16 @@
-export const dataCategories = {
+import uxuiIllustration from "../assets/Ilustrations/uxuiIllustration.webp";
+import frontendIllustration from "../assets/Ilustrations/frontendIllustration.webp";
+import graphicIllustration from "../assets/Ilustrations/graphicIllustration.webp";
+
+export const dataCareers = {
 	1: {
 		title: "UX/UI",
+		caption: "Diseño",
+		description:
+			"Transformo ideas en experiencias digitales únicas, diseñando interfaces intuitivas que mejoran la interacción y generan fidelidad.",
+		tags: ["Research", "Writing", "Figma", "Usabilidad", "Accesibilidad"],
+		priority: "Principal",
+		startDate: "2023",
 		svg: (
 			<svg
 				width="19"
@@ -16,6 +26,12 @@ export const dataCategories = {
 					strokeLinejoin="round"
 				/>
 			</svg>
+		),
+		illustration: (
+			<img
+				src={uxuiIllustration}
+				alt="Illustración 3D de pieza de rompecabezas"
+			/>
 		),
 	},
 	2: {
@@ -43,6 +59,12 @@ export const dataCategories = {
 	},
 	3: {
 		title: "Frontend",
+		caption: "Desarrollo",
+		description:
+			"Desarrollo interfaces interactivas con tecnologías modernas, optimizando el rendimiento y la experiencia de usuario.",
+		tags: ["React JS", "HTML", "CSS", "JS", "Responsive", "Hosting", "SEO"],
+		priority: "Complementario",
+		startDate: "2022",
 		svg: (
 			<svg
 				width="19"
@@ -58,9 +80,21 @@ export const dataCategories = {
 				/>
 			</svg>
 		),
+		illustration: (
+			<img
+				src={frontendIllustration}
+				alt="Illustración 3D de código de desarrollo web"
+			/>
+		),
 	},
 	4: {
 		title: "Gráfico",
+		caption: "Diseño",
+		description:
+			"Transmito mensajes visuales impactantes a través del branding, la tipografía y la composición gráfica.",
+		tags: ["Comunicación", "Tipografía", "Color", "Branding", "Composición"],
+		priority: "Complementario",
+		startDate: "2024",
 		svg: (
 			<svg
 				width="18"
@@ -92,6 +126,12 @@ export const dataCategories = {
 					strokeWidth="2"
 				/>
 			</svg>
+		),
+		illustration: (
+			<img
+				src={graphicIllustration}
+				alt="Illustración 3D de una composición de paisaje"
+			/>
 		),
 	},
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./cardProject.module.css";
 import { Link } from "react-router-dom";
-import { dataCategories } from "../../data/dataCategories";
+import { dataCareers } from "../../data/dataCareers";
 import Carousel from "../carousel/carousel";
 import Chip from "../chip/chip";
 import LazyImage from "../lazyImage/LazyImage";
@@ -28,8 +28,8 @@ export default function CardProject({ project, isMinimal = false }) {
 							<span
 								key={category}
 								className={styles.chip}>
-								{dataCategories[category]?.svg}{" "}
-								{dataCategories[category]?.title}
+								{dataCareers[category]?.svg}{" "}
+								{dataCareers[category]?.title}
 							</span>
 						))}
 					</div>

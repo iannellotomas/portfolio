@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Projects.module.css";
 import SectionHead from "../../../../components/sectionHead/sectionHead";
-import { dataCategories } from "../../../../data/dataCategories";
+import { dataCareers } from "../../../../data/dataCareers";
 import { ProjectsContext } from "../../../../context/ProjectsContext";
 import CardProject from "../../../../components/cardProject/cardProject";
 import SegmentedControls from "../../../../components/segmentedControls/segmentedControls";
@@ -29,7 +29,7 @@ export default function Projects() {
 			/>
 			<section className={styles.tools}>
 				<SegmentedControls
-					controls={dataCategories}
+					controls={dataCareers}
 					selectedControl={selectedCategory}
 					setSelectedControl={setSelectedCategory}
 				/>

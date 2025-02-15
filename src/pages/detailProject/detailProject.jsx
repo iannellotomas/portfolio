@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { dataProjects } from "../../data/dataProjects";
-import { dataCategories } from "../../data/dataCategories";
+import { dataCareers } from "../../data/dataCareers";
 import { dataTools } from "../../data/dataTools";
 import { formatDate } from "../../utils/formatDate";
 import { formatText } from "../../utils/formatText";
@@ -147,7 +147,7 @@ export default function DetailProject() {
 						<span>
 							<CaptionText
 								text={`Proyecto ${project.categories
-									.map((category) => dataCategories[category].title)
+									.map((category) => dataCareers[category].title)
 									.join(", ")}`}
 								weight="500"
 							/>
@@ -189,7 +189,7 @@ export default function DetailProject() {
 						className={styles.hero}>
 						<CaptionText
 							text={`Proyecto ${project.categories
-								.map((category) => dataCategories[category].title)
+								.map((category) => dataCareers[category].title)
 								.join(", ")} • ${formatDate(project.publishedDate)}`}
 						/>
 						<div>

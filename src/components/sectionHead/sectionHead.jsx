@@ -3,6 +3,7 @@ import SectionTitle from "../sectionTitle/sectionTitle";
 import ProyectsSectionHead from "../../assets/Ilustrations/ProyectsSectionHead.webp";
 import EducationSectionHead from "../../assets/Ilustrations/EducationSectionHead.webp";
 import ContactSectionHead from "../../assets/Ilustrations/ContactSectionHead.webp";
+import { motion } from "framer-motion";
 
 const images = {
 	paint: (
@@ -30,7 +31,18 @@ export default function SectionHead({ title, description, imageName }) {
 
 	return (
 		<header className={styles.header}>
-			<span className={styles.icon}>{currentImage}</span>
+			<span className={styles.icon}>
+				<motion.span
+					initial={{ opacity: 0, y: 50 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.1 }}
+					transition={{
+						duration: 0.15,
+						ease: [0.215, 0.61, 0.355, 1],
+					}}>
+					{currentImage}
+				</motion.span>
+			</span>
 			<span className={styles.headerRight}>
 				<SectionTitle text={title} />
 				<p className={styles.description}>{description}</p>
