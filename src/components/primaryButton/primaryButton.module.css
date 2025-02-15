@@ -1,0 +1,71 @@
+.primaryButton {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding-inline: 40px;
+  background: var(--color-primary);
+  color: var(--text-alternative);
+  font-weight: var(--active-label-weight);
+  border-radius: 500px;
+  overflow: hidden;
+  transition: var(--dynamic-fast-transition);
+}
+
+.primaryButton > * {
+  z-index: 3;
+}
+
+.primaryButton:active {
+  transform: scale(.9);
+}
+
+.primaryButton.disabled {
+  display: none;
+}
+
+.primaryButton svg path,
+.primaryButton svg line {
+  stroke: var(--text-alternative);
+}
+
+.primaryButton::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--color-primary-dark);
+}
+
+.primaryButton:hover::before {
+  animation: riseUp 0.4s forwards;
+}
+
+.primaryButton:not(:hover)::before {
+  animation: fallDown 0.4s forwards;
+}
+
+/* Animaciones */
+@keyframes riseUp {
+  from {
+    top: 100%;
+  }
+  to {
+    top: -20px;
+  }
+}
+
+@keyframes fallDown {
+  from {
+    top: -20px;
+  }
+  to {
+    top: calc(-100% - 60px);
+  }
+}

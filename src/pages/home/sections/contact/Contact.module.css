@@ -141,23 +141,6 @@
   gap: 20px;
 }
 
-.primaryButton {
-  width: 100%;
-  max-width: 350px;
-  margin: 0 auto;
-  height: 60px;
-  background: var(--color-primary);
-  border-radius: 60px;
-  font-size: 16px;
-  font-weight: var(--active-label-weight);
-  color: var(--text-alternative);
-  transition: var(--dynamic-fast-transition);
-}
-
-.primaryButton:hover {
-  background: var(--color-primary-dark);
-}
-
 /* MEDIA QUERIES */
 @media (width <= 1024px) {
   .contact {
@@ -198,9 +181,5 @@
 
   .form > span {
     flex-direction: column;
-  }
-
-  .primaryButton {
-    max-width: 100%;
   }
 }

@@ -7,6 +7,7 @@ import CardTitle from "../../../../components/cardTitle/cardTitle";
 import SocialButton from "../../../../components/socialButton/socialButton";
 import Snackbar from "../../../../components/snackbar/snackbar";
 import TextField from "../../../../components/textField/textField";
+import PrimaryButton from "../../../../components/primaryButton/primaryButton";
 
 export default function Contact() {
 	const myEmail = "iannello.mas@gmail.com";
@@ -45,7 +46,6 @@ export default function Contact() {
 			!newErrors.fullname && !newErrors.email && !newErrors.message;
 
 		if (allValid) {
-			console.log("Enviado");
 			setContactData({
 				fullname: "",
 				email: "",
@@ -73,8 +73,6 @@ export default function Contact() {
 				.catch((error) =>
 					console.error("Error al enviar el correo: ", error.text)
 				);
-		} else {
-			console.log("Hay errores");
 		}
 	};
 
@@ -229,11 +227,12 @@ export default function Contact() {
 							isValid={errors.message}
 							errorMessage="Compartime tu propuesta antes de enviar"
 						/>
-						<button
-							className={styles.primaryButton}
-							onClick={(e) => handleSubmit(e)}>
-							Enviar
-						</button>
+						<PrimaryButton
+							onClick={(e) => handleSubmit(e)}
+							text="Enviar"
+							minWidth="300px"
+							centered
+						/>
 					</form>
 					<Snackbar
 						title="Mensaje enviado"

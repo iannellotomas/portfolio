@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Nav.module.css";
 import Tooltip from "../../../../components/tooltip/tooltip";
+import PrimaryButton from "../../../../components/primaryButton/primaryButton";
 
 const icons = [
 	{
@@ -193,11 +194,11 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 						<span>Educación</span>
 					</button>
 				</div>
-				<button
-					className={`${styles.primaryButton}`}
-					onClick={() => handleScroll("contact")}>
-					<span>Contáctame</span>
-				</button>
+				<PrimaryButton
+					text="Contáctame"
+					onClick={() => handleScroll("contact")}
+					fontSize="15px"
+				/>
 			</div>
 			<div className={styles.navRight}>
 				<Tooltip

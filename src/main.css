@@ -77,7 +77,7 @@ body.dark-mode {
   --color-primary: #7D8AFF;
   --color-primary-light: #1D1F34;
   --hover-primary-light: #252845;
-  --color-primary-dark: #9ea6ff;
+  --color-primary-dark: #959eff;
   --title-weight: 600;
   --label-weight: 500;
   --active-label-weight: 800;
@@ -112,7 +112,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {

@@ -99,23 +99,9 @@
   width: 100%;
 }
 
-.primaryButton {
-  height: 100%;
-  display: grid;
-  place-items: center;
-  padding: 0 40px;
-  background: var(--color-primary);
-  color: var(--text-alternative);
-  font-size: 15px;
-  font-weight: var(--active-label-weight);
-  border-radius: 500px;
+.navLeft > button:nth-of-type(2) {
   margin-left: 70px;
 }
-
-.primaryButton:hover {
-  background: var(--color-primary-dark);
-}
-
 
 /* NAV RIGHT */
 

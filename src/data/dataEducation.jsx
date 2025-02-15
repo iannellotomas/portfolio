@@ -63,7 +63,7 @@ export const dataEducation = [
 		startDate: "2024-07",
 		endDate: "2024-09",
 		stats: {
-			outstanding: ["#10 estudiantes", "con mayor calificación"],
+			outstanding: ["Top #10", "con mayor calificación"],
 			classes: ["16 clases", "8 semanas"],
 			hours: "36",
 		},
@@ -78,6 +78,7 @@ export const dataEducation = [
 		title: "UX Research",
 		url: "ux-research",
 		institution: 2,
+		relatedProject: "mostaza",
 		skills: [
 			"Plan Investigación",
 			"Exploratoria",
@@ -88,7 +89,7 @@ export const dataEducation = [
 		startDate: "2024-01",
 		endDate: "2024-03",
 		stats: {
-			outstanding: ["#10 estudiantes", "con mayor calificación"],
+			outstanding: ["Top #10", "con mayor calificación"],
 			classes: ["16 clases", "8 semanas"],
 			hours: "32",
 		},
@@ -103,6 +104,7 @@ export const dataEducation = [
 		title: "UX/UI Avanzado",
 		url: "ux-ui-advanced",
 		institution: 2,
+		relatedProject: "amazon",
 		skills: [
 			"5 elementos UX",
 			"Heurísticas",
@@ -115,7 +117,7 @@ export const dataEducation = [
 		startDate: "2023-10",
 		endDate: "2024-01",
 		stats: {
-			outstanding: ["#10 estudiantes", "con mayor calificación"],
+			outstanding: ["Top #10", "con mayor calificación"],
 			classes: ["20 clases", "10 semanas"],
 			hours: "50",
 		},
@@ -130,6 +132,7 @@ export const dataEducation = [
 		title: "Diseño UX/UI",
 		url: "ux-ui-design",
 		institution: 2,
+		relatedProject: "skillswap",
 		skills: [
 			"Design Thinking",
 			"DCU",
@@ -142,7 +145,7 @@ export const dataEducation = [
 		startDate: "2023-04",
 		endDate: "2023-07",
 		stats: {
-			outstanding: ["#10 estudiantes", "con mayor calificación"],
+			outstanding: ["Top #10", "con mayor calificación"],
 			classes: ["25 clases", "14 semanas"],
 			hours: "58",
 		},
@@ -157,6 +160,7 @@ export const dataEducation = [
 		title: "Adobe Ps/Ai",
 		url: "photoshop-illustrator",
 		institution: 2,
+		relatedProject: "sharp-fusion",
 		skills: [
 			"Edición de fotos",
 			"Composición",
@@ -168,7 +172,7 @@ export const dataEducation = [
 		startDate: "2024-05",
 		endDate: "2024-07",
 		stats: {
-			outstanding: ["#10 estudiantes", "con mayor calificación"],
+			outstanding: ["Top #10", "con mayor calificación"],
 			classes: ["12 clases", "7 semanas"],
 			hours: "27",
 		},

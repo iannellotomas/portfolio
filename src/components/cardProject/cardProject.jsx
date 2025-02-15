@@ -7,7 +7,7 @@ import Chip from "../chip/chip";
 import LazyImage from "../lazyImage/LazyImage";
 import CardTitle from "../cardTitle/cardTitle";
 
-export default function CardProject({ project, isMinimal }) {
+export default function CardProject({ project, isMinimal = false }) {
 	return (
 		<Link
 			to={`/project/${project.url}`}
@@ -46,6 +46,7 @@ export default function CardProject({ project, isMinimal }) {
 							motionId={project.url}
 						/>
 					)}
+
 					<div className={styles.cardFooter}>
 						<span>
 							<span>
