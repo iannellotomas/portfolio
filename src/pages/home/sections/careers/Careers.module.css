@@ -31,7 +31,7 @@
   border-radius: 30px;
   position: relative;
   user-select: none;
-  transition: background var(--dynamic-transition);
+  transition: background var(--dynamic-transition), opacity var(--dynamic-medium-transition);
 }
 
 .careerItem:hover {
@@ -91,6 +91,12 @@
   height: 130px;
   background: var(--color-career);
   filter: blur(60px);
+  transition: var(--dynamic-transition);
+}
+
+.careerItem:hover .glow::before {
+  width: 270px;
+  height: 180px;
 }
 
 .careerItem .timelineItem {
@@ -154,7 +160,7 @@
   gap: 10px;
   height: 80px;
   padding-block: 15px 10px;
-  border-bottom: 1px solid var(--color-primary-light);
+  border-bottom: 1px solid var(--text-primary-transparent);
 }
 
 .careerItem .image {
@@ -168,6 +174,7 @@
   object-fit: contain;
   user-select: none;
   pointer-events: none;
+  transition: var(--dynamic-medium-transition);
 }
 
 .tags {
@@ -176,7 +183,7 @@
   margin-bottom: 15px;
 }
 
-.careerItem > button {
+.careerItem>button {
   width: 100%;
   max-width: 200px;
   height: 40px;
@@ -188,25 +195,26 @@
   font-size: 16px;
   font-weight: var(--title-weight);
   background: var(--color-primary-light);
+  outline: 6px solid var(--surface-primary);
   color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
   z-index: -1;
-  transition: var(--dynamic-transition);
+  transition: var(--dynamic-medium-transition);
 }
 
-.careerItem:hover > button {
+.careerItem:hover>button {
   transform: translate(-50%, 0);
 }
 
-.careerItem > button path {
+.careerItem>button path {
   stroke: var(--color-primary);
   stroke-width: 2;
 }
 
-.careerItem > button:hover {
+.careerItem>button:hover {
   background: var(--hover-primary-light);
 }
 
@@ -214,8 +222,17 @@
   transform: translate(-50%, 0) scale(.9);
 }
 
+@media (width >=1024px) {
+  .container:has(.careerItem:hover) .careerItem:not(:hover) {
+    opacity: .4 !important;
+  }
 
-@media (width <= 1100px) {
+  .careerItem:hover .image img {
+    transform: scale(1.2) translateX(-15px);
+  }
+}
+
+@media (width <=1100px) {
   .container {
     flex-direction: column;
     gap: 80px;
@@ -244,27 +261,27 @@
     flex-direction: row;
     height: max-content;
   }
-  
+
   .careerItem:nth-of-type(1) .timelineItem {
     height: max-content;
   }
-  
+
   .timelineItem::before {
     position: static;
     width: 150px;
     height: 1px;
   }
 
-  .careerItem > button {
+  .careerItem>button {
     transform: translate(-50%, 0);
   }
 }
 
-@media (width <= 500px) {
+@media (width <=500px) {
   .container {
     gap: 100px;
   }
-  
+
   .careerItem {
     margin: 70px 0 0 0 !important;
     width: calc(100% - 30px);

@@ -59,7 +59,7 @@ export default function Careers() {
 							isMobile
 								? {}
 								: {
-										scale: 1.05,
+										scale: 1.1,
 										rotateY: 15,
 										rotateX: -15,
 										translateY: 20,
