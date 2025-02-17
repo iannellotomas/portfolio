@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Education.module.css";
 import { dataEducation } from "../../../../data/dataEducation";
@@ -49,12 +49,9 @@ const viewModeOptions = {
 
 export default function Education() {
 	const [isMobile, setIsMobile] = useState(false);
-	const [viewMode, setViewMode] = useState(isMobile ? 2 : 1); // List default
-	const [inProgress, setInProgress] = useState(true); // Show default
-
-	const [sortedListsEducation, setSortedListsEducation] =
-		useState(dataEducation);
-	const dropdownOptions = ["Más relevantes", "Más recientes", "Mayor duración"];
+	const [viewMode, setViewMode] = useState(1);
+	const [inProgress, setInProgress] = useState(true);
+	const [sortOrder, setSortOrder] = useState("Más relevantes");
 
 	useEffect(() => {
 		const checkMobile = () => {
@@ -63,7 +60,6 @@ export default function Education() {
 
 		checkMobile();
 		window.addEventListener("resize", checkMobile);
-
 		return () => window.removeEventListener("resize", checkMobile);
 	}, []);
 
@@ -71,31 +67,26 @@ export default function Education() {
 		setViewMode(isMobile ? 2 : 1);
 	}, [isMobile]);
 
-	const handleSortChange = (selectedOption) => {
-		let sortedData = [...dataEducation];
+	const displayedEducation = useMemo(() => {
+		let filtered = dataEducation.filter(
+			(education) => inProgress || education.endDate !== ""
+		);
 
-		if (selectedOption === "Más recientes") {
-			sortedData.sort(
+		if (sortOrder === "Más recientes") {
+			filtered.sort(
 				(a, b) => new Date(`${b.startDate}-01`) - new Date(`${a.startDate}-01`)
 			);
-		} else if (selectedOption === "Mayor duración") {
-			sortedData.sort((a, b) => {
-				// En curso al final
-				if (a.endDate === "" && b.endDate === "") return 0; // Ambos en curso
-				if (a.endDate === "") return 1; // a al final
-				if (b.endDate === "") return -1; // b al final
-
-				// Ordenar por horas
-				const hoursA = a?.stats?.hours || 0; // Si no tiene stats, asumir 0 horas
-				const hoursB = b?.stats?.hours || 0;
-				return hoursB - hoursA;
+		} else if (sortOrder === "Mayor duración") {
+			filtered.sort((a, b) => {
+				if (a.endDate === "" && b.endDate === "") return 0;
+				if (a.endDate === "") return 1;
+				if (b.endDate === "") return -1;
+				return (b?.stats?.hours || 0) - (a?.stats?.hours || 0);
 			});
 		}
 
-		// "Más relevantes" mantiene el orden original
-
-		setSortedListsEducation(sortedData); // Actualizar el estado con los proyectos ordenados
-	};
+		return filtered;
+	}, [sortOrder, inProgress]);
 
 	return (
 		<section
@@ -108,7 +99,7 @@ export default function Education() {
 			/>
 			<section className={styles.tools}>
 				<Checkbox
-					text={"En curso"}
+					text="En curso"
 					isChecked={inProgress}
 					setIsChecked={setInProgress}
 				/>
@@ -122,8 +113,8 @@ export default function Education() {
 						/>
 					)}
 					<SortDropdown
-						options={dropdownOptions}
-						onSelectOption={handleSortChange}
+						options={["Más relevantes", "Más recientes", "Mayor duración"]}
+						onSelectOption={setSortOrder}
 					/>
 				</span>
 			</section>
@@ -138,33 +129,23 @@ export default function Education() {
 						<CaptionText text="Habilidades" />
 						<CaptionText text="Fecha" />
 					</header>
-					{sortedListsEducation
-						.filter((education) => {
-							if (!inProgress) {
-								return education.endDate != ""; // Filtrar los "en curso"
-							}
-							return true;
-						})
-						.map((education, index) => (
-							<motion.div
-								key={education.url}
-								initial={{ opacity: 0, y: 50 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true, amount: 0.3 }}
-								exit={{ opacity: 0, y: 50 }}
-								layout
-								transition={{
-									duration: 0.15,
-									ease: [0.215, 0.61, 0.355, 1],
-								}}
-								className={styles.motionCard}>
-								<ListEducation
-									key={index}
-									education={education}
-									viewMode={viewMode}
-								/>
-							</motion.div>
-						))}
+					{displayedEducation.map((education, index) => (
+						<motion.div
+							key={education.url}
+							initial={{ opacity: 0, y: 50 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, amount: 0.3 }}
+							exit={{ opacity: 0, y: 50 }}
+							layoutId={education.url}
+							transition={{ duration: 0.15, ease: [0.215, 0.61, 0.355, 1] }}
+							className={styles.motionCard}>
+							<ListEducation
+								key={index}
+								education={education}
+								viewMode={viewMode}
+							/>
+						</motion.div>
+					))}
 				</AnimatePresence>
 			</main>
 		</section>

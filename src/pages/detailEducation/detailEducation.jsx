@@ -84,7 +84,8 @@ const DetailEducation = () => {
 							<LazyImage
 								src={education.certificate.src}
 								alt={`Certificado de ${education.title}`}
-								style={{ width: "100%", height: "auto", borderRadius: "20px" }}
+								style={{ width: "100%", height: "auto" }}
+								radius={20}
 							/>
 						)}
 					</span>

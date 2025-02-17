@@ -12,7 +12,6 @@ export default function Projects() {
 	const {
 		selectedCategory,
 		setSelectedCategory,
-		sortOrder,
 		setSortOrder,
 		displayedProjects,
 	} = useContext(ProjectsContext);

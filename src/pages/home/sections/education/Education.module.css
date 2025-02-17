@@ -55,6 +55,16 @@
   display: none;
 }
 
+.motionCard {
+  transition: var(--dynamic-fast-transition);
+}
+
+@media (width >=1024px) {
+  .containerEducation:has(.motionCard:hover) .motionCard:not(:hover) {
+    opacity: .4 !important;
+  }
+}
+
 @media (width <=1024px) {
   .education {
     padding-bottom: 0;
@@ -70,7 +80,7 @@
     height: 100%;
   }
 
-  .motionCard > a {
+  .motionCard>a {
     display: flex;
   }
 }
