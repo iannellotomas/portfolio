@@ -1,5 +1,5 @@
-import ComputingTechCertificate from "../assets/Documents/Analítico-Iannello-Técnica-Informática.pdf";
-import GraphicDesignCertificate from "../assets/Documents/CertificadoDiseñoGráficoUBA.pdf";
+import ComputingTechCertificate from "../assets/Certificates/Analítico-Iannello-Técnica-Informática.pdf";
+import GraphicDesignCertificate from "../assets/Certificates/CertificadoDiseñoGráficoUBA.pdf";
 
 export const dataEducation = [
 	{
@@ -172,7 +172,7 @@ export const dataEducation = [
 			"Aprendí a usar estas herramientas clave para el **diseño gráfico y la comunicación visual**. Desarrollé habilidades en edición de fotos, composición, color, y tipografía. También creé logotipos y manuales de marca, ampliando mi capacidad para diseñar **piezas gráficas profesionales y comunicativas** para redes sociales y branding.",
 	},
 	{
-		title: "React Js",
+		title: "React JS",
 		url: "react-js",
 		institution: 2,
 		skills: [
@@ -186,13 +186,16 @@ export const dataEducation = [
 			"Optimización",
 		],
 		startDate: "2024-12",
-		endDate: "",
+		endDate: "2025-03",
 		stats: {
 			outstanding: ["Estudiantes", "con mayor calificación"],
 			classes: ["8 clases", "8 semanas"],
 			hours: "22",
 		},
-		certificate: {},
+		certificate: {
+			link: "https://drive.google.com/file/d/1gicM6P_RDDjE0zOgKYa1HlIGDZ-sPq2F/view?usp=sharing",
+			src: "https://i.postimg.cc/QC3WK75C/React-JS-Certificado-Coderhouse.jpg",
+		},
 		description:
 			"Estoy aprendiendo a **desarrollar aplicaciones dinámicas con React JS**, utilizando programación por componentes en JavaScript (ES6) y gestionando rutas con React Router y Firebase. También estoy explorando el Virtual DOM y creando aplicaciones SPA para optimizar el rendimiento, lo que me permite no solo desarrollar **proyectos más interactivos y escalables**, sino también comprender mejor la **factibilidad y viabilidad de los diseños UX en productos digitales**.",
 	},
