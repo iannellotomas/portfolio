@@ -188,7 +188,7 @@ export const dataEducation = [
 		startDate: "2024-12",
 		endDate: "2025-03",
 		stats: {
-			outstanding: ["Estudiantes", "con mayor calificación"],
+			outstanding: ["10/10", "de calificación final"],
 			classes: ["8 clases", "8 semanas"],
 			hours: "22",
 		},
@@ -197,7 +197,7 @@ export const dataEducation = [
 			src: "https://i.postimg.cc/QC3WK75C/React-JS-Certificado-Coderhouse.jpg",
 		},
 		description:
-			"Estoy aprendiendo a **desarrollar aplicaciones dinámicas con React JS**, utilizando programación por componentes en JavaScript (ES6) y gestionando rutas con React Router y Firebase. También estoy explorando el Virtual DOM y creando aplicaciones SPA para optimizar el rendimiento, lo que me permite no solo desarrollar **proyectos más interactivos y escalables**, sino también comprender mejor la **factibilidad y viabilidad de los diseños UX en productos digitales**.",
+			"Aprendí a **desarrollar aplicaciones dinámicas con React JS**, utilizando programación por componentes en JavaScript (ES6) y gestionando rutas con React Router y Firebase. También exploré el Virtual DOM y creé aplicaciones SPA para optimizar el rendimiento, lo que me permite no solo desarrollar **proyectos más interactivos y escalables**, sino también comprender mejor la **factibilidad y viabilidad de los diseños UX en productos digitales**.",
 	},
 	{
 		title: "Desarrollo Web III",
