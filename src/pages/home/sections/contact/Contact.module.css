@@ -71,7 +71,6 @@
   flex-direction: column;
   text-align: left;
   gap: 2px;
-  color: var(--text-secondary);
   font-size: 14px;
 }
 
