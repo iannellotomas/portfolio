@@ -185,7 +185,7 @@ a {
 }
 
 .cardProject.minimal .blurOverlay {
-  max-height: 200px;
+  max-height: 220px;
   border-radius: 50px;
   transition: .3s ease;
 }
@@ -238,7 +238,6 @@ a {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-
 
 /* MEDIA QUERIES */
 @media (width <=1024px) {

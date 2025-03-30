@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Nav.module.css";
 import Tooltip from "../../../../components/tooltip/tooltip";
 import PrimaryButton from "../../../../components/primaryButton/primaryButton";
+import { motion } from "framer-motion";
 
 const icons = [
 	{
@@ -152,7 +153,11 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 	};
 
 	return (
-		<nav className={`${styles.nav} ${listVisible ? styles.open : ""}`}>
+		<motion.nav
+			className={`${styles.nav} ${listVisible ? styles.open : ""}`}
+			initial={{ opacity: 0, y: -50 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.5, delay: 0.8, ease: [0.215, 0.61, 0.355, 1] }}>
 			<div
 				className={styles.coverList}
 				onClick={() => setListVisible(false)}></div>
@@ -287,6 +292,6 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 					</button>
 				</div>
 			</div>
-		</nav>
+		</motion.nav>
 	);
 }

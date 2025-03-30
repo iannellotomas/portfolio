@@ -5,21 +5,15 @@ import { Analytics } from "@vercel/analytics/react";
 import "./main.css";
 
 export default function App() {
-	const [isDarkMode, setIsDarkMode] = useState(false);
+	const [isDarkMode, setIsDarkMode] = useState(() => {
+		const savedMode = localStorage.getItem("darkMode");
+		return savedMode === null ? true : savedMode === "true";
+	});
 
 	useEffect(() => {
-		const prefersDarkMode = window.matchMedia(
-			"(prefers-color-scheme: dark)"
-		).matches;
-
-		const savedMode = localStorage.getItem("darkMode");
-
-		const initialMode =
-			savedMode === null ? prefersDarkMode : savedMode === "true";
-
-		setIsDarkMode(initialMode);
-		document.body.className = initialMode ? "dark-mode" : "light-mode";
-	}, []);
+		document.body.className = isDarkMode ? "dark-mode" : "light-mode";
+		localStorage.setItem("darkMode", isDarkMode);
+	}, [isDarkMode]);
 
 	const toggleDarkMode = () => {
 		setIsDarkMode((prevMode) => {

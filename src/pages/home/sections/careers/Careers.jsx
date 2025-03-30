@@ -40,7 +40,15 @@ export default function Careers() {
 
 	return (
 		<section className={styles.careers}>
-			<span className={styles.timeline}></span>
+			<motion.span
+				className={styles.timeline}
+				initial={{
+					opacity: 0,
+				}}
+				whileInView={{
+					opacity: 1,
+				}}
+				viewport={{ once: true, amount: 1 }}></motion.span>
 			<div className={styles.container}>
 				{careers.map(([key, item]) => (
 					<motion.article

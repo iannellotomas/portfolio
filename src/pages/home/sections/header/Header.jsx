@@ -1,6 +1,7 @@
 import styles from "./Header.module.css";
 import headerImage from "../../../../assets/FotoPerfil.webp";
 import SocialButton from "../../../../components/socialButton/socialButton";
+import { motion } from "framer-motion";
 
 export default function Header() {
 	return (
@@ -65,7 +66,15 @@ export default function Header() {
 					</defs>
 				</svg>
 			</div>
-			<div className={styles.headerLeft}>
+			<motion.div
+				className={styles.headerLeft}
+				initial={{ opacity: 0, x: 50 }}
+				animate={{ opacity: 1, x: 0 }}
+				transition={{
+					duration: 0.5,
+					delay: 0.3,
+					ease: [0.215, 0.61, 0.355, 1],
+				}}>
 				<img
 					src={headerImage}
 					alt="Foto de perfil de Tomás Iannello"
@@ -75,8 +84,16 @@ export default function Header() {
 					<div className={styles.circle}></div>
 					<span>¡Buscando nuevos desafíos! 🚀</span>
 				</div>
-			</div>
-			<div className={styles.headerRight}>
+			</motion.div>
+			<motion.div
+				className={styles.headerRight}
+				initial={{ opacity: 0, x: -50 }}
+				animate={{ opacity: 1, x: 0 }}
+				transition={{
+					duration: 0.5,
+					delay: 0.5,
+					ease: [0.215, 0.61, 0.355, 1],
+				}}>
 				<h3>¡Hola! ¿Cómo estás? Soy</h3>
 				<h1>Tomás Iannello</h1>
 				<span className={styles.profession}>
@@ -101,12 +118,21 @@ export default function Header() {
 						{" "}
 						ideas creativas en experiencias digitales envolventes
 					</strong>
-					, enfocándome en mejorar la usabilidad y la accesibilidad mientras diseño interfaces impactantes. Estoy{" "}
+					, enfocándome en mejorar la usabilidad y la accesibilidad mientras
+					diseño interfaces impactantes. Estoy{" "}
 					<strong>buscando progresar en mi carrera profesional</strong>,
 					contribuyendo a equipos innovadores mientras sigo aprendiendo y
 					adaptándome a las nuevas tecnologías.
 				</p>
-				<div className={styles.cta}>
+				<motion.div
+					className={styles.cta}
+					initial={{ opacity: 0, y: -20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{
+						duration: 0.3,
+						delay: 1.2,
+						ease: [0.215, 0.61, 0.355, 1],
+					}}>
 					<a
 						href="https://drive.google.com/file/d/11Xhm7hqm72QybGw4IsF0ScvmGR4fL8dC/view?usp=sharing"
 						rel="noreferrer"
@@ -143,8 +169,8 @@ export default function Header() {
 						<SocialButton iconName="behance" />
 						<SocialButton iconName="dribbble" />
 					</div>
-				</div>
-			</div>
+				</motion.div>
+			</motion.div>
 		</header>
 	);
 }
