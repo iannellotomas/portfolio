@@ -1,14 +1,21 @@
 import styles from "./sectionHead.module.css";
 import SectionTitle from "../sectionTitle/sectionTitle";
-import ProyectsSectionHead from "../../assets/Ilustrations/ProyectsSectionHead.webp";
+import ExperienceSectionHead from "../../assets/Ilustrations/ExperienceSectionHead.webp";
+import ProjectsSectionHead from "../../assets/Ilustrations/ProjectsSectionHead.webp";
 import EducationSectionHead from "../../assets/Ilustrations/EducationSectionHead.webp";
 import ContactSectionHead from "../../assets/Ilustrations/ContactSectionHead.webp";
 import { motion } from "framer-motion";
 
 const images = {
+	briefcase: (
+		<img
+			src={ExperienceSectionHead}
+			alt="Ilustración 3D de maletín de trabajo animado"
+		/>
+	),
 	paint: (
 		<img
-			src={ProyectsSectionHead}
+			src={ProjectsSectionHead}
 			alt="Ilustración 3D de tacho de pintura colorida"
 		/>
 	),
@@ -41,6 +48,7 @@ export default function SectionHead({ title, description, imageName }) {
 						ease: [0.215, 0.61, 0.355, 1],
 					}}>
 					{currentImage}
+					<span className={styles.blurImage}>{currentImage}</span>
 				</motion.span>
 			</span>
 			<span className={styles.headerRight}>

@@ -185,7 +185,9 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 						aria-label="Ir al inicio">
 						{getIcon("logo")}
 					</button>
-					<button className={styles.navLink}>
+					<button
+						onClick={() => handleScroll("experience")}
+						className={styles.navLink}>
 						<span>Experiencia</span>
 					</button>
 					<button
@@ -243,6 +245,7 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 					<span>Inicio</span>
 				</button>
 				<button
+					onClick={() => handleScroll("experience")}
 					className={styles.navLink}
 					style={{
 						animationDelay: `${0.1 * 2}s`,
@@ -251,18 +254,18 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
 				</button>
 				<button
 					className={styles.navLink}
+					onClick={() => handleScroll("projects")}
 					style={{
 						animationDelay: `${0.1 * 3}s`,
-					}}
-					onClick={() => handleScroll("projects")}>
+					}}>
 					<span>Proyectos</span>
 				</button>
 				<button
 					className={styles.navLink}
+					onClick={() => handleScroll("education")}
 					style={{
 						animationDelay: `${0.1 * 4}s`,
-					}}
-					onClick={() => handleScroll("education")}>
+					}}>
 					<span>Educación</span>
 				</button>
 				<div

@@ -411,79 +411,8 @@
   top: 50%;
 }
 
-.tools {
-  display: flex;
-  flex-direction: column;
-}
-
-.tools ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 15px;
-  margin-block: 15px 0;
-}
-
-.tools ul>div {
-  border-radius: 15px;
-}
-
-.toolItem {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 60px;
-  height: 60px;
-  background: var(--color-primary-light);
-  border-radius: 15px;
-  transition: var(--dynamic-fast-transition);
-}
-
-.toolItem img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  pointer-events: none;
-  user-select: none;
-  transition: var(--dynamic-fast-transition);
-}
-
-.heightDivisor {
-  width: 1px;
-  height: 30px;
-  border-radius: 5px;
-  background: var(--color-primary-light);
-}
-
 /* MEDIA QUERIES */
 @media (width > 1024px) {
-  .toolItem::before {
-    content: "";
-    width: 100%;
-    height: 20px;
-    position: absolute;
-    left: 0;
-    bottom: 20px;
-    background: var(--hover-primary-light);
-    transition: bottom var(--dynamic-fast-transition);
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  .toolItem:hover {
-    background: var(--hover-primary-light);
-    border-radius: 15px 15px 0 0;
-  }
-
-  .toolItem:hover::before {
-    bottom: -20px;
-  }
-
-  .toolItem:hover img {
-    transform: translateY(8px);
-  }
-
   /* DESKTOP REVEAL ANIMATION */
   .headerRight:not(.loaded) {
     transform: translateY(100%);
@@ -583,8 +512,7 @@
     margin-top: 5px;
   }
 
-  .hero>span,
-  .tools>span {
+  .hero>span {
     font-size: 16px;
   }
 
@@ -637,21 +565,6 @@
     height: 50px;
   }
 
-  .tools ul {
-    gap: 10px;
-  }
-
-  .toolItem {
-    width: 50px;
-    height: 50px;
-    border-radius: 15px;
-  }
-
-  .toolItem img {
-    width: 26px;
-    height: 26px;
-  }
-
   .cover {
     backdrop-filter: blur(0);
     transition: var(--dynamic-transition);
@@ -690,8 +603,7 @@
     border-radius: 30px 30px 0 0;
   }
 
-  .hero>span,
-  .tools>span {
+  .hero>span {
     font-size: 14px;
   }
 

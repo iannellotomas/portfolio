@@ -5,6 +5,7 @@ import { dataInstitutions } from "../../data/dataInstitutions";
 import { dataProjects } from "../../data/dataProjects";
 import { formatDate } from "../../utils/formatDate";
 import { formatText } from "../../utils/formatText";
+import { motion } from "framer-motion";
 import Chip from "../../components/chip/chip";
 import styles from "./detailEducation.module.css";
 import Footer from "../../components/footer/footer";
@@ -14,7 +15,6 @@ import BackButton from "../../components/backButton/backButton";
 import CaptionText from "../../components/captionText/captionText";
 import CardProject from "../../components/cardProject/cardProject";
 import PrimaryButton from "../../components/primaryButton/primaryButton";
-import { motion } from "framer-motion";
 
 const DetailEducation = () => {
 	const { id } = useParams();

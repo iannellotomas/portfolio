@@ -8,6 +8,7 @@
   border-bottom: 0;
   border-radius: 50px 50px 0 0;
   background: var(--surface-primary);
+  z-index: 6;
 }
 
 .header::before {
@@ -48,22 +49,35 @@
   pointer-events: none;
 }
 
+.icon>span>img {
+  z-index: 20;
+}
+
+.icon .blurImage {
+  position: absolute;
+  z-index: 2;
+  bottom: -20%;
+  pointer-events: none;
+}
+
+.blurImage img {
+  filter: blur(50px);
+  width: 150%;
+  max-width: 300px;
+  opacity: .8;
+}
+
 .headerRight {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding-top: 30px;
+  z-index: 8;
 }
 
 .description {
   max-width: 750px;
-}
-
-@media (width <=1024px) {
-  .header {
-    gap: 20px;
-  }
 }
 
 @media (width <=768px) {
@@ -80,6 +94,10 @@
     border-radius: 20px 20px 0 0;
   }
 
+  .icon img {
+    left: 0;
+  }
+
   .headerRight {
     padding: 0;
   }
@@ -92,5 +110,6 @@
 
   .icon img {
     max-height: 200px;
+    left: -5vw;
   }
 }

@@ -1,0 +1,131 @@
+.tools {
+  display: flex;
+  flex-direction: column;
+}
+
+.divisor {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background: var(--text-primary-transparent-2);
+  margin-block: 20px;
+}
+
+.tools ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-block: 15px 0;
+}
+
+.tools ul:has(.small) {
+  gap: 10px;
+}
+
+.tools ul>div {
+  border-radius: 15px;
+}
+
+.toolItem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  background: var(--color-primary-light);
+  border-radius: 15px;
+  transition: var(--dynamic-fast-transition);
+}
+
+.toolItem.small {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+}
+
+.toolItem img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  transition: var(--dynamic-fast-transition);
+}
+
+.toolItem.small img {
+  width: 24px;
+  height: 24px;
+}
+
+.heightDivisor {
+  width: 1px;
+  height: 30px;
+  border-radius: 5px;
+  background: var(--color-primary-light);
+}
+
+.tools:has(.small) .heightDivisor {
+  height: 24px;
+}
+
+@media (width > 1024px) {
+  .toolItem::before {
+    content: "";
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    background: var(--hover-primary-light);
+    transition: bottom var(--dynamic-fast-transition);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .toolItem.small::before {
+    bottom: 10px;
+  }
+  
+
+  .toolItem:hover {
+    background: var(--hover-primary-light);
+    border-radius: 15px 15px 0 0;
+  }
+
+  .toolItem:hover::before {
+    bottom: -20px;
+  }
+
+  .toolItem:hover img {
+    transform: translateY(8px);
+  }
+}
+
+@media (width <= 768px) {
+  .tools>span {
+    font-size: 16px;
+  }
+
+  .tools ul {
+    gap: 10px;
+  }
+
+  .toolItem {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+  }
+
+  .toolItem img {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (width <= 500px) {
+  .tools>span {
+    font-size: 14px;
+  }
+}

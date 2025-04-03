@@ -4,7 +4,6 @@ import GoogleDocsLogo from "../../public/logos/GoogleDocs.png";
 import GoogleSlidesLogo from "../../public/logos/GoogleSlides.png";
 import GoogleSheetsLogo from "../../public/logos/GoogleSheets.png";
 import OptimalWorkshopLogo from "../../public/logos/OptimalWorkshop.png";
-import NotionLogo from "../../public/logos/Notion.png";
 
 import ShotsLogo from "../../public/logos/Shots.png";
 
@@ -19,6 +18,10 @@ import GithubLogo from "../../public/logos/Github.png";
 
 import PhotoshopLogo from "../../public/logos/Photoshop.png";
 import IllustratorLogo from "../../public/logos/Illustrator.png";
+
+import AsanaLogo from "../../public/logos/Asana.png";
+import ClockifyLogo from "../../public/logos/Clockify.png";
+import NotionLogo from "../../public/logos/Notion.png";
 
 export const dataTools = {
 	// UX/UI TOOLS
@@ -58,13 +61,7 @@ export const dataTools = {
 		logo: { OptimalWorkshopLogo },
 		category: 1,
 	},
-	notion: {
-		title: "Notion",
-		caption: "Gestión organizada de tareas",
-		logo: { NotionLogo },
-		category: 1,
-	},
-	
+
 	// UI
 	shots: {
 		title: "Shots",
@@ -135,5 +132,25 @@ export const dataTools = {
 		caption: "Diseño vectorial avanzado",
 		logo: { IllustratorLogo },
 		category: 4,
+	},
+
+	// ORGANIZATION
+	asana: {
+		title: "Asana",
+		caption: "Organización de tareas y deadlines",
+		logo: { AsanaLogo },
+		category: 5,
+	},
+	clockify: {
+		title: "Clockify",
+		caption: "Optimización del tiempo de trabajo",
+		logo: { ClockifyLogo },
+		category: 5,
+	},
+	notion: {
+		title: "Notion",
+		caption: "Gestión y documentación de proyectos",
+		logo: { NotionLogo },
+		category: 5,
 	},
 };

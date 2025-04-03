@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { dataProjects } from "../../data/dataProjects";
 import { dataCareers } from "../../data/dataCareers";
-import { dataTools } from "../../data/dataTools";
 import { formatDate } from "../../utils/formatDate";
 import { formatText } from "../../utils/formatText";
 import { handleShare } from "../../utils/share";
@@ -19,6 +18,7 @@ import Carousel from "../../components/carousel/carousel";
 import Accordion from "../../components/accordion/accordion";
 import SheetProject from "../../components/sheetProject/sheetProject";
 import CarouselProjects from "../../components/carouselProjects/carouselProjects";
+import ToolsList from "../../components/toolsList/toolsList";
 
 export default function DetailProject() {
 	const { url } = useParams();
@@ -97,19 +97,6 @@ export default function DetailProject() {
 
 	const toggleOptions = () => {
 		setIsOptionsOpen((prev) => !prev);
-	};
-
-	const isNextOtherCategory = (toolName, index) => {
-		const nextToolName = project.tools[index + 1];
-
-		if (
-			nextToolName &&
-			dataTools[nextToolName]?.category !== dataTools[toolName]?.category
-		) {
-			return true;
-		}
-
-		return false;
 	};
 
 	if (!project) {
@@ -191,6 +178,7 @@ export default function DetailProject() {
 							text={`Proyecto ${project.categories
 								.map((category) => dataCareers[category].title)
 								.join(", ")} • ${formatDate(project.publishedDate)}`}
+							textColor="var(--text-primary)"
 						/>
 						<div>
 							<h1 title={project.title}>{project.title}</h1>
@@ -297,40 +285,7 @@ export default function DetailProject() {
 							descriptions={project.details}
 						/>
 					)}
-					{project.tools && (
-						<section className={styles.tools}>
-							<hr className={styles.divisor} />
-							<CaptionText
-								text="Herramientas"
-								weight="500"
-							/>
-							<ul>
-								{project.tools.map((toolName, index) => {
-									const tool = dataTools[toolName]; // Accedes al objeto de la herramienta usando su nombre
-									if (!tool) return null;
-									return (
-										<React.Fragment key={index}>
-											<Tooltip
-												text={tool.title}
-												caption={innerWidth > 1024 && tool.caption}
-												size={innerWidth <= 1024 && "minimal"}
-												anchorSide={innerWidth > 1024 ? "left" : "center"}>
-												<li className={styles.toolItem}>
-													<img
-														src={Object.values(tool.logo)}
-														alt={`Logo de ${tool.title}`}
-													/>
-												</li>
-											</Tooltip>
-											{isNextOtherCategory(toolName, index) && (
-												<span className={styles.heightDivisor}></span>
-											)}
-										</React.Fragment>
-									);
-								})}
-							</ul>
-						</section>
-					)}
+					{project.tools && <ToolsList tools={project.tools} />}
 				</div>
 			</header>
 			{project.sheet && <SheetProject sheets={project.sheet} />}

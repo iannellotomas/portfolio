@@ -278,6 +278,10 @@
 }
 
 @media (width <=500px) {
+  .careers {
+    margin-block: 20px 120px;
+  }
+  
   .container {
     gap: 100px;
   }

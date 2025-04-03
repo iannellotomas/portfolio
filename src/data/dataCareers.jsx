@@ -8,7 +8,7 @@ export const dataCareers = {
 		caption: "Diseño",
 		description:
 			"Transformo ideas en experiencias digitales únicas, diseñando interfaces intuitivas que mejoran la interacción y generan fidelidad.",
-		tags: ["Research", "Writing", "Figma", "Usabilidad", "Accesibilidad"],
+		tags: ["Research", "Writing", "Wireframing", "Usabilidad", "Accesibilidad"],
 		priority: "Principal",
 		startDate: "2023",
 		svg: (

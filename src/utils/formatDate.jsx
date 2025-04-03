@@ -30,3 +30,26 @@ export function formatDateToSubmit() {
 
 	return [formattedDate, formattedHour];
 }
+
+// Calcula la cantidad de meses entre 2 fechas
+export function getDurationInMonths(startDate, endDate) {
+	const [startYear, startMonth] = startDate.split("-").map(Number);
+
+	let endYear, endMonth;
+
+	if (!endDate) {
+		const now = new Date();
+		endYear = now.getFullYear();
+		endMonth = now.getMonth() + 1;
+	} else {
+		[endYear, endMonth] = endDate.split("-").map(Number);
+	}
+
+	const yearDiff = endYear - startYear;
+	const monthDiff = endMonth - startMonth;
+
+	const totalMonths = yearDiff * 12 + monthDiff + 1; // +1 para contar ambos extremos
+	const stringMonths = totalMonths == 1 ? "1 mes" : `${totalMonths} meses`;
+
+	return stringMonths;
+}

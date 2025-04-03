@@ -93,6 +93,7 @@ export default function Tooltip({
 						<CaptionText
 							text={caption}
 							weight="500"
+							textColor="var(--text-secondary)"
 						/>
 					</>
 				) : (
