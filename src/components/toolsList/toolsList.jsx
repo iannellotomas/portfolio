@@ -1,10 +1,16 @@
 import React from "react";
 import styles from "./toolsList.module.css";
 import { dataTools } from "../../data/dataTools";
+import { motion } from "framer-motion";
 import CaptionText from "../captionText/captionText";
 import Tooltip from "../tooltip/tooltip";
 
-export default function ToolsList({ tools, size = "large", divisors = true }) {
+export default function ToolsList({
+	tools,
+	size = "large",
+	divisors = true,
+	animateOnScroll = false,
+}) {
 	const isNextOtherCategory = (toolName, index) => {
 		const nextToolName = tools[index + 1];
 
@@ -29,7 +35,16 @@ export default function ToolsList({ tools, size = "large", divisors = true }) {
 					/>
 				</>
 			)}
-			<ul>
+			<motion.ul
+				{...(animateOnScroll && {
+					initial: { opacity: 0, y: 50 },
+					whileInView: { opacity: 1, y: 0 },
+					transition: {
+						duration: 0.25,
+						ease: [0.215, 0.61, 0.355, 1],
+					},
+					viewport: { once: true, amount: 0.3 },
+				})}>
 				{tools.map((toolName, index) => {
 					const tool = dataTools[toolName];
 					if (!tool) return null;
@@ -56,7 +71,7 @@ export default function ToolsList({ tools, size = "large", divisors = true }) {
 						</React.Fragment>
 					);
 				})}
-			</ul>
+			</motion.ul>
 		</section>
 	);
 }

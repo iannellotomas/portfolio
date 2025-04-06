@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { dataExperiences } from "../../../../data/dataExperiences";
 import { formatDate, getDurationInMonths } from "../../../../utils/formatDate";
+import { motion } from "framer-motion";
 import SectionHead from "../../../../components/sectionHead/sectionHead";
 import CardTitle from "../../../../components/cardTitle/cardTitle";
 import CaptionText from "../../../../components/captionText/captionText";
@@ -54,7 +55,15 @@ export default function Experience() {
 						className={`${styles.experienceItem} ${
 							index === visibleIndex ? styles.visible : ""
 						}`}>
-						<div className={styles.itemLeft}>
+						<motion.div
+							initial={{ opacity: 0, y: 50 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.3,
+								ease: [0.215, 0.61, 0.355, 1],
+							}}
+							viewport={{ once: true, amount: 1 }}
+							className={styles.itemLeft}>
 							<div className={styles.circle}></div>
 							<span>
 								<CaptionText
@@ -100,9 +109,17 @@ export default function Experience() {
 									alt={`Logo de ${experience.organization.title}`}
 								/>
 							</a>
-						</div>
+						</motion.div>
 						<div className={styles.itemRight}>
-							<div className={styles.itemDetails}>
+							<motion.div
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{
+									duration: 0.15,
+									ease: [0.215, 0.61, 0.355, 1],
+								}}
+								viewport={{ once: true, amount: 1 }}
+								className={styles.itemDetails}>
 								<span className={styles.detail}>
 									<span>
 										<svg
@@ -192,10 +209,20 @@ export default function Experience() {
 									/>
 									<h4>{experience.workMode}</h4>
 								</span>
-							</div>
+							</motion.div>
 							<ul className={styles.responsabilities}>
 								{experience.responsabilities.map((item, index) => (
-									<li key={index}>{item}</li>
+									<motion.li
+										key={index}
+										initial={{ opacity: 0, y: 50 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										transition={{
+											duration: 0.25,
+											ease: [0.215, 0.61, 0.355, 1],
+										}}
+										viewport={{ once: true, amount: 0.1 }}>
+										{item}
+									</motion.li>
 								))}
 							</ul>
 							{experience.tools && (
@@ -203,6 +230,7 @@ export default function Experience() {
 									tools={experience.tools}
 									size="small"
 									divisors={false}
+									animateOnScroll
 								/>
 							)}
 						</div>
