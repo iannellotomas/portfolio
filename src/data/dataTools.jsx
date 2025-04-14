@@ -15,6 +15,7 @@ import VercelLogo from "../../public/logos/Vercel.png";
 import FirebaseLogo from "../../public/logos/Firebase.png";
 import HostingerLogo from "../../public/logos/Hostinger.png";
 import GithubLogo from "../../public/logos/Github.png";
+import StrapiLogo from "../../public/logos/Strapi.png";
 
 import PhotoshopLogo from "../../public/logos/Photoshop.png";
 import IllustratorLogo from "../../public/logos/Illustrator.png";
@@ -59,6 +60,12 @@ export const dataTools = {
 		title: "Optimal Workshop",
 		caption: "Pruebas de arquitectura UX",
 		logo: { OptimalWorkshopLogo },
+		category: 1,
+	},
+	strapi: {
+		title: "Strapi",
+		caption: "Sistema de gestión de contenidos",
+		logo: { StrapiLogo },
 		category: 1,
 	},
 
