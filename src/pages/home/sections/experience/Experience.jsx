@@ -107,6 +107,7 @@ export default function Experience() {
 								<img
 									src={experience.organization.image}
 									alt={`Logo de ${experience.organization.title}`}
+									loading="lazy"
 								/>
 							</a>
 						</motion.div>

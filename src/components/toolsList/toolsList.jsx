@@ -54,8 +54,9 @@ export default function ToolsList({
 								text={tool.title}
 								caption={innerWidth > 1024 && tool.caption}
 								size={innerWidth <= 1024 && "minimal"}
-								anchorSide={innerWidth > 1024 ? "left" : "center"}>
-								<li
+								anchorSide={innerWidth > 1024 ? "left" : "center"}
+								isListItem>
+								<div
 									className={`${styles.toolItem} ${
 										size == "small" ? styles.small : ""
 									}`}>
@@ -63,7 +64,7 @@ export default function ToolsList({
 										src={Object.values(tool.logo)}
 										alt={`Logo de ${tool.title}`}
 									/>
-								</li>
+								</div>
 							</Tooltip>
 							{isNextOtherCategory(toolName, index) && (
 								<span className={styles.heightDivisor}></span>

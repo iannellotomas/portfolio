@@ -31,6 +31,7 @@ export const dataCareers = {
 			<img
 				src={uxuiIllustration}
 				alt="Illustración 3D de pieza de rompecabezas"
+				loading="lazy"
 			/>
 		),
 	},
@@ -84,6 +85,7 @@ export const dataCareers = {
 			<img
 				src={frontendIllustration}
 				alt="Illustración 3D de código de desarrollo web"
+				loading="lazy"
 			/>
 		),
 	},
@@ -131,6 +133,7 @@ export const dataCareers = {
 			<img
 				src={graphicIllustration}
 				alt="Illustración 3D de una composición de paisaje"
+				loading="lazy"
 			/>
 		),
 	},

@@ -11,24 +11,28 @@ const images = {
 		<img
 			src={ExperienceSectionHead}
 			alt="Ilustración 3D de maletín de trabajo animado"
+			loading="lazy"
 		/>
 	),
 	paint: (
 		<img
 			src={ProjectsSectionHead}
 			alt="Ilustración 3D de tacho de pintura colorida"
+			loading="lazy"
 		/>
 	),
 	book: (
 		<img
 			src={EducationSectionHead}
 			alt="Ilustración 3D de libro animado con índice"
+			loading="lazy"
 		/>
 	),
 	message: (
 		<img
 			src={ContactSectionHead}
 			alt="Ilustración 3D de globo de mensaje"
+			loading="lazy"
 		/>
 	),
 };

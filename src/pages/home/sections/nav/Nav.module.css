@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+  pointer-events: none;
 }
 
 .nav::before {
@@ -39,6 +40,7 @@
   display: flex;
   align-items: center;
   padding-left: 80px;
+  pointer-events: all;
 }
 
 .logo {
@@ -107,10 +109,11 @@
 
 .navRight {
   display: flex;
+  pointer-events: all;
 }
 
 .navRight svg {
-  width: 24px;
+  width: 20px;
 }
 
 .navSetting:not(.switchSetting) svg path {
@@ -129,7 +132,7 @@
   padding-inline: 30px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .navSetting:hover {
@@ -160,11 +163,11 @@
 }
 
 .switchSetting.light .backdrop {
-  transform: translateX(-22px);
+  transform: translateX(-19px);
 }
 
 .switchSetting.dark .backdrop {
-  transform: translateX(22px);
+  transform: translateX(19px);
 }
 
 .switchSetting.dark .moon,
@@ -182,6 +185,7 @@
   opacity: 0;
   pointer-events: none;
   transform: translateX(40px);
+  pointer-events: all;
 }
 
 .menu span {

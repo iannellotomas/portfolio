@@ -10,6 +10,7 @@ export default function Tooltip({
 	size = "normal",
 	isDisabled = null,
 	ariaLabel = "",
+	isListItem = false,
 }) {
 	const [showTooltip, setShowTooltip] = useState(false);
 	const [isOverflowing, setIsOverflowing] = useState(false);
@@ -54,8 +55,10 @@ export default function Tooltip({
 		}
 	}, [showTooltip, caption]);
 
+	let CurrentTag = isListItem ? "li" : "div";
+
 	return text ? (
-		<div
+		<CurrentTag
 			style={{ position: "relative", display: "inline-block" }}
 			onMouseEnter={() => setShowTooltip(true)} // Para desktop
 			onMouseLeave={() => setShowTooltip(false)}
@@ -100,7 +103,7 @@ export default function Tooltip({
 					text
 				)}
 			</div>
-		</div>
+		</CurrentTag>
 	) : (
 		children
 	);
