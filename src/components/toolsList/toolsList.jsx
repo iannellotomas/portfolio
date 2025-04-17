@@ -67,7 +67,9 @@ export default function ToolsList({
 								</div>
 							</Tooltip>
 							{isNextOtherCategory(toolName, index) && (
-								<span className={styles.heightDivisor}></span>
+								<span
+									className={styles.heightDivisor}
+									aria-hidden></span>
 							)}
 						</React.Fragment>
 					);
