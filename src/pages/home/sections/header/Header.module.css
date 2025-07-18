@@ -33,7 +33,7 @@
   gap: 10px;
   font-size: 14px;
   font-weight: 700;
-  border-radius: 500px;
+  border-radius: 50px;
   color: var(--text-primary);
   font-weight: var(--label-weight);
   border: 2px solid transparent;
@@ -48,8 +48,8 @@
   width: calc(100% - 4px);
   height: calc(100% - 4px);
   position: absolute;
-  border-radius: 500px;
-  background: var(--surface-primary);
+  border-radius: 50px;
+  background: var(--surface-primary-transparent-2);
 }
 
 .workTag>* {

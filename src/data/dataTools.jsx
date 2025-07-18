@@ -1,4 +1,5 @@
 import FigmaLogo from "../../public/logos/Figma.png";
+import HotjarLogo from "../../public/logos/Hotjar.png";
 import CanvaLogo from "../../public/logos/Canva.png";
 import GoogleDocsLogo from "../../public/logos/GoogleDocs.png";
 import GoogleSlidesLogo from "../../public/logos/GoogleSlides.png";
@@ -21,6 +22,7 @@ import PhotoshopLogo from "../../public/logos/Photoshop.png";
 import IllustratorLogo from "../../public/logos/Illustrator.png";
 
 import AsanaLogo from "../../public/logos/Asana.png";
+import JiraLogo from "../../public/logos/Jira.png";
 import ClockifyLogo from "../../public/logos/Clockify.png";
 import NotionLogo from "../../public/logos/Notion.png";
 
@@ -30,6 +32,12 @@ export const dataTools = {
 		title: "Figma",
 		caption: "Diseño, prototipos y workshops",
 		logo: { FigmaLogo },
+		category: 1,
+	},
+	hotjar: {
+		title: "Hotjar",
+		caption: "Métricas UX del comportamiento",
+		logo: { HotjarLogo },
 		category: 1,
 	},
 	canva: {
@@ -146,6 +154,12 @@ export const dataTools = {
 		title: "Asana",
 		caption: "Organización de tareas y deadlines",
 		logo: { AsanaLogo },
+		category: 5,
+	},
+	jira: {
+		title: "Jira",
+		caption: "Seguimiento ágil de proyectos complejos",
+		logo: { JiraLogo },
 		category: 5,
 	},
 	clockify: {
