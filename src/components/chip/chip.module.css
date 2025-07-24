@@ -6,12 +6,27 @@
   place-items: center;
   padding: 0 15px;
   border-radius: 500px;
-  background: var(--color-primary-light);
+  background: linear-gradient(180deg, var(--color-primary-light) 60%, var(--color-primary-light-accent) 100%);
   color: var(--color-primary);
-  font-weight: 900;
+  position: relative;
+}
+
+.chip > span {
+  z-index: 2;
+  font-weight: 900 !important;
   font-size: 14px;
   letter-spacing: -.5px;
   text-transform: uppercase;
+}
+
+.chip::before {
+  background: var(--color-primary-light);
+  content: '';
+  position: absolute;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 500px;
+  z-index: 2;
 }
 
 @media (width <=768px) {

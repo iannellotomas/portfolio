@@ -5,7 +5,7 @@ export default function Chip({tag, index}) {
 		<li
 			key={index}
 			className={styles.chip}>
-			{tag}
+			<span>{tag}</span>
 		</li>
 	);
 }
