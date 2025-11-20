@@ -1,5 +1,5 @@
 import ComputingTechCertificate from "../assets/Certificates/Analítico-Iannello-Técnica-Informática.pdf";
-import GraphicDesignCertificate from "../assets/Certificates/CertificadoDiseñoGráficoUBA.pdf";
+import CertificateRegularStudentUBA from "../assets/Certificates/AlumnoRegular2025UBAIannelloTomas.pdf";
 
 export const dataEducation = [
 	{
@@ -12,7 +12,10 @@ export const dataEducation = [
 			"Branding",
 			"Morfología",
 			"Tipografía",
-			"Medios Expresivos",
+			"Color",
+			"Gestalt",
+			"Composición",
+			"Fotografía",
 		],
 		startDate: "2024-04",
 		endDate: "",
@@ -23,11 +26,37 @@ export const dataEducation = [
 		},
 		certificate: {
 			link: "https://drive.google.com/file/d/1tBj5lyd63a-VXj9SFPkzatT5qGJ6c1OV/view?usp=sharing",
-			src: GraphicDesignCertificate,
+			src: CertificateRegularStudentUBA,
 			type: "pdf",
 		},
 		description:
 			"Estoy cursando el primer año de la carrera, donde aprendo las bases en **comunicación visual, diseño editorial, tipografía y tecnología aplicada al diseño**. Me permitirá explorar los fundamentos teóricos y prácticos necesarios para abordar proyectos de **diseño gráfico con una visión integral y estratégica**, orientada a potenciar la experiencia del usuario y la interfaz en productos digitales.",
+	},
+	{
+		title: "Design System",
+		url: "design-system",
+		institution: 6,
+		skills: [
+			"Consistencia",
+			"Escalabilidad",
+			"Sincronización",
+			"Atomic Design",
+			"Tokens",
+			"Component Properties",
+			"Documentación",
+			"Guidelines",
+			"Handoff",
+		],
+		startDate: "2025-11",
+		endDate: "",
+		stats: {
+			outstanding: ["Certificado", "profesional"],
+			classes: ["53 lecciones", "8 semanas"],
+			hours: "8",
+		},
+		certificate: {},
+		description:
+			"Me encuentro desarrollando un Design System escalable para un producto digital, donde estoy **definiendo desde cero una lógica modular** (componentes, variantes y propiedades) junto con los tokens visuales (colores, tipografías, espaciados) para garantizar **consistencia, reutilización y alineación con desarrollo**. Estoy documentando patrones, creando guidelines claras y preparando el hand‑off con equipos de devs para **asegurar que el sistema pueda crecer sin perder control ni coherencia**.",
 	},
 	{
 		title: "UX Writing",

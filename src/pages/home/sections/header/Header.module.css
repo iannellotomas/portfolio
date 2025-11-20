@@ -90,18 +90,19 @@
 
 .header h1 {
   font-size: clamp(2rem, calc(3rem + 2.5vw), 85px);
-  line-height: 110%;
+  line-height: 120%;
   color: var(--text-primary);
+  letter-spacing: -3px;
 }
 
 .header h2 {
   text-transform: uppercase;
-  font-size: clamp(45px, calc(1.5rem + 2vw), 52px);
+  font-size: clamp(45px, calc(1.5rem + 2vw), 48px);
   font-weight: 400;
   line-height: 110%;
   background: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary-dark) 25%, var(--color-primary-dark) 75%, var(--color-primary) 100%);
   background-clip: text;
-  letter-spacing: -2px;
+  letter-spacing: -3px;
   -webkit-text-fill-color: transparent;
 }
 
@@ -133,6 +134,8 @@
   font-weight: 400;
   font-size: 24px;
   color: var(--text-primary);
+  line-height: 100%;
+  letter-spacing: -0.5px;
 }
 
 .header p {
@@ -150,9 +153,10 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-primary);
   height: 50px;
+  font-size: 15px;
   border: 2px solid var(--color-primary-light);
   padding: 0 30px;
   border-radius: 500px;

@@ -93,7 +93,7 @@ export const dataCareers = {
 		title: "Gráfico",
 		caption: "Diseño",
 		description:
-			"Transmito mensajes visuales impactantes a través del branding, la tipografía y la composición gráfica.",
+			"Transmito mensajes visuales impactantes a través del branding, la tipografía y la composición gráfica con mucha creatividad.",
 		tags: ["Comunicación", "Tipografía", "Color", "Branding", "Composición"],
 		priority: "Complementario",
 		startDate: "2024",

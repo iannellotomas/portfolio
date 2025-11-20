@@ -35,13 +35,14 @@
 }
 
 .header h1 {
-  font-size: clamp(36px, calc(2vw + 2rem), 56px);
+  font-size: clamp(36px, calc(2vw + 2rem), 40px);
   line-height: 100%;
   color: var(--text-primary);
   max-width: calc(100% - 50px);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  letter-spacing: -1px;
 }
 
 .header .date {
@@ -153,11 +154,13 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   max-width: 500px;
 }
 
 .institution {
   width: 100%;
+  min-width: 160px;
   padding: 0 30px 0 0;
   height: 40px;
   display: flex;

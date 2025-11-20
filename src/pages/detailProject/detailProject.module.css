@@ -1,6 +1,6 @@
 .detailProject {
   position: relative;
-  width: 100%;
+  width: 100vw;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 4vw 0 4vw;
@@ -266,13 +266,14 @@
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
 }
 
 .hero h1 {
   color: var(--text-primary);
-  font-size: clamp(2rem, calc(3rem + 2.5vw), 65px);
-  line-height: 80%;
+  font-size: clamp(2rem, calc(3rem + 2.5vw), 64px);
+  letter-spacing: -2px;
+  line-height: 100%;
   margin-top: 5px;
   width: 100%;
   white-space: nowrap;

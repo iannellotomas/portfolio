@@ -88,7 +88,7 @@ body.dark-mode {
   --color-primary-dark: #959eff;
   --title-weight: 600;
   --label-weight: 500;
-  --active-label-weight: 800;
+  --active-label-weight: 700;
   --paragraph-weight: 300;
   --inverse-weight: 600;
   /* OUTSTANDING */
@@ -146,7 +146,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Bricolage Grotesque", sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 h1,

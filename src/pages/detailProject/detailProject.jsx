@@ -180,7 +180,7 @@ export default function DetailProject() {
 								.join(", ")} • ${formatDate(project.publishedDate)}`}
 							textColor="var(--text-primary)"
 						/>
-						<div>
+						<div className={styles.containerTitle}>
 							<h1 title={project.title}>{project.title}</h1>
 							<div className={`${styles.cta} ${isScrolled && styles.fixed}`}>
 								<Tooltip

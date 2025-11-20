@@ -3,6 +3,7 @@ import LogoCoder from "../../public/logos/CODER.jpg";
 import LogoEduIT from "../../public/logos/IT.jpg";
 import LogoGCBA from "../../public/logos/GCBA.jpg";
 import LogoIPE from "../../public/logos/IPE.jpg";
+import LogoEspacioUX from "../../public/logos/EspacioUX.png";
 
 export const dataInstitutions = {
 	1: {
@@ -52,6 +53,16 @@ export const dataInstitutions = {
 			<img
 				src={LogoIPE}
 				alt="Logo de Instituto Padre Elizalde"
+			/>
+		),
+	},
+	6: {
+		name: "Espacio UX",
+    link: "https://www.espacioux.com/",
+		image: (
+			<img
+				src={LogoEspacioUX}
+				alt="Logo de Espacio UX"
 			/>
 		),
 	},
