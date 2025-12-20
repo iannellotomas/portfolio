@@ -24,7 +24,7 @@ export const dataExperiences = [
 			"Presentación de propuestas a clientes y stakeholders.",
 			"Planificación de tareas y tiempos en dinámicas ágiles junto a equipos interdisciplinarios.",
 		],
-		tools: ["figma", "hotjar", "gdocs", "gsheets", "strapi", "jira", "asana", "clockify"],
+		tools: ["figma", "hotjar", "gdocs", "gsheets", "strapi", "jira", "trello", "asana", "clockify"],
 	},
 	{
 		role: "UX/UI Designer",

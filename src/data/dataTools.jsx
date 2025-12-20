@@ -22,6 +22,7 @@ import PhotoshopLogo from "../../public/logos/Photoshop.png";
 import IllustratorLogo from "../../public/logos/Illustrator.png";
 
 import AsanaLogo from "../../public/logos/Asana.png";
+import TrelloLogo from "../../public/logos/Trello.png";
 import JiraLogo from "../../public/logos/Jira.png";
 import ClockifyLogo from "../../public/logos/Clockify.png";
 import NotionLogo from "../../public/logos/Notion.png";
@@ -156,9 +157,15 @@ export const dataTools = {
 		logo: { AsanaLogo },
 		category: 5,
 	},
+	trello: {
+		title: "Trello",
+		caption: "Seguimiento de proyectos ágiles",
+		logo: { TrelloLogo },
+		category: 5,
+	},
 	jira: {
 		title: "Jira",
-		caption: "Seguimiento ágil de proyectos complejos",
+		caption: "Seguimiento de proyectos complejos",
 		logo: { JiraLogo },
 		category: 5,
 	},
