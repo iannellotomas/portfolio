@@ -48,13 +48,16 @@ export const dataEducation = [
 			"Handoff",
 		],
 		startDate: "2025-11",
-		endDate: "",
+		endDate: "2025-12",
 		stats: {
 			outstanding: ["Certificado", "profesional"],
 			classes: ["53 lecciones", "8 semanas"],
 			hours: "8",
 		},
-		certificate: {},
+		certificate: {
+			link: "https://drive.google.com/file/d/1voujZHIBXx96bdNSHUoFtE2fzFT_eZI5/view?usp=sharing",
+			src: "https://i.postimg.cc/brmQFzV1/Design-Systems-Espacio-UX-Tomas-Iannello.jpg",
+		},
 		description:
 			"Me encuentro desarrollando un Design System escalable para un producto digital, donde estoy **definiendo desde cero una lógica modular** (componentes, variantes y propiedades) junto con los tokens visuales (colores, tipografías, espaciados) para garantizar **consistencia, reutilización y alineación con desarrollo**. Estoy documentando patrones, creando guidelines claras y preparando el hand‑off con equipos de devs para **asegurar que el sistema pueda crecer sin perder control ni coherencia**.",
 	},
