@@ -39,59 +39,22 @@ const DetailEducation = () => {
 			animate={{ opacity: "1", translateY: "0" }}
 			exit={{ opacity: "0", translateY: "100px" }}
 			transition={{ duration: 0.3, ease: [0.215, 0.61, 0.355, 1] }}>
-			<header className={styles.header}>
-				<span>
-					<BackButton />
-					<div className={styles.title}>
-						<CaptionText
-							text={`${formatDate(education.startDate)} - ${formatDate(
-								education.endDate
-							)}`}
-						/>
-						<h1>{education.title}</h1>
-					</div>
-				</span>
-				<div className={styles.cta}>
-					<PrimaryButton
-						type="link"
-						text="Descargar certificado"
-						iconName="download"
-						href={education.certificate.link}
-					/>
-				</div>
-			</header>
-			<main className={styles.main}>
-				<section className={styles.certificate}>
-					<span>
-						{!education.certificate?.link ? (
-							<div className={styles.warning}>
-								<svg
-									width="32"
-									height="32"
-									viewBox="0 0 32 32"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M23.8442 25.7293C21.4987 27.2169 18.7776 28.0046 16.0002 28C8.81084 28 2.82951 22.8266 1.57617 16C2.15073 12.8957 3.71161 10.0596 6.02684 7.91331L1.85884 3.74398L3.74417 1.85864L30.1428 28.256L28.2575 30.1426L23.8442 25.7293ZM7.91484 9.79998C6.10269 11.4475 4.84003 13.6117 4.29751 16C4.7139 17.8219 5.54986 19.5215 6.73884 20.9634C7.92783 22.4054 9.43701 23.5498 11.1462 24.3057C12.8555 25.0616 14.7176 25.4081 16.5843 25.3175C18.451 25.2269 20.2708 24.7018 21.8988 23.784L19.1948 21.08C18.0438 21.8051 16.6804 22.1175 15.3285 21.9659C13.9765 21.8143 12.7162 21.2078 11.7543 20.2459C10.7923 19.2839 10.1858 18.0236 10.0343 16.6717C9.8827 15.3197 10.1951 13.9564 10.9202 12.8053L7.91484 9.79998ZM17.2188 19.104L12.8962 14.7826C12.6589 15.3866 12.6031 16.0466 12.7355 16.6818C12.8679 17.317 13.1829 17.8997 13.6417 18.3585C14.1005 18.8173 14.6832 19.1322 15.3184 19.2646C15.9536 19.3971 16.6149 19.3412 17.2188 19.104ZM27.7415 22.124L25.8335 20.216C26.7268 18.9465 27.3624 17.5141 27.7042 16C27.3418 14.4128 26.6605 12.9159 25.7016 11.6002C24.7427 10.2846 23.5262 9.1777 22.1262 8.34686C20.7261 7.51601 19.1718 6.97856 17.5575 6.76719C15.9433 6.55582 14.3029 6.67494 12.7362 7.11731L10.6322 5.01331C12.2948 4.35998 14.1068 3.99998 16.0002 3.99998C23.1895 3.99998 29.1708 9.17331 30.4255 16C30.017 18.2213 29.0974 20.3176 27.7415 22.124ZM15.6308 10.012C15.7526 10.004 15.8757 9.99998 16.0002 9.99998C16.8194 9.99987 17.63 10.1675 18.3819 10.4926C19.1339 10.8177 19.8113 11.2933 20.3724 11.8902C20.9336 12.487 21.3665 13.1925 21.6446 13.9631C21.9227 14.7336 22.0401 15.553 21.9895 16.3706L15.6308 10.012Z"
-										fill="black"
-									/>
-								</svg>
-								Este certificado aún no está disponible
+			<div className={styles.main}>
+				<div className={styles.detail}>
+					<header className={styles.header}>
+						<span>
+							<BackButton />
+							<div className={styles.title}>
+								<CaptionText
+									text={`${formatDate(education.startDate)} - ${formatDate(
+										education.endDate
+									)}`}
+								/>
+								<h1>{education.title}</h1>
 							</div>
-						) : education.certificate?.type === "pdf" ? (
-							<PDFViewer fileUrl={education.certificate.src} />
-						) : (
-							<LazyImage
-								src={education.certificate.src}
-								alt={`Certificado de ${education.title}`}
-								style={{ width: "100%", height: "auto" }}
-								radius={20}
-							/>
-						)}
-					</span>
-				</section>
-				<section className={styles.detail}>
-					<div className={styles.about}>
+						</span>
+					</header>
+					<main className={styles.about}>
 						<span>
 							<div className={styles.col}>
 								<CaptionText text="Institución" />
@@ -125,7 +88,7 @@ const DetailEducation = () => {
 								}}
 							/>
 						</div>
-					</div>
+					</main>
 					{Object.keys(education.stats).length > 0 && (
 						<div className={styles.stats}>
 							<div className={styles.outstanding}>
@@ -216,8 +179,37 @@ const DetailEducation = () => {
 							/>
 						</div>
 					)}
+				</div>
+				<section className={styles.certificate}>
+					<span>
+						{!education.certificate?.link ? (
+							<div className={styles.warning}>
+								<svg
+									width="32"
+									height="32"
+									viewBox="0 0 32 32"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M23.8442 25.7293C21.4987 27.2169 18.7776 28.0046 16.0002 28C8.81084 28 2.82951 22.8266 1.57617 16C2.15073 12.8957 3.71161 10.0596 6.02684 7.91331L1.85884 3.74398L3.74417 1.85864L30.1428 28.256L28.2575 30.1426L23.8442 25.7293ZM7.91484 9.79998C6.10269 11.4475 4.84003 13.6117 4.29751 16C4.7139 17.8219 5.54986 19.5215 6.73884 20.9634C7.92783 22.4054 9.43701 23.5498 11.1462 24.3057C12.8555 25.0616 14.7176 25.4081 16.5843 25.3175C18.451 25.2269 20.2708 24.7018 21.8988 23.784L19.1948 21.08C18.0438 21.8051 16.6804 22.1175 15.3285 21.9659C13.9765 21.8143 12.7162 21.2078 11.7543 20.2459C10.7923 19.2839 10.1858 18.0236 10.0343 16.6717C9.8827 15.3197 10.1951 13.9564 10.9202 12.8053L7.91484 9.79998ZM17.2188 19.104L12.8962 14.7826C12.6589 15.3866 12.6031 16.0466 12.7355 16.6818C12.8679 17.317 13.1829 17.8997 13.6417 18.3585C14.1005 18.8173 14.6832 19.1322 15.3184 19.2646C15.9536 19.3971 16.6149 19.3412 17.2188 19.104ZM27.7415 22.124L25.8335 20.216C26.7268 18.9465 27.3624 17.5141 27.7042 16C27.3418 14.4128 26.6605 12.9159 25.7016 11.6002C24.7427 10.2846 23.5262 9.1777 22.1262 8.34686C20.7261 7.51601 19.1718 6.97856 17.5575 6.76719C15.9433 6.55582 14.3029 6.67494 12.7362 7.11731L10.6322 5.01331C12.2948 4.35998 14.1068 3.99998 16.0002 3.99998C23.1895 3.99998 29.1708 9.17331 30.4255 16C30.017 18.2213 29.0974 20.3176 27.7415 22.124ZM15.6308 10.012C15.7526 10.004 15.8757 9.99998 16.0002 9.99998C16.8194 9.99987 17.63 10.1675 18.3819 10.4926C19.1339 10.8177 19.8113 11.2933 20.3724 11.8902C20.9336 12.487 21.3665 13.1925 21.6446 13.9631C21.9227 14.7336 22.0401 15.553 21.9895 16.3706L15.6308 10.012Z"
+										fill="black"
+									/>
+								</svg>
+								Este certificado aún no está disponible
+							</div>
+						) : education.certificate?.type === "pdf" ? (
+							<PDFViewer fileUrl={education.certificate.src} />
+						) : (
+							<LazyImage
+								src={education.certificate.src}
+								alt={`Certificado de ${education.title}`}
+								style={{ width: "100%", height: "auto" }}
+								radius={20}
+							/>
+						)}
+					</span>
 				</section>
-			</main>
+			</div>
 			<Footer />
 		</motion.div>
 	);
