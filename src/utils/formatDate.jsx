@@ -48,8 +48,26 @@ export function getDurationInMonths(startDate, endDate) {
 	const yearDiff = endYear - startYear;
 	const monthDiff = endMonth - startMonth;
 
-	const totalMonths = yearDiff * 12 + monthDiff + 1; // +1 para contar ambos extremos
-	const stringMonths = totalMonths == 1 ? "1 mes" : `${totalMonths} meses`;
+	const totalMonths = yearDiff * 12 + monthDiff + 1; // cuenta ambos extremos
 
-	return stringMonths;
+	const years = Math.floor(totalMonths / 12);
+	const months = totalMonths % 12;
+
+	const parts = [];
+
+	if (years > 0) {
+		parts.push(years === 1 ? "1 año" : `${years} años`);
+	}
+
+	if (months > 0) {
+		parts.push(months === 1 ? "1 mes" : `${months} meses`);
+	}
+
+	// caso especial: exactamente 12 meses
+	if (parts.length === 0) {
+		return "1 año";
+	}
+
+	return parts.join(" y ");
 }
+

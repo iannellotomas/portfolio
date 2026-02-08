@@ -209,6 +209,7 @@
 
 .itemDetails .detail h4 {
   font-size: 18px;
+  width: 100%;
   color: var(--text-primary);
   font-weight: var(--label-weight);
   letter-spacing: .2px;
